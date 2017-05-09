@@ -25,4 +25,4 @@
         * Dependencies Injection
         * Routing
         * Integrate Angular2 libraries
-        * Practice Trello
+        * Practice Movie app
