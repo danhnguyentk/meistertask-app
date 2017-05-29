@@ -1,3 +1,4 @@
+// FIX ME
 {
     "rulesDirectory": [
         "node_modules/codelyzer"
@@ -102,18 +103,6 @@
             "check-operator",
             "check-separator",
             "check-type"
-        ],
-        "directive-selector": [
-            true,
-            "attribute",
-            "app",
-            "camelCase"
-        ],
-        "component-selector": [
-            true,
-            "element",
-            "app",
-            "kebab-case"
         ],
         "use-input-property-decorator": true,
         "use-output-property-decorator": true,
