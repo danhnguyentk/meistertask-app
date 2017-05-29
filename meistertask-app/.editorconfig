@@ -24,6 +24,7 @@ trim_trailing_whitespace = false
 [*.{ts,js,json}]
 indent_style = space
 indent_size = 4
+max_line_length = 180
 
 # Set default *html file
 [*.html]
