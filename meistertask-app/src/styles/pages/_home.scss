@@ -1,0 +1,27 @@
+.home {
+    @extend %flex;
+
+    .title {
+        .label-collaborative {
+            color: #00aaff;
+            font-size: 55px;
+        }
+
+        .label-mindmapping {
+            color: #3d474d;
+            font-size: 55px;
+            font-weight: 600;
+        }
+
+        .desc {
+            color: #a0a9ad;
+            margin: 10px 0 40px;
+        }
+    }
+
+    .device {
+        .img-device {
+
+        }
+    }
+}

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1200px" height="560px" viewBox="0 0 1200 560" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>MindMeister Full</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="1200" height="560"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="MindMeister-Full" sketch:type="MSLayerGroup">
+            <g id="Mask-+-Oval-167-+-Oval-167-+-Oval-167-+-Oval-167" transform="translate(600.000000, 280.000000) scale(1, -1) translate(-600.000000, -280.000000) ">
+                <mask id="mask-2" sketch:name="Mask" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" fill="#FFFFFF" sketch:type="MSShapeGroup" xlink:href="#path-1"></use>
+                <g id="Oval-167-+-Oval-167-+-Oval-167-+-Oval-167" mask="url(#mask-2)">
+                    <g transform="translate(852.000000, -236.000000)" id="Oval-167-+-Oval-167">
+                        <g transform="translate(41.000000, 446.000000)">
+                            <circle id="Oval-167" opacity="0.2" fill="#41D9D9" sketch:type="MSShapeGroup" cx="360" cy="186" r="93"></circle>
+                            <circle id="Oval-167" opacity="0.2" fill="#A1E65C" sketch:type="MSShapeGroup" cx="75" cy="85" r="75"></circle>
+                            <circle id="Oval-167" fill="#A1E65C" sketch:type="MSShapeGroup" cx="134" cy="45" r="45"></circle>
+                            <circle id="Oval-167" fill="#41D9D9" sketch:type="MSShapeGroup" cx="279.5" cy="137.5" r="31.5"></circle>
+                            <circle id="Oval-167" fill="#FF9F19" sketch:type="MSShapeGroup" cx="173" cy="209" r="23"></circle>
+                            <circle id="Oval-167" fill="#FFC619" sketch:type="MSShapeGroup" cx="271" cy="311" r="13"></circle>
+                        </g>
+                        <g>
+                            <circle id="Oval-167" opacity="0.2" fill="#18CCF0" sketch:type="MSShapeGroup" cx="361.5" cy="376.5" r="133.5"></circle>
+                            <circle id="Oval-167" fill="#18CCF0" sketch:type="MSShapeGroup" cx="233.5" cy="335.5" r="42.5"></circle>
+                            <circle id="Oval-167" opacity="0.2" fill="#A47EE6" sketch:type="MSShapeGroup" cx="177.025" cy="173.525" r="172.975"></circle>
+                            <ellipse id="Oval-167" fill="#A47EE6" sketch:type="MSShapeGroup" cx="56.95" cy="314.45" rx="56.45" ry="56.45"></ellipse>
+                        </g>
+                    </g>
+                </g>
+                <g id="Oval-167-+-Oval-167" mask="url(#mask-2)" sketch:type="MSShapeGroup">
+                    <g transform="translate(76.000000, 145.500000) scale(-1, 1) translate(-76.000000, -145.500000) translate(-119.000000, -68.000000)" id="Oval-167">
+                        <circle opacity="0.2" fill="#A1E65C" cx="126" cy="235" r="75"></circle>
+                        <circle fill="#A1E65C" cx="45" cy="269" r="45"></circle>
+                        <circle fill="#41D9D9" cx="274.5" cy="266.5" r="42.5"></circle>
+                        <circle fill="#FF9F19" cx="45" cy="118" r="23"></circle>
+                        <path d="M240,427 C247.179702,427 253,421.179702 253,414 C253,406.820298 247.179702,401 240,401 C232.820298,401 227,406.820298 227,414 C227,421.179702 232.820298,427 240,427 Z" fill="#FFC619"></path>
+                        <circle opacity="0.2" fill="#18CCF0" cx="256.5" cy="133.5" r="133.5"></circle>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

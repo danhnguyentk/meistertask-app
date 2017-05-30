@@ -1,0 +1,133 @@
+/* mixin definitions */
+$font-path: '/assets/fonts/';
+$image-path: '/assets/images/';
+
+/* function convert pixel to rem */
+$browser-context: 8;
+@function rem($pixel, $context: $browser-context) {
+  @if (unitless($pixel)) {
+    $pixel: $pixel * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return ($pixel / $context) * 1rem;
+}
+
+/* mixin for font face */
+@mixin font-face($font-name) {
+  @font-face {
+    font-family: $font-name;
+    src: url($font-path + $font-name + '.ttf');
+    /* src: url($font-path + $font-name + '.eot?#iefix') format('embedded-opentype'),
+         url($font-path + $font-name + '.woff') format('woff'),
+         url($font-path + $font-name + '.ttf') format('truetype'),
+         url($font-path + $font-name + '.svg#') format('svg'); */
+  }
+}
+
+/* border radius */
+@mixin border-radius($radius) {
+  @include border-top-radius($radius);
+  @include border-right-radius($radius);
+  @include border-bottom-radius($radius);
+  @include border-left-radius($radius);
+}
+
+/* background image mixin
+ * $image: is name and type of image
+ */
+@mixin background-image($image) {
+  background-image: url('#{$image-path+$image}');
+}
+
+@mixin linkState () {
+  &:hover,
+  &:focus,
+  &:visited,
+  &:active,
+  &:active:focus {
+    @content;
+  }
+}
+
+/* background sprite */
+@mixin backgroundSprite ($width, $height, $value1, $value2) {
+  width: em($base-font-size, $width);
+  height: em($base-font-size, $height);
+  background-position: em($base-font-size, $value1) em($base-font-size, $value2);
+}
+
+/* block size */
+@mixin boxSize ($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin minBoxSize ($width, $height) {
+  min-width: $width;
+  min-height: $height;
+}
+
+// format btn
+@mixin format-btn($width, $height, $border-radius, $font-size: false, $color: false, $background-color: false, $border: false) {
+  min-width: rem($width);
+  height: rem($height);
+  border-radius: rem($border-radius);
+  @if ($font-size) {
+    font-size: rem($font-size);
+  }
+  @if ($color) {
+    color: $color;
+  }
+  @if ($background-color) {
+    background-color: $background-color;
+    @if ($background-color != $white) {
+      &:hover {
+        background-color: darken($background-color, 15%);
+      }
+    }
+  }
+  @if ($border) {
+    border: $border;
+  }
+}
+
+// format icon
+@mixin format-icon($image, $width, $height, $background-size) {
+  display: block;
+  background-image: url('#{$image-path+$image}');
+  width: $width;
+  height: $height;
+  background-size: $background-size;
+}
+
+@mixin color-hover($color: $default-color) {
+  &:hover {
+    color: darken($color, 30%);
+    cursor: pointer;
+  }
+}
+
+@mixin background-hover($color: $default-color) {
+  &:hover {
+    background-color: darken($color, 15%);
+    cursor: pointer;
+  }
+}
+
+@mixin no-color-hover($color: $default-color) {
+  &:hover {
+    color: $color;
+    cursor: default;
+  }
+}
+
+@mixin no-background-hover($color: $default-color) {
+  &:hover {
+    background-color: $color;
+    cursor: default;
+  }
+}

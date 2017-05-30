@@ -1,0 +1,40 @@
+.main-footer {
+    @extend %margin-auto;
+    width: 900px;
+}
+
+.social {
+    @extend %flex-content-space;
+
+    .logo {
+        @include format-icon('logo.svg', 199px, 46px, 'contain');
+    }
+
+    .social-list {
+        @extend %flex;
+
+        .facebook,
+        .google,
+        .twitter {
+            border-radius: 50%;
+            margin-left: 20px;
+        }
+
+        .facebook {
+            @include format-icon('facebook.svg', 32px, 32px, 'contain');
+        }
+
+        .google {
+            @include format-icon('google.svg', 32px, 32px, 'contain');
+        }
+
+        .twitter {
+            @include format-icon('twitter.svg', 32px, 32px, 'contain');
+        }
+    }
+}
+
+.sitemap {
+    @extend %flex-content-space;
+    margin-top: 30px;
+}
