@@ -8,7 +8,7 @@ export class CustomValidatorService {
 
     // FIX ME
     containNameValidator(name: string): Function {
-        return (input: FormControl): { containName: { requiredName: string, actualName: string }} => {
+        return (input: FormControl): { containName: { requiredName: string, actualName: string } } => {
             if (!input.value || input.value.includes(name)) {
                 return null;
             } else {
