@@ -9,9 +9,19 @@ export class AppConfig {
         ROOT_URL: environment.API_ROOT
     };
 
+    VALIDATION_KEY = {
+        EMAIL: 'invalidEmail'
+    }
+
     VALIDATION_MESSAGES = {
         required: `<%= name %> is required.`,
+        [this.VALIDATION_KEY.EMAIL] : 'Please enter a valid email address',
         minlength: `<%= name %> must be at least <%= errors.minlength.requiredLength %> characters long.`,
         maxlength: `<%= name %> can not be more than <%= errors.maxlength.requiredLength %> characters long.`
+    };
+
+    // Pattern validate
+    VALIDATIONS = {
+        EMAIL_PATTERN: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
     };
 }

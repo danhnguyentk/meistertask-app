@@ -1,24 +1,30 @@
 import { Injectable } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
+import { AppConfig } from './app-config.service';
+
 @Injectable()
-export class CustomValidatorService {
+export class CustomValidator {
 
-    constructor() { }
+    constructor(private appConfig: AppConfig) { }
 
-    // FIX ME
-    containNameValidator(name: string): Function {
-        return (input: FormControl): { containName: { requiredName: string, actualName: string } } => {
-            if (!input.value || input.value.includes(name)) {
-                return null;
-            } else {
-                return {
-                    containName: {
-                        requiredName: name,
-                        actualName: input.value
-                    }
-                };
-            }
+    validatePattern (input: FormControl, regExp: RegExp, key: string) {
+        if (!input.value || regExp.test(input.value)) {
+            return null;
+        } else {
+            return {
+                [key]: {
+                    valid: false
+                }
+            };
+        }
+    }
+
+    validateEmail() {
+        return (input: FormControl) => {
+            const regExp: RegExp = this.appConfig.VALIDATIONS.EMAIL_PATTERN;
+            const validateKey: string = this.appConfig.VALIDATION_KEY.EMAIL;
+            return this.validatePattern(input, regExp, validateKey);
         };
     }
 

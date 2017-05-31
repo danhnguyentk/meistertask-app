@@ -3,16 +3,16 @@ import {
     inject
 } from '@angular/core/testing';
 
-import { ValidationMessageService } from './validation-message.service';
+import { ValidationMessage } from './validation-message.service';
 
-describe('ValidationMessageService', () => {
+describe('ValidationMessage', () => {
     beforeEach(() => {
         TestBed.configureTestingModule({
-            providers: [ ValidationMessageService ]
+            providers: [ ValidationMessage ]
         });
     });
 
-    it('should ...', inject([ ValidationMessageService ], (service: ValidationMessageService) => {
+    it('should ...', inject([ ValidationMessage ], (service: ValidationMessage) => {
         expect(service).toBeTruthy();
     }));
 });

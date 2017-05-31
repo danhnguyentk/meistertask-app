@@ -1,16 +1,19 @@
 <section class="singup">
   <div class="email-icon"></div>
   <p class="signup-desc">with your email address</p>
-  <form novalidate>
+  <form [formGroup]="form" (ngSubmit)="signup()" novalidate>
     <div class="form-group">
-      <input class="form-control name" placeholder="Name">
+      <input class="form-control name" placeholder="Name" formControlName="Name">
+      <control-message [control]="form.controls.name" nameControl="Name"></control-message>
     </div>
     <div class="form-group">
-      <input class="form-control work-email" placeholder="Work Email">
+      <input class="form-control work-email" placeholder="Work Email" formControlName="workEmail">
+      <control-message [control]="form.controls.workEmail" nameControl="Work email"></control-message>
     </div>
     <div class="form-group">
-      <input class="form-control password" placeholder="Password">
+      <input class="form-control password" placeholder="Password" formControlName="password">
+      <control-message [control]="form.controls.password" nameControl="Password"></control-message>
     </div>
-    <button type="submit" class="btn btn-signup">Sign Up</button>
+    <button type="submit" class="btn btn-signup" [disabled]="!form.valid">Sign Up</button>
   </form>
 </section>

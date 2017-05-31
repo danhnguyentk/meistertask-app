@@ -11,13 +11,15 @@ import { MainFooterComponent } from './components/main-footer/main-footer.compon
 import { PrimaryLayoutComponent } from './components/primary-layout/primary-layout.component';
 import { SecondaryLayoutComponent } from './components/secondary-layout/secondary-layout.component';
 import { MainBodyComponent } from './components/main-body/main-body.component';
+import { ControlMessageComponent } from './components/control-message/control-message.component';
 
 const COMPONENTS = [
     MainHeaderComponent,
     MainFooterComponent,
     MainBodyComponent,
     PrimaryLayoutComponent,
-    SecondaryLayoutComponent
+    SecondaryLayoutComponent,
+    ControlMessageComponent
 ]
 
 const COMMON_MODULES = [
@@ -36,6 +38,7 @@ const COMMON_MODULES = [
         ...COMPONENTS
     ],
     exports: [
+        ...COMPONENTS,
         ...COMMON_MODULES
     ]
 })

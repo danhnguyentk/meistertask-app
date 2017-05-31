@@ -6,7 +6,7 @@ import * as _ from 'lodash';
 import { AppConfig } from './app-config.service';
 
 @Injectable()
-export class ValidationMessageService {
+export class ValidationMessage {
 
     constructor(private appConfig: AppConfig) { }
 
