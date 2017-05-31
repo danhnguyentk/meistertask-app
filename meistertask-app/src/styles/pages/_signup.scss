@@ -1,0 +1,23 @@
+.singup {
+    @extend %margin-auto;
+    width: 300px;
+    padding: 50px 0;
+
+    .email-icon {
+        @extend %margin-auto;
+        @include format-icon('email.svg', 60px, 44px, contain);
+    }
+
+    .signup-desc {
+        margin: 20px 0;
+        font-size: 24px;
+        color: #A0A9AD;
+    }
+
+    .btn-signup {
+        @extend %full-width;
+        @extend %color-white;
+        background-color: #00AAFF;
+        border-radius: 5px;
+    }
+}

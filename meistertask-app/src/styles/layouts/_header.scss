@@ -1,7 +1,5 @@
 .main-header {
-    @extend %margin-auto;
     @extend %flex-align-center-content-space;
-    width: 900px;
     padding: 40px 0;
 
     .logo {

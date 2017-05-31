@@ -2,6 +2,8 @@
     @extend %flex;
 
     .title {
+        @extend %text-center;
+
         .label-collaborative {
             color: #00aaff;
             font-size: 55px;
@@ -21,7 +23,7 @@
 
     .device {
         .img-device {
-
+            width: 600px;
         }
     }
 }

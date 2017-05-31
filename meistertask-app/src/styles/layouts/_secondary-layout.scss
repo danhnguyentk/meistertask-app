@@ -1,5 +1,5 @@
-.primary-layout {
-    @include format-icon('primary-background.svg', 100%, 100%, cover);
+.secondary-layout {
+    @include format-icon('secondary-background.svg', 100%, 100%, cover);
 
     .layout-content {
         @extend %full-height;

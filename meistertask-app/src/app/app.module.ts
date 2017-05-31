@@ -7,13 +7,15 @@ import { ROUTES } from './app.routes';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './home/home.module';
+import { AuthModule } from './auth/auth.module';
 
 const MODULES = [
     BrowserModule,
     RouterModule.forRoot(ROUTES),
     CoreModule,
     SharedModule,
-    HomeModule
+    HomeModule,
+    AuthModule
 ];
 
 @NgModule({
