@@ -8,6 +8,7 @@ import {
     Validators
 } from '@angular/forms';
 
+import { AuthService } from '../../services/auth.service';
 import { CustomValidator } from '../../../core/custom-validator.service';
 
 @Component({
@@ -20,7 +21,8 @@ export class SignupComponent implements OnInit {
 
     constructor(
         private fb: FormBuilder,
-        private customValidator: CustomValidator
+        private customValidator: CustomValidator,
+        private authService: AuthService
     ) { }
 
     ngOnInit() {
@@ -36,6 +38,18 @@ export class SignupComponent implements OnInit {
             ]],
             password: [ '', Validators.required ]
         });
+    }
+
+    signup() {
+        if (!this.form.valid) {
+            return;
+        }
+        this.authService.signup(this.form.value)
+            .subscribe(data => {
+                console.log(data);
+            }, err => {
+                console.log(err);
+            });
     }
 
 }

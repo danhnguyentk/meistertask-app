@@ -78,6 +78,10 @@ see [@ngrx/effects](https://github.com/ngrx/effects)
 see [@ngrx/store-devtools](https://github.com/ngrx/store-devtools)
 > The ngrx/store-devtools module is useful for development. It relies on Redux Devtools and allows watch the store's state at any time, see which actions are dispatched along with its payload, undo actions, and much more.
 
+##### Json-server 0.10.1
+see [json-server](https://github.com/typicode/json-server)
+> The json-server is library get a full fake REST API with zero coding in less than 30 seconds. 
+
 ---
 ## Installation
 Open terminal, run `npm install`
