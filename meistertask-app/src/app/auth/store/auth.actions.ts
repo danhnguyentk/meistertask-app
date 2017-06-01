@@ -13,6 +13,7 @@ export class AuthActions {
     static SIGNUP = '[Auth] SIGNUP';
     static SIGNUP_SUCCESS= '[Auth] SIGNUP_SUCCESS';
     static SIGNUP_FAIL= '[Auth] SIGNUP_FAIL';
+    static LOGOUT = '[Auth] LOGOUT';
 
     signup(user: User): Action {
         return {
@@ -32,6 +33,12 @@ export class AuthActions {
         return {
             type: AuthActions.SIGNUP_FAIL,
             payload: errorMessage
+        };
+    }
+
+    logout() {
+        return {
+            type: AuthActions.LOGOUT,
         };
     }
 }

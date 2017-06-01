@@ -1,0 +1,41 @@
+.logout {
+    @extend %text-center;
+
+    .title {
+        font-size: 50px;
+        font-weight: 300;
+        margin: 30px 0;
+    }
+
+    .digital {
+        margin-bottom: 20px;
+
+        .apple {
+            max-width: 50px;
+        }
+
+        .iphone {
+            max-width: 78px;
+        }
+
+        .macbook {
+            max-width: 360px;
+        }
+
+        .ipad {
+            max-width: 178px;
+        }
+    }
+
+    .desc {
+        font-size: 26px;
+        color: #A0A9AD;
+        margin: 20px 0;
+    }
+
+    .detail {
+        color: #A0A9AD;
+        margin-bottom: 20px;
+        font-size: 22px;
+    }
+}

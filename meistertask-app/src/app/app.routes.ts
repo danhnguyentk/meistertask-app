@@ -23,6 +23,7 @@ export const ROUTES: Routes = [
     },
     {
         path: '',
+        component: SecondaryLayoutComponent,
         children: [
             ...dashboardRoutes
         ]

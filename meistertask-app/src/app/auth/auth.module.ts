@@ -9,10 +9,12 @@ import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './services/auth-guard.service';
 import { AuthEffects } from './store/auth.effects';
 import { AuthActions } from './store/auth.actions';
+import { LoggedOutComponent } from './components/logged-out/logged-out.component';
 
 const COMPONENTS = [
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    LoggedOutComponent
 ];
 
 const SERVICES = [
@@ -27,7 +29,7 @@ const SERVICES = [
         SharedModule
     ],
     declarations: [
-        ...COMPONENTS
+        ...COMPONENTS,
     ],
     providers: [
         ...SERVICES

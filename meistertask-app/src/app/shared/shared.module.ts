@@ -6,6 +6,9 @@ import {
     ReactiveFormsModule
 } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+
+import { DropdownModule } from 'ngx-dropdown';
+
 import { MainHeaderComponent } from './components/main-header/main-header.component';
 import { MainFooterComponent } from './components/main-footer/main-footer.component';
 import { PrimaryLayoutComponent } from './components/primary-layout/primary-layout.component';
@@ -29,7 +32,8 @@ const COMMON_MODULES = [
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    DropdownModule
 ];
 
 @NgModule({
