@@ -77,13 +77,13 @@ export class HttpWrapperService {
      * Resolve when http success
      */
     private extractData(res: Response): any {
-        return CaseFormat.convertKeysToCamelCase(res.json);
+        return CaseFormat.convertKeysToCamelCase(res.json());
     }
 
     /**
      * Resolve when http fail
      */
     private handleError(err: Response) {
-        return Observable.throw(CaseFormat.convertKeysToCamelCase(err.json));
+        return Observable.throw(CaseFormat.convertKeysToCamelCase(err.json()));
     }
 }

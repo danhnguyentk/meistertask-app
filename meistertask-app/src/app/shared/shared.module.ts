@@ -12,6 +12,7 @@ import { PrimaryLayoutComponent } from './components/primary-layout/primary-layo
 import { SecondaryLayoutComponent } from './components/secondary-layout/secondary-layout.component';
 import { MainBodyComponent } from './components/main-body/main-body.component';
 import { ControlMessageComponent } from './components/control-message/control-message.component';
+import { ErrorMessageComponent } from './components/error-message/error-message.component';
 
 const COMPONENTS = [
     MainHeaderComponent,
@@ -19,7 +20,8 @@ const COMPONENTS = [
     MainBodyComponent,
     PrimaryLayoutComponent,
     SecondaryLayoutComponent,
-    ControlMessageComponent
+    ControlMessageComponent,
+    ErrorMessageComponent
 ]
 
 const COMMON_MODULES = [

@@ -14,7 +14,7 @@ export class AuthService {
         private appConfig: AppConfig) { }
 
     signup(user: User): Observable<User> {
-        return this.httpWrapperService.post(this.appConfig.API.SINGUP, user);
+        return this.httpWrapperService.post(this.appConfig.API.SIGNUP, user);
     }
 
 }

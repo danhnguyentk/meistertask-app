@@ -78,6 +78,10 @@ see [@ngrx/effects](https://github.com/ngrx/effects)
 see [@ngrx/store-devtools](https://github.com/ngrx/store-devtools)
 > The ngrx/store-devtools module is useful for development. It relies on Redux Devtools and allows watch the store's state at any time, see which actions are dispatched along with its payload, undo actions, and much more.
 
+##### ngrx-store-freeze 0.1.9
+see [ngrx-store-freeze](https://www.npmjs.com/package/ngrx-store-freeze)
+> The ngrx-store-freeze is library very useful during development mode to ensure that no part of the app accidentally mutates the state. When mutation occurs, an exception will be thrown.
+
 ##### Json-server 0.10.1
 see [json-server](https://github.com/typicode/json-server)
 > The json-server is library get a full fake REST API with zero coding in less than 30 seconds. 
