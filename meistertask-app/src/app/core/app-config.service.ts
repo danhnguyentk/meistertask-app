@@ -7,7 +7,7 @@ export class AppConfig {
 
     API = {
         ROOT_URL: environment.API_ROOT,
-        SIGNUP: 'api/user'
+        USER: 'api/user'
     };
 
     VALIDATION_KEY = {

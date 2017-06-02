@@ -20,6 +20,12 @@ export function authReducer(state: AuthState = initialState, action: Action): Au
         case AuthActions.SIGNUP_FAIL:
             return _.assignIn({}, state, { errorMessage: action.payload });
 
+        case AuthActions.LOGIN_SUCCESS:
+            return _.assignIn({}, state, { isAuthenticated: true, errorMessage: null, user: action.payload });
+
+        case AuthActions.LOGIN_FAIL:
+            return _.assignIn({}, state, { errorMessage: action.payload });
+
         case AuthActions.LOGOUT:
             return initialState;
 

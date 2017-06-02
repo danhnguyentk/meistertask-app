@@ -28,7 +28,18 @@ export class AuthEffects {
         .map(toPayload)
         .switchMap((user: User) => {
             return this.authService.signup(user)
-                .map((user: User) => this.authActions.signupSuccess(user))
+                .map((userRes: User) => this.authActions.signupSuccess(userRes))
                 .catch((errorMessage: ErrorMessage) => Observable.of(this.authActions.signupFail(errorMessage)));
+        });
+
+    @Effect()
+    login$ = this.actions
+        .ofType(AuthActions.LOGIN)
+        .map(toPayload)
+        .switchMap((user: User) => {
+            return this.authService.login(user)
+                .do(user => console.log(user))
+                .map((userRes: User) => this.authActions.loginSuccess(userRes))
+                .catch((errorMessage: ErrorMessage) => Observable.of(this.authActions.loginFail(errorMessage)));
         });
 }

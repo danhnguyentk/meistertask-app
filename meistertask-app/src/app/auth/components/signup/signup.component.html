@@ -4,15 +4,15 @@
   <form [formGroup]="form" (ngSubmit)="signup()" novalidate>
     <error-message [message]="errorMessage$ | async"></error-message>
     <div class="form-group">
-      <input class="form-control name" placeholder="Name" formControlName="name">
-      <control-message [control]="form.controls.name" nameControl="Name"></control-message>
+      <input class="form-control name" placeholder="Name" formControlName="workName">
+      <control-message [control]="form.controls.workName" nameControl="Work name"></control-message>
     </div>
     <div class="form-group">
-      <input class="form-control work-email" placeholder="Work Email" formControlName="workEmail">
-      <control-message [control]="form.controls.workEmail" nameControl="Work email"></control-message>
+      <input class="form-control work-email" placeholder="Work Email" formControlName="email">
+      <control-message [control]="form.controls.email" nameControl="Email"></control-message>
     </div>
     <div class="form-group">
-      <input class="form-control password" placeholder="Password" formControlName="password">
+      <input type="password" class="form-control password" placeholder="Password" formControlName="password">
       <control-message [control]="form.controls.password" nameControl="Password"></control-message>
     </div>
     <button type="submit" class="btn btn-signup" [disabled]="!form.valid">Sign Up</button>

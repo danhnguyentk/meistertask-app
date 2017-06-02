@@ -57,8 +57,8 @@ export class SignupComponent implements OnInit {
 
     buildForm() {
         this.form = this.fb.group({
-            name: [ '', Validators.required ],
-            workEmail: [ '', [
+            workName: [ '', Validators.required ],
+            email: [ '', [
                 Validators.required,
                 this.customValidator.validateEmail()
             ]],
@@ -70,8 +70,7 @@ export class SignupComponent implements OnInit {
         if (!this.form.valid) {
             return;
         }
-        const user: User = _.assignIn({}, this.form.value, { id: new Date().valueOf() });
-        this.store.dispatch(this.authActions.signup(user));
+        this.store.dispatch(this.authActions.signup(this.form.value));
     }
 
     /**

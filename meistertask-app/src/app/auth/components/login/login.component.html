@@ -1,10 +1,19 @@
 <section class="login">
-  <h2>Log In</h2>
-  <form action="" method="POST" role="form">
+  <h2 class="title">Log In</h2>
+  <p class="intro">with you MeisterTask account</p>
+  <form class="login-form" novalidate [formGroup]=form (ngSubmit)="login()">
+    <error-message [message]="errorMessage$ | async"></error-message>
     <div class="form-group">
-      <label for="">label</label>
-      <input type="text" class="form-control" id="" placeholder="Input field">
+      <input type="email" class="form-control" placeholder="Email" formControlName="email">
+      <control-message [control]="form.controls.email" nameControl="Email"></control-message>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <div class="form-group">
+      <input type="password" class="form-control" placeholder="Password" formControlName="password">
+      <control-message [control]="form.controls.password" nameControl="Password"></control-message>
+    </div>
+    <div class="check-box">
+      <label class="remmber"><input type="checkbox"> Remember me</label>
+    </div>
+    <button type="submit" class="btn btn-login" [disabled]="!form.valid">Login</button>
   </form>
 </section>

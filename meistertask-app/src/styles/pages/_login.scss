@@ -1,0 +1,30 @@
+.login {
+    @extend %text-center;
+
+    .title {
+        font-size: 40px;
+    }
+
+    .intro {
+        margin-bottom: 20px;
+        font-size: 24px;
+        color: #A0A9AD;
+    }
+
+    .login-form {
+        @extend %margin-auto;
+        @extend %text-left;
+        width: 250px;
+    }
+
+    .remmber {
+        @extend %font-weight-normal;
+        margin-bottom: 10px;
+    }
+
+    .btn-login {
+        @extend %full-width;
+        @extend %color-white;
+        background-color: #00AAFF;
+    }
+}
