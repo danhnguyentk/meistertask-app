@@ -26,6 +26,8 @@ export class AuthService {
         return this.httpWrapperService.get(this.appConfig.API.USER, { email: user.email })
             .switchMap((useresRes: User[]) => {
                 this.logger.debug('User res when login:', useresRes, user);
+
+                // Check info user and compare with email and password user type
                 if (useresRes.length && useresRes[0].email === user.email && useresRes[0].password === user.password) {
                     return Observable.of(useresRes[0]);
                 } else {

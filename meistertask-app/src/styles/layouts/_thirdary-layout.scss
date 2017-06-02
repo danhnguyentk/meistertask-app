@@ -1,0 +1,18 @@
+.thirdary-layout {
+    @extend %full-height;
+    @include background-image('wallpapers.jpg');
+
+    .main-sidebar {
+        @extend %absolute;
+        @extend %full-height;
+        @extend %no-top;
+        @extend %no-left;
+        @include background-image('wallpapers-blur.jpg');
+        width: 300px;
+        padding: 10px 10px;
+    }
+
+    .logo {
+        @include format-icon('logo-white.svg', 193px, 45px, contain);
+    }
+}

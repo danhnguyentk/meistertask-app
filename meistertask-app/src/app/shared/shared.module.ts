@@ -8,6 +8,7 @@ import {
 import { HttpModule } from '@angular/http';
 
 import { DropdownModule } from 'ngx-dropdown';
+import { ModalModule } from 'ngx-modal';
 
 import { MainHeaderComponent } from './components/main-header/main-header.component';
 import { MainFooterComponent } from './components/main-footer/main-footer.component';
@@ -16,6 +17,7 @@ import { SecondaryLayoutComponent } from './components/secondary-layout/secondar
 import { MainBodyComponent } from './components/main-body/main-body.component';
 import { ControlMessageComponent } from './components/control-message/control-message.component';
 import { ErrorMessageComponent } from './components/error-message/error-message.component';
+import { ThirdaryLayoutComponent } from './components/thirdary-layout/thirdary-layout.component';
 
 const COMPONENTS = [
     MainHeaderComponent,
@@ -23,6 +25,7 @@ const COMPONENTS = [
     MainBodyComponent,
     PrimaryLayoutComponent,
     SecondaryLayoutComponent,
+    ThirdaryLayoutComponent,
     ControlMessageComponent,
     ErrorMessageComponent
 ]
@@ -33,7 +36,8 @@ const COMMON_MODULES = [
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    DropdownModule
+    DropdownModule,
+    ModalModule
 ];
 
 @NgModule({

@@ -1,0 +1,45 @@
+.modal-new-project {
+    @extend %color-black;
+
+    .new-project-label {
+        font-size: 26px;
+        color: #3D474D;
+    }
+
+    .guide {
+        color: #8A9499;
+        margin-bottom: 30px;
+        font-size: 16px;
+    }
+
+    .add-desc {
+        @extend %inline-block;
+        @extend %cursor-pointer;
+        margin-bottom: 10px
+    }
+
+    .description {
+        @extend %no-resize;
+        margin-bottom: 20px;
+    }
+
+    .form-new-project-action {
+        @extend %text-right;
+    }
+
+    .btn-cancel {
+        background-color: transparent;
+        border: 1px solid #00aaff;
+        color: #00aaff;
+        line-height: 30px;
+        padding: 0 16px;
+        margin-right: 20px;
+    }
+
+    .btn-create-project {
+        @extend %color-white;
+        background-color: #00AAFF;
+        line-height: 30px;
+        padding: 0 16px;
+    }
+}

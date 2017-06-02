@@ -1,0 +1,33 @@
+.dashboard {
+    @extend %color-white;
+    padding: 10px;
+
+    .project-label {
+        font-size: 18px;
+        margin: 20px 0;
+    }
+
+    .project-item {
+        @extend %cursor-pointer;
+        @extend %flex-content-space;
+        border-bottom: 1px solid green;
+        padding: 10px 0;
+
+        &:last-child {
+            @extend %no-border;
+        }
+    }
+
+    .create-project {
+        @extend %color-white;
+        @extend %cursor-pointer;
+        @extend %absolute;
+        font-size: 16px;
+        bottom: 30px;
+    }
+
+    .plus-sign {
+        margin-right: 10px;
+    }
+
+}

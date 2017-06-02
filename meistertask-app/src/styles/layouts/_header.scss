@@ -36,5 +36,11 @@
             margin-left: 20px;
             border-radius: 5px;
         }
+
+        .name-user {
+            @extend %color-black;
+            @extend %text-uppercase;
+            font-size: 22px;
+        }
     }
 }

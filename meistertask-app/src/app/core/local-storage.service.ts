@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 
-// FIX ME
-// import { User } from '../auth/shared/user.model';
-export interface User { }
+import { User } from '../auth/models/user.model';
 
 @Injectable()
 export class LocalStorageService {

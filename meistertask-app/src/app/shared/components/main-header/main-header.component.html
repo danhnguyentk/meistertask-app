@@ -11,10 +11,10 @@
   </nav>
   <nav class="auth">
     <ul class="auth-list">
-      <li><a routerLink="/login" class="login">Log In</a></li>
-      <li><a routerLink="/signup" class="signup">Sign Up</a></li>
-      <li class="dropdown" dropdown>
-        <a dropdown-open>Danh Nguyen</a>
+      <li *ngIf="!(user$ | async)"><a routerLink="/login" class="login">Log In</a></li>
+      <li *ngIf="!(user$ | async)"><a routerLink="/signup" class="signup">Sign Up</a></li>
+      <li class="dropdown" dropdown *ngIf="user$ | async">
+        <a dropdown-open class="name-user">{{ (user$ | async)?.workName }}</a>
         <ul class="dropdown-menu">
           <li><a routerLink="/account/personal">Personal Info</a></li>
           <li><a (click)="logout()">Log Out</a></li>

@@ -371,9 +371,9 @@
   transform: inherit;
 }
 
-/* colors */
-%cl-white {
-  color: $white;
+/* textarea */
+%no-resize {
+    resize: none;
 }
 
 /* flexbox */
