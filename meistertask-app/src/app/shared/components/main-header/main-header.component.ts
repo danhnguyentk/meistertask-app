@@ -9,7 +9,7 @@ import { Store } from '@ngrx/store';
 
 import { AppState } from '../../../interface';
 import { getAuthUser } from '../../../auth/store/auth.selectors';
-import { User } from '../../../auth/models/user.model';
+import { User } from '../../../auth/models/user';
 import { AuthActions } from '../../../auth/store/auth.actions';
 import { AppConfig } from '../../../core/app-config.service';
 

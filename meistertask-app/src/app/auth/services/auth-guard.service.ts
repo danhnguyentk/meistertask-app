@@ -10,7 +10,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from '../../interface';
 import { getAuthStatus } from '../store/auth.selectors';
 import { LocalStorageService } from '../../core/local-storage.service';
-import { User } from '../models/user.model';
+import { User } from '../models/user';
 
 @Injectable()
 export class AuthGuardService implements CanActivate {

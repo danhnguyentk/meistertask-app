@@ -19,7 +19,7 @@ import { AuthService } from '../../services/auth.service';
 import { CustomValidator } from '../../../core/custom-validator.service';
 import { AppState } from '../../../interface';
 import { AuthActions } from '../../store/auth.actions';
-import { User } from '../../models/user.model';
+import { User } from '../../models/user';
 import { ErrorMessage } from '../../../shared/models/error-message.model';
 import { AppConfig } from '../../../core/app-config.service';
 import {

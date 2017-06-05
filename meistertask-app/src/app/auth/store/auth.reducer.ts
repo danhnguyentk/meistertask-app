@@ -2,13 +2,12 @@ import {
     ActionReducer,
     Action
 } from '@ngrx/store';
-import { Map } from 'immutable';
 
 import * as _ from 'lodash';
 
 import { AuthActions } from './auth.actions';
 import { AuthState } from './auth.state';
-import { User } from '../models/user.model';
+import { User } from '../models/user';
 
 const initialState: AuthState = { isAuthenticated: false, errorMessage: null, user: null };
 

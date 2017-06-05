@@ -4,7 +4,7 @@ import * as _  from 'lodash';
 import { Observable } from 'rxjs/Observable';
 import {} from 'rxjs/ErrorObs'
 
-import { User } from '../models/user.model';
+import { User } from '../models/user';
 import { AppConfig } from '../../core/app-config.service';
 import { HttpWrapperService } from '../../core/http-wrapper.service';
 import { Logger } from '../../core/logger.service';

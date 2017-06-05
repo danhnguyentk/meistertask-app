@@ -7,11 +7,13 @@ import {
 } from '@ngrx/store';
 
 import { authReducer } from './auth/store/auth.reducer';
+import { projectReducer } from './dashboard/reducers/project.reducers';
 import { AppState } from './interface';
 import { environment } from '../environments/environment';
 
 const reducers: any = {
-    auth: authReducer
+    auth: authReducer,
+    project: projectReducer
 }
 export const developmentReducer: ActionReducer<AppState> = compose(storeFreeze, combineReducers)(reducers);
 export const productionReducer: ActionReducer<AppState> = combineReducers(reducers);

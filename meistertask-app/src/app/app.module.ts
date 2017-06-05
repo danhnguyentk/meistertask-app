@@ -12,6 +12,7 @@ import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './home/home.module';
 import { AuthModule } from './auth/auth.module';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { ProjectModule } from './project/project.module';
 import { reducer } from './app.reducers';
 import { environment } from '../environments/environment';
 
@@ -30,7 +31,8 @@ const MODULES: any[] = [
     SharedModule,
     HomeModule,
     AuthModule,
-    DashboardModule
+    DashboardModule,
+    ProjectModule
 ];
 
 @NgModule({

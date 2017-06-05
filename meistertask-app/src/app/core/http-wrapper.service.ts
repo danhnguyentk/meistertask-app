@@ -11,6 +11,7 @@ import { Observable } from 'rxjs/Observable';
 import * as _ from 'lodash';
 
 import { AppConfig } from './app-config.service';
+import { Logger } from './logger.service';
 import { CaseFormat } from '../helper/case-format';
 
 @Injectable()
@@ -18,7 +19,8 @@ export class HttpWrapperService {
 
     constructor(
         private http: Http,
-        private appConfig: AppConfig ) { }
+        private appConfig: AppConfig,
+        private logger: Logger) { }
 
     get(url: string, paramObj?: Object): Observable<any> {
         const params: URLSearchParams = this.convertObjToParams(CaseFormat.convertKeysToSnakeCase(paramObj));
@@ -77,6 +79,7 @@ export class HttpWrapperService {
      * Resolve when http success
      */
     private extractData(res: Response): any {
+        this.logger.info(CaseFormat.convertKeysToCamelCase(res.json()));
         return CaseFormat.convertKeysToCamelCase(res.json());
     }
 

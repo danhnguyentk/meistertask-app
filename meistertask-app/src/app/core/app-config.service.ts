@@ -7,7 +7,8 @@ export class AppConfig {
 
     API = {
         ROOT_URL: environment.API_ROOT,
-        USER: 'api/user'
+        USER: 'api/user',
+        PROJECT: 'api/project'
     };
 
     VALIDATION_KEY = {
@@ -28,6 +29,7 @@ export class AppConfig {
 
     ROUTES = {
         DASHBOARD: '/app/dashboard',
-        LOGGED_OUT: '/loggedout'
+        LOGGED_OUT: '/loggedout',
+        PROJECT: '/app/project'
     };
 }

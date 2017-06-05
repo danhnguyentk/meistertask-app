@@ -9,7 +9,7 @@ import {
 } from '@ngrx/effects';
 
 import { AuthActions } from './auth.actions';
-import { User } from '../models/user.model';
+import { User } from '../models/user';
 import { ErrorMessage } from '../../shared/models/error-message.model';
 import { AuthService } from '../services/auth.service';
 
@@ -38,7 +38,6 @@ export class AuthEffects {
         .map(toPayload)
         .switchMap((user: User) => {
             return this.authService.login(user)
-                .do(user => console.log(user))
                 .map((userRes: User) => this.authActions.loginSuccess(userRes))
                 .catch((errorMessage: ErrorMessage) => Observable.of(this.authActions.loginFail(errorMessage)));
         });
