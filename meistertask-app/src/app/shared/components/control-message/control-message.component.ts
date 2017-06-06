@@ -1,6 +1,6 @@
 import {
     Component,
-    OnInit ,
+    OnInit,
     Input
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
@@ -25,6 +25,7 @@ export class ControlMessageComponent implements OnInit {
 
     get errorMessage() {
         let error: string = '';
+        // Fix me should return when occur error
         _.forOwn(this.control.errors, (value, key) => {
             if (this.control.touched) {
                 error += this.validationMessage.getValidatorMessage(this.control, this.nameControl, key);

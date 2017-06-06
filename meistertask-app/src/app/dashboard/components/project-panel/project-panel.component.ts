@@ -32,7 +32,7 @@ import { AppConfig } from '../../../core/app-config.service';
     styleUrls: [ './project-panel.component.scss' ]
 })
 export class ProjectPanelComponent implements OnInit, OnDestroy {
-    @ViewChild(Modal) modal:Modal;
+    @ViewChild(Modal) modal: Modal;
     form: FormGroup;
     isShowDesc: boolean = false;
     projectList: Project[];

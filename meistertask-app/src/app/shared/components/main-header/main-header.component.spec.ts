@@ -1,7 +1,7 @@
-import { 
-    async, 
-    ComponentFixture, 
-    TestBed 
+import {
+    async,
+    ComponentFixture,
+    TestBed
 } from '@angular/core/testing';
 
 import { MainHeaderComponent } from './main-header.component';
@@ -13,8 +13,7 @@ describe('MainHeaderComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             declarations: [ MainHeaderComponent ]
-        })
-            .compileComponents();
+        }).compileComponents();
     }));
 
     beforeEach(() => {

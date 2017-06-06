@@ -3,16 +3,16 @@ import {
     inject
 } from '@angular/core/testing';
 
-import { AppConfigService } from './app-config.service';
+import { AppConfig } from './app-config.service';
 
 describe('AppConfigService', () => {
     beforeEach(() => {
         TestBed.configureTestingModule({
-            providers: [ AppConfigService ]
+            providers: [ AppConfig ]
         });
     });
 
-    it('should ...', inject([ AppConfigService ], (service: AppConfigService) => {
+    it('should ...', inject([ AppConfig ], (service: AppConfig) => {
         expect(service).toBeTruthy();
     }));
 });

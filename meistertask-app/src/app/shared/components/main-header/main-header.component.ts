@@ -8,9 +8,9 @@ import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 
 import { AppState } from '../../../interface';
-import { getAuthUser } from '../../../auth/store/auth.selectors';
+import { getAuthUser } from '../../../auth/reducers/auth.selectors';
 import { User } from '../../../auth/models/user';
-import { AuthActions } from '../../../auth/store/auth.actions';
+import { AuthActions } from '../../../auth/actions/auth.actions';
 import { AppConfig } from '../../../core/app-config.service';
 
 @Component({

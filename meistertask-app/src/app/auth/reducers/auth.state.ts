@@ -4,5 +4,5 @@ import { User } from '../models/user';
 export interface AuthState {
     isAuthenticated: boolean;
     errorMessage: ErrorMessage;
-    user: User
+    user: User;
 }

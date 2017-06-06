@@ -8,8 +8,6 @@ import { ErrorMessage } from '../../shared/models/error-message.model';
 @Injectable()
 export class AuthActions {
 
-    constructor() {}
-
     static SIGNUP = '[Auth] SIGNUP';
     static SIGNUP_SUCCESS= '[Auth] SIGNUP_SUCCESS';
     static SIGNUP_FAIL= '[Auth] SIGNUP_FAIL';
@@ -43,7 +41,7 @@ export class AuthActions {
         return {
             type: AuthActions.LOGIN,
             payload: user
-        }
+        };
     }
 
     loginSuccess(user: User): Action {
@@ -60,9 +58,9 @@ export class AuthActions {
         };
     }
 
-    logout() {
+    logout(): Action {
         return {
-            type: AuthActions.LOGOUT,
+            type: AuthActions.LOGOUT
         };
     }
 }

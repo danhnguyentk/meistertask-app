@@ -8,7 +8,7 @@ import {
     toPayload
 } from '@ngrx/effects';
 
-import { AuthActions } from './auth.actions';
+import { AuthActions } from '../actions/auth.actions';
 import { User } from '../models/user';
 import { ErrorMessage } from '../../shared/models/error-message.model';
 import { AuthService } from '../services/auth.service';

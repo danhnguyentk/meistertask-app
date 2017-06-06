@@ -37,7 +37,7 @@ const MODULES: any[] = [
 
 @NgModule({
     declarations: [
-        AppComponent,
+        AppComponent
     ],
     imports: [
         ...MODULES

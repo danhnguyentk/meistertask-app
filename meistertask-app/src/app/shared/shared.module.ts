@@ -28,7 +28,7 @@ const COMPONENTS = [
     ThirdaryLayoutComponent,
     ControlMessageComponent,
     ErrorMessageComponent
-]
+];
 
 const COMMON_MODULES = [
     CommonModule,

@@ -1,4 +1,3 @@
-// FIX ME
 {
     "rulesDirectory": [
         "node_modules/codelyzer"
@@ -26,14 +25,9 @@
         "label-position": true,
         "max-line-length": [
             true,
-            140
+            180
         ],
         "member-access": false,
-        "member-ordering": [
-            true,
-            "static-before-instance",
-            "variables-before-functions"
-        ],
         "no-arg": true,
         "no-bitwise": true,
         "no-console": [
@@ -50,10 +44,6 @@
         "no-empty": false,
         "no-empty-interface": true,
         "no-eval": true,
-        "no-inferrable-types": [
-            true,
-            "ignore-params"
-        ],
         "no-shadowed-variable": true,
         "no-string-literal": false,
         "no-string-throw": true,

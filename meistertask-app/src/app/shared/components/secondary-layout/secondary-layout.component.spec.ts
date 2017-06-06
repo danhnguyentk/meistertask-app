@@ -1,7 +1,7 @@
-import { 
-    async, 
-    ComponentFixture, 
-    TestBed 
+import {
+    async,
+    ComponentFixture,
+    TestBed
 } from '@angular/core/testing';
 
 import { SecondaryLayoutComponent } from './secondary-layout.component';

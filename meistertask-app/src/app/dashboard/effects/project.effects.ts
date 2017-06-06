@@ -28,7 +28,7 @@ export class ProjectEffects {
         .switchMap(() => {
             return this.projectService.getProjects()
                 .map((projectList: Project[]) => this.projectActions.getProjectListSuccess(projectList));
-        })
+        });
 
     @Effect()
     createProject = this.actions

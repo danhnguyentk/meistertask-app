@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 
-import * as _  from 'lodash';
+import * as _ from 'lodash';
 import { Observable } from 'rxjs/Observable';
-import {} from 'rxjs/ErrorObs'
 
 import { User } from '../models/user';
 import { AppConfig } from '../../core/app-config.service';
@@ -18,7 +17,7 @@ export class AuthService {
         private logger: Logger) { }
 
     signup(user: User): Observable<User> {
-        _.assignIn(user, { id: user.workName });
+        user = _.assignIn({}, user, { id: user.workName });
         return this.httpWrapperService.post(this.appConfig.API.USER, user);
     }
 

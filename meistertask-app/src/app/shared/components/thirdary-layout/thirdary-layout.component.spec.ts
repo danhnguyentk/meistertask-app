@@ -1,7 +1,7 @@
-import { 
-    async, 
-    ComponentFixture, 
-    TestBed 
+import {
+    async,
+    ComponentFixture,
+    TestBed
 } from '@angular/core/testing';
 
 import { ThirdaryLayoutComponent } from './thirdary-layout.component';
@@ -12,7 +12,7 @@ describe('ThirdaryLayoutComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [ThirdaryLayoutComponent]
+            declarations: [ ThirdaryLayoutComponent ]
         }).compileComponents();
     }));
 

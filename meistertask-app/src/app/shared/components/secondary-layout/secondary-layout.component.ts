@@ -1,5 +1,5 @@
-import { 
-    Component, 
+import {
+    Component,
     OnInit
 } from '@angular/core';
 

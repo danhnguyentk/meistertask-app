@@ -1,4 +1,4 @@
 export interface Task {
-    name: string,
-    status: number
+    name: string;
+    status: number;
 }

@@ -13,7 +13,7 @@ export class AppConfig {
 
     VALIDATION_KEY = {
         EMAIL: 'invalidEmail'
-    }
+    };
 
     VALIDATION_MESSAGES = {
         required: `<%= name %> is required.`,

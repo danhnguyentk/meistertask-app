@@ -8,7 +8,7 @@ import {
 import { Store } from '@ngrx/store';
 
 import { AppState } from '../../interface';
-import { getAuthStatus } from '../store/auth.selectors';
+import { getAuthStatus } from '../reducers/auth.selectors';
 import { LocalStorageService } from '../../core/local-storage.service';
 import { User } from '../models/user';
 

@@ -3,7 +3,7 @@ import {
     Action
 } from '@ngrx/store';
 
-import * as _ from  'lodash';
+import * as _ from 'lodash';
 
 import { ProjectActions } from '../actions/project.actions';
 import { ProjectState } from './project.state';

@@ -1,6 +1,6 @@
-import { 
-    Component, 
-    OnInit 
+import {
+    Component,
+    OnInit
 } from '@angular/core';
 
 @Component({

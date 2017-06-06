@@ -1,4 +1,4 @@
-import { AuthState } from './auth/store/auth.state';
+import { AuthState } from './auth/reducers/auth.state';
 import { ProjectState } from './dashboard/reducers/project.state';
 
 export interface AppState {

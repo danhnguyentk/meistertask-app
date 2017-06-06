@@ -5,7 +5,7 @@ import {
 
 import * as _ from 'lodash';
 
-import { AuthActions } from './auth.actions';
+import { AuthActions } from '../actions/auth.actions';
 import { AuthState } from './auth.state';
 import { User } from '../models/user';
 
