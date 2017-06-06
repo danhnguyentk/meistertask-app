@@ -14,7 +14,7 @@
     @extend %flex-content-space;
 
     .logo {
-        @include format-icon('logo.svg', 199px, 46px, 'contain');
+        @include format-icon('logo.svg', 199px, 46px, contain);
     }
 
     .social-list {
@@ -28,15 +28,15 @@
         }
 
         .facebook {
-            @include format-icon('facebook.svg', 32px, 32px, 'contain');
+            @include format-icon('facebook.svg', 32px, 32px, contain);
         }
 
         .google {
-            @include format-icon('google.svg', 32px, 32px, 'contain');
+            @include format-icon('google.svg', 32px, 32px, contain);
         }
 
         .twitter {
-            @include format-icon('twitter.svg', 32px, 32px, 'contain');
+            @include format-icon('twitter.svg', 32px, 32px, contain);
         }
     }
 }

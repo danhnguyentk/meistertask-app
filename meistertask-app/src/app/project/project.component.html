@@ -1,23 +1,73 @@
 <section class="project-detail">
-  <div class="task-open">
+  <div class="task-status task-open">
     <div class="task-header">
-      <div class="present-icon"></div>
-      <label class="name-status">Open</label>
+      <div class="block-status-icon-name">
+        <div class="status-icon"></div>
+        <div class="status-name">Open</div>
+      </div>
       <label class="number-task">5</label>
     </div>
-  </div>
-  <div class="task-in-progress">
-    <div class="task-header">
-      <div class="present-icon"></div>
-      <label class="name-status">In Progress</label>
-      <label class="number-task">5</label>
+    <ul class="task-list">
+      <li class="task">Do list</li>
+      <li class="task">Do open</li>
+    </ul>
+    <div class="task-footer">
+      <a class="add-task"><i class="glyphicon glyphicon-plus-sign plus-sign"></i></a>
     </div>
   </div>
-  <div class="task-done">
+  <div class="task-status task-in-progress">
     <div class="task-header">
-      <div class="present-icon"></div>
-      <label class="name-status">Done</label>
+      <div class="block-status-icon-name">
+        <div class="status-icon"></div>
+        <div class="status-name">Open</div>
+      </div>
+      <label class="number-task">5</label>
+    </div>
+    <ul class="task-list">
+      <li class="task">Do list</li>
+      <li class="task">Do open</li>
+    </ul>
+    <div class="task-footer">
+      <a class="add-task"><i class="glyphicon glyphicon-plus-sign plus-sign"></i></a>
+    </div>
+  </div>
+  <div class="task-status task-done">
+    <div class="task-header">
+      <div class="block-status-icon-name">
+        <div class="status-icon"></div>
+        <div class="status-name">Open</div>
+      </div>
       <label class="number-task"></label>
+    </div>
+    <div class="task-footer">
+      <a class="add-task"><i class="glyphicon glyphicon-plus-sign plus-sign"></i></a>
+    </div>
+    <div class="no-task">
+      <div class="icon-drag"></div>
+      <h4 class="no-task-label">No tasks</h4>
+      <p class="guide-add-task">Drag tasks here or click + to add new tasks</p>
     </div>
   </div>
 </section>
+
+<!-- Fix me -->
+<!-- <div class="panel panel-warning" dnd-sortable-container [sortableData]="arr1" dropZones="widget-dropZone">
+    <div class="panel-heading">ARR1</div>
+    <div class="panel-body">
+        <ul class="list-group">
+            <li *ngFor="let data of arr1; let x = index" class="list-group-item"
+                dnd-sortable [sortableIndex]="x" dragEnabled="true"
+                [dragData]="data">{{data}}</li>
+        </ul>
+    </div>
+</div>
+<div class="panel panel-warning" dnd-sortable-container [sortableData]="arr2" dropZones="widget-dropZone" >
+    <div class="panel-heading">ARR2</div>
+    <div class="panel-body" dnd-droppable (onDropSuccess)="aaa()">
+        <ul class="list-group">
+            <li *ngFor="let data of arr2; let x = index" class="list-group-item"
+                dnd-sortable [sortableIndex]="x" dragEnabled="true"
+                [dragData]="data">{{data}}</li>
+        </ul>
+    </div>
+</div> -->

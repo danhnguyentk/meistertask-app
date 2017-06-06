@@ -406,6 +406,12 @@
   flex-direction: column;
 }
 
+%flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 %flex-align-center-content-space {
   display: flex;
   align-items: center;

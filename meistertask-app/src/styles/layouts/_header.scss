@@ -3,7 +3,7 @@
     padding: 40px 0;
 
     .logo {
-        @include format-icon('logo.svg', 199px, 46px, 'contain');
+        @include format-icon('logo.svg', 199px, 46px, contain);
     }
 }
 

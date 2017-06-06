@@ -54,13 +54,13 @@ see [ngx-dropdown](https://github.com/pleerock/ngx-dropdown)
 see [ngx-modal](https://github.com/pleerock/ngx-modal)
 > Ngx-dropdown create modal for angular2 application using bootstrap3, not depend of jquery.
 
+##### Ng2-dnd 4.1.0
+see [ng2-dnd](https://github.com/akserg/ng2-dnd)
+> Ng2-dnd drag and drop between elements or components
+
 ##### Moment 2.18.1
 see [moment](https://momentjs.com/)
 > Moment parse, validate, manipulate and display dates and times in javascript.
-
-##### Ngx-bootstrap 1.6.6
-see [ngx-bootstrap](http://valor-software.com/ngx-bootstrap)
-> Ngx-bootstrap contains all core Bootstrap components powered by angular.
 
 ##### @ngrx/core 1.2.0
 see [@ngrx/core](https://github.com/ngrx/core)

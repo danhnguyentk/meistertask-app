@@ -9,6 +9,7 @@ import { HttpModule } from '@angular/http';
 
 import { DropdownModule } from 'ngx-dropdown';
 import { ModalModule } from 'ngx-modal';
+import { DndModule } from 'ng2-dnd';
 
 import { MainHeaderComponent } from './components/main-header/main-header.component';
 import { MainFooterComponent } from './components/main-footer/main-footer.component';
@@ -39,12 +40,14 @@ const COMMON_MODULES = [
     ReactiveFormsModule,
     HttpModule,
     DropdownModule,
-    ModalModule
+    ModalModule,
 ];
 
+// Fixme
 @NgModule({
     imports: [
-        ...COMMON_MODULES
+        ...COMMON_MODULES,
+        DndModule.forRoot()
     ],
     declarations: [
         ...COMPONENTS,
@@ -52,7 +55,8 @@ const COMMON_MODULES = [
     ],
     exports: [
         ...COMPONENTS,
-        ...COMMON_MODULES
+        ...COMMON_MODULES,
+        DndModule
     ]
 })
 export class SharedModule { }
