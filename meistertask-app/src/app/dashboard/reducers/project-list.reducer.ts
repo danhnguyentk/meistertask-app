@@ -5,26 +5,26 @@ import {
 
 import * as _ from 'lodash';
 
-import { ProjectActions } from '../actions/project.actions';
-import { ProjectState } from './project.state';
+import { ProjectListActions } from '../actions/project-list.actions';
+import { ProjectListState } from './project-list.state';
 import { ErrorMessage } from '../../shared/models/error-message.model';
 
-const initialState: ProjectState = { projectList: [], errorMessage: null };
+const initialState: ProjectListState = { projectList: [], errorMessage: null };
 
-export function projectReducer(state: ProjectState = initialState, action: Action ): ProjectState {
+export function projectListReducer(state: ProjectListState = initialState, action: Action ): ProjectListState {
     switch (action.type) {
-        case ProjectActions.GET_PROJECT_LIST_SUCCESS:
+        case ProjectListActions.GET_PROJECT_LIST_SUCCESS:
             console.log(state, action.payload);
             return _.assignIn({}, state, {
                 projectList: [ ...action.payload ]
             });
 
-        case ProjectActions.CREATE_PROJECT_SUCCESS:
+        case ProjectListActions.CREATE_PROJECT_SUCCESS:
             return _.assignIn({}, state, {
                 projectList: [ ...state.projectList, action.payload ]
             });
 
-        case ProjectActions.CREATE_PROJECT_FAIL:
+        case ProjectListActions.CREATE_PROJECT_FAIL:
             return _.assignIn({}, state, { errorMessage: action.payload });
 
         default:

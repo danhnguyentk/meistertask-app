@@ -18,6 +18,7 @@ import { MainBodyComponent } from './components/main-body/main-body.component';
 import { ControlMessageComponent } from './components/control-message/control-message.component';
 import { ErrorMessageComponent } from './components/error-message/error-message.component';
 import { ThirdaryLayoutComponent } from './components/thirdary-layout/thirdary-layout.component';
+import { FourthLayoutComponent } from './components/fourth-layout/fourth-layout.component';
 
 const COMPONENTS = [
     MainHeaderComponent,
@@ -26,6 +27,7 @@ const COMPONENTS = [
     PrimaryLayoutComponent,
     SecondaryLayoutComponent,
     ThirdaryLayoutComponent,
+    FourthLayoutComponent,
     ControlMessageComponent,
     ErrorMessageComponent
 ];
@@ -45,7 +47,8 @@ const COMMON_MODULES = [
         ...COMMON_MODULES
     ],
     declarations: [
-        ...COMPONENTS
+        ...COMPONENTS,
+
     ],
     exports: [
         ...COMPONENTS,

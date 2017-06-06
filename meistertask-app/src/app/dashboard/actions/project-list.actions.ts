@@ -6,7 +6,7 @@ import { Project } from '../models/project';
 import { ErrorMessage } from '../../shared/models/error-message.model';
 
 @Injectable()
-export class ProjectActions {
+export class ProjectListActions {
 
     constructor() {}
 
@@ -18,34 +18,34 @@ export class ProjectActions {
 
     getProjectList(): Action {
         return {
-            type: ProjectActions.GET_PROJECT_LIST,
+            type: ProjectListActions.GET_PROJECT_LIST,
         };
     }
 
     getProjectListSuccess(projectList: Project[]): Action {
         return {
-            type: ProjectActions.GET_PROJECT_LIST_SUCCESS,
+            type: ProjectListActions.GET_PROJECT_LIST_SUCCESS,
             payload: projectList
         };
     }
 
     createProject(project: Project): Action {
         return {
-            type: ProjectActions.CREATE_PROJECT,
+            type: ProjectListActions.CREATE_PROJECT,
             payload: project
         };
     }
 
     createProjectSuccess(project: Project): Action {
         return {
-            type: ProjectActions.CREATE_PROJECT_SUCCESS,
+            type: ProjectListActions.CREATE_PROJECT_SUCCESS,
             payload: project
         };
     }
 
     createProjectFail(errorMessage: ErrorMessage): Action {
         return {
-            type: ProjectActions.CREATE_PROJECT_FAIL,
+            type: ProjectListActions.CREATE_PROJECT_FAIL,
             payload: errorMessage
         };
     }

@@ -7,6 +7,7 @@ import { ROUTES as projectRoutes } from './project/project.routes';
 import { PrimaryLayoutComponent } from './shared/components/primary-layout/primary-layout.component';
 import { SecondaryLayoutComponent } from './shared/components/secondary-layout/secondary-layout.component';
 import { ThirdaryLayoutComponent } from './shared/components/thirdary-layout/thirdary-layout.component';
+import { FourthLayoutComponent } from './shared/components/fourth-layout/fourth-layout.component';
 
 export const ROUTES: Routes = [
     {
@@ -37,7 +38,7 @@ export const ROUTES: Routes = [
     },
     {
         path: '',
-        component: ThirdaryLayoutComponent,
+        component: FourthLayoutComponent,
         children: [
             ...projectRoutes
         ]

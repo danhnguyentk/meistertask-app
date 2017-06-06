@@ -1,9 +1,9 @@
 import { AppState } from '../../interface';
-import { ProjectState } from './project.state';
+import { ProjectListState } from './project-list.state';
 import { ErrorMessage } from '../../shared/models/error-message.model';
 import { Project } from '../models/project';
 
-export function getProject(state: AppState): ProjectState {
+export function getProject(state: AppState): ProjectListState {
     return state.project;
 }
 

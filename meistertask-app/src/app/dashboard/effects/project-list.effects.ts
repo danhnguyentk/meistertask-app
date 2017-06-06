@@ -8,23 +8,23 @@ import {
     toPayload
 } from '@ngrx/effects';
 
-import { ProjectActions } from '../actions/project.actions';
+import { ProjectListActions } from '../actions/project-list.actions';
 import { Project } from '../models/project';
 import { ErrorMessage } from '../../shared/models/error-message.model';
 import { ProjectService } from '../services/project.service';
 
 @Injectable()
-export class ProjectEffects {
+export class ProjectListEffects {
 
     constructor(
         private actions: Actions,
-        private projectActions: ProjectActions,
+        private projectActions: ProjectListActions,
         private projectService: ProjectService
     ) {}
 
     @Effect()
     getProjects = this.actions
-        .ofType(ProjectActions.GET_PROJECT_LIST)
+        .ofType(ProjectListActions.GET_PROJECT_LIST)
         .switchMap(() => {
             return this.projectService.getProjects()
                 .map((projectList: Project[]) => this.projectActions.getProjectListSuccess(projectList));
@@ -32,7 +32,7 @@ export class ProjectEffects {
 
     @Effect()
     createProject = this.actions
-        .ofType(ProjectActions.CREATE_PROJECT)
+        .ofType(ProjectListActions.CREATE_PROJECT)
         .map(toPayload)
         .mergeMap((project: Project) => {
             return this.projectService.createProject(project)

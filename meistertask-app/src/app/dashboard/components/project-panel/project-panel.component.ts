@@ -17,11 +17,11 @@ import { Modal } from 'ngx-modal';
 import { Store } from '@ngrx/store';
 
 import { AppState } from '../../../interface';
-import { ProjectActions } from '../../actions/project.actions';
+import { ProjectListActions } from '../../actions/project-list.actions';
 import {
     getProjectList,
     getErrorMessage
-} from '../../reducers/project.selector';
+} from '../../reducers/project-list.selector';
 import { Project } from '../../models/project';
 import { ErrorMessage } from '../../../shared/models/error-message.model';
 import { AppConfig } from '../../../core/app-config.service';
@@ -42,7 +42,7 @@ export class ProjectPanelComponent implements OnInit, OnDestroy {
         private fb: FormBuilder,
         private router: Router,
         private store: Store<AppState>,
-        private projectActions: ProjectActions,
+        private projectActions: ProjectListActions,
         private appConfig: AppConfig
     ) { }
 
@@ -99,6 +99,6 @@ export class ProjectPanelComponent implements OnInit, OnDestroy {
     }
 
     goDetailProject(project: Project) {
-        this.router.navigate([ this.appConfig, project.id ]);
+        this.router.navigate([ this.appConfig.ROUTES.PROJECT, project.id, project.nameProject ]);
     }
 }
