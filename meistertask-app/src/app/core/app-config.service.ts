@@ -8,7 +8,8 @@ export class AppConfig {
     API = {
         ROOT_URL: environment.API_ROOT,
         USER: 'api/user',
-        PROJECT: 'api/project'
+        PROJECT: 'api/project',
+        TASK: 'api/task'
     };
 
     VALIDATION_KEY = {

@@ -17,36 +17,15 @@
       "name_project": "dadada",
       "desc_project": "",
       "id": 1496636649852
-    },
+    }
+  ],
+  "task": [
     {
-      "name_project": "fdsfsfs",
-      "desc_project": "",
-      "id": 1496636704844
-    },
-    {
-      "name_project": "fdsfsfs",
-      "desc_project": "gdgdgd fdgd gdgd gdg gdgdgd",
-      "id": 1496636721890
-    },
-    {
-      "name_project": "tu",
-      "desc_project": "",
-      "id": 1496655722580
-    },
-    {
-      "name_project": "dada",
-      "desc_project": "",
-      "id": 1496656657249
-    },
-    {
-      "name_project": "dadafsfsfs",
-      "desc_project": "",
-      "id": 1496656660528
-    },
-    {
-      "name_project": "gfhfhf",
-      "desc_project": "",
-      "id": 1496656665175
+        "id": 1496636376065,
+        "name": "danh",
+        "date_created": "12/12/2017",
+        "status": 1,
+        "projectId": 1496636376063
     }
   ]
 }

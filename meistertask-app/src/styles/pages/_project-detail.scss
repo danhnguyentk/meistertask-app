@@ -32,6 +32,17 @@
             @extend %cursor-pointer;
             font-size: 22px;
         }
+
+        .task-input {
+            border: 2px solid #00aaff;
+            margin: 0 15px;
+            padding: 15px;
+            min-height: 50px;
+
+            &:focus {
+                @extend %no-outline;
+            }
+        }
     }
 
     .task-open {
