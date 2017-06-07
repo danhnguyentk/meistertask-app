@@ -1,74 +1,42 @@
 <section class="project-detail">
-  <div class="task-status task-open">
-    <div class="task-header">
-      <div class="block-status-icon-name">
-        <div class="status-icon"></div>
-        <div class="status-name">Open</div>
-      </div>
-      <label class="number-task">5</label>
-    </div>
-    <ul class="task-list">
-      <li class="task">Do list</li>
-      <li class="task">Do open</li>
-    </ul>
-    <div contenteditable="true" class="task-input" (keyup)="addTask($event, taskInput.innerText)" #taskInput>adadad dada dada dada dadadad dadad da</div>
-    <div class="task-footer">
-      <a class="add-task"><i class="glyphicon glyphicon-plus-sign plus-sign"></i></a>
-    </div>
-  </div>
-  <div class="task-status task-in-progress">
-    <div class="task-header">
-      <div class="block-status-icon-name">
-        <div class="status-icon"></div>
-        <div class="status-name">Open</div>
-      </div>
-      <label class="number-task">5</label>
-    </div>
-    <ul class="task-list">
-      <li class="task">Do list</li>
-      <li class="task">Do open</li>
-    </ul>
-    <div class="task-footer">
-      <a class="add-task"><i class="glyphicon glyphicon-plus-sign plus-sign"></i></a>
-    </div>
-  </div>
-  <div class="task-status task-done">
-    <div class="task-header">
-      <div class="block-status-icon-name">
-        <div class="status-icon"></div>
-        <div class="status-name">Open</div>
-      </div>
-      <label class="number-task"></label>
-    </div>
-    <div class="task-footer">
-      <a class="add-task"><i class="glyphicon glyphicon-plus-sign plus-sign"></i></a>
-    </div>
-    <div class="no-task">
-      <div class="icon-drag"></div>
-      <h4 class="no-task-label">No tasks</h4>
-      <p class="guide-add-task">Drag tasks here or click + to add new tasks</p>
-    </div>
-  </div>
+  <task-status
+    class="task-open"
+    statusName="Open"
+    [tasks]="taskList$ | async | filterTask:1 "
+  ></task-status>
+  <task-status
+    class="task-in-progress"
+    statusName="In Progress"
+    [tasks]="taskList$ | async | filterTask:2 "
+  ></task-status>
+  <task-status
+    class="task-done"
+    statusName="Done"
+    [tasks]="taskList$ | async | filterTask:3 "
+  ></task-status>
 </section>
 
-<!-- Fix me -->
-<!-- <div class="panel panel-warning" dnd-sortable-container [sortableData]="arr1" dropZones="widget-dropZone">
+<!-- FIXME: update the way use dnd -->
+<!-- <div class="panel panel-warning"  dnd-sortable-container [sortableData]="arr1" dropZones="widget-dropZone">
     <div class="panel-heading">ARR1</div>
     <div class="panel-body">
         <ul class="list-group">
             <li *ngFor="let data of arr1; let x = index" class="list-group-item"
-                dnd-sortable [sortableIndex]="x" dragEnabled="true"
-                [dragData]="data">{{data}}</li>
+                dnd-sortable [sortableIndex]="x" dragEnabled="true" dnd-draggable
+                [dragData]="{
+                  'zone': 'zone-a',
+                  'data': data
+                }" >{{data}}</li>
         </ul>
     </div>
 </div>
 <div class="panel panel-warning" dnd-sortable-container [sortableData]="arr2" dropZones="widget-dropZone" >
     <div class="panel-heading">ARR2</div>
-    <div class="panel-body" dnd-droppable (onDropSuccess)="aaa()">
+    <div class="panel-body" >
         <ul class="list-group">
             <li *ngFor="let data of arr2; let x = index" class="list-group-item"
                 dnd-sortable [sortableIndex]="x" dragEnabled="true"
-                [dragData]="data">{{data}}</li>
+                [dragData]="data" dnd-droppable (onDropSuccess)="aaa(, x)">{{data}}</li>
         </ul>
     </div>
 </div> -->

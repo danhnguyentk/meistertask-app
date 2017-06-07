@@ -2,11 +2,15 @@ import { Injectable } from '@angular/core';
 
 import * as _ from 'lodash';
 import { Observable } from 'rxjs/Observable';
+import { Store } from '@ngrx/store';
 
 import { User } from '../models/user';
 import { AppConfig } from '../../core/app-config.service';
 import { HttpWrapperService } from '../../core/http-wrapper.service';
 import { Logger } from '../../core/logger.service';
+import { LocalStorageService } from '../../core/local-storage.service';
+import { AppState } from '../../interface';
+import { getAuthUser } from '../reducers/auth.selectors';
 
 @Injectable()
 export class AuthService {
@@ -14,7 +18,18 @@ export class AuthService {
     constructor(
         private httpWrapperService: HttpWrapperService,
         private appConfig: AppConfig,
-        private logger: Logger) { }
+        private logger: Logger,
+        private store: Store<AppState>,
+        private localStorageService: LocalStorageService) {
+        store.select(getAuthUser)
+            .subscribe((user: User) => {
+                if (user) {
+                    this.localStorageService.setCurrentUser(user);
+                } else {
+                    this.localStorageService.removeCurrentUser();
+                }
+            });
+    }
 
     signup(user: User): Observable<User> {
         user = _.assignIn({}, user, { id: user.workName });

@@ -79,7 +79,7 @@ export class HttpWrapperService {
      * Resolve when http success
      */
     private extractData(res: Response): any {
-        this.logger.info(CaseFormat.convertKeysToCamelCase(res.json()));
+        this.logger.info('Data reponse from the server: ', CaseFormat.convertKeysToCamelCase(res.json()));
         return CaseFormat.convertKeysToCamelCase(res.json());
     }
 

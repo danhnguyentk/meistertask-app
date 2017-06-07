@@ -1,3 +1,21 @@
-<p>
-  task-status works!
-</p>
+<div class="task-status">
+  <div class="task-header">
+    <div class="block-status-icon-name">
+      <div class="status-icon"></div>
+      <div class="status-name">{{ statusName }}</div>
+    </div>
+    <label class="number-task">5</label>
+  </div>
+  <ul class="task-list" dnd-sortable-container>
+    <li class="task" *ngFor="let task of tasks" dnd-sortable dragEnabled="true" dnd-draggable dnd-droppable (onDropSuccess)="aaa()">{{ task.name }}</li>
+  </ul>
+  <div contenteditable="true" class="task-input" (keyup)="addTask($event, taskInput.innerText)" #taskInput>adadad dada dada dada dadadad dadad da</div>
+  <div class="block-add-task">
+    <a class="add-task"><i class="glyphicon glyphicon-plus-sign plus-sign"></i></a>
+  </div>
+  <div class="no-task" *ngIf="!tasks?.length">
+    <div class="icon-drag"></div>
+    <h4 class="no-task-label">No tasks</h4>
+    <p class="guide-add-task">Drag tasks here or click + to add new tasks</p>
+  </div>
+</div>
