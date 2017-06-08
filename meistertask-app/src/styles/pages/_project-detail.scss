@@ -1,6 +1,6 @@
 .project-detail {
     @extend %flex;
-    @extend %full-height;
+    min-height: 100%;
     background-color: #ebf0f2;
 
     .task-status {
@@ -33,10 +33,14 @@
             font-size: 22px;
         }
 
-        .task-input {
-            border: 2px solid #00aaff;
+        .form-group-task {
             margin: 0 15px;
+        }
+
+        .task-input {
             padding: 15px;
+            @extend %full-width;
+            border: 2px solid #00aaff;
             min-height: 50px;
 
             &:focus {
@@ -80,6 +84,7 @@
     .task-list {
         padding: 15px;
         .task {
+            @extend %flex-align-center-content-space;
             @extend %background-white;
             @extend %cursor-pointer;
             border-radius: 5px;
@@ -90,6 +95,14 @@
 
         &:last-child {
             @extend %no-margin;
+        }
+
+        .complete-task {
+            @include format-icon('complete.png', 32px, 32px, contain);
+        }
+
+        .remove-task {
+            @include format-icon('remove.png', 32px, 32px, contain);
         }
     }
 

@@ -37,6 +37,26 @@ export class HttpWrapperService {
             .catch(this.handleError.bind(this));
     }
 
+    // Use Update multiple field
+    putch(url: string, body: Object, paramObj?: Object): Observable<any> {
+        const options: RequestOptions = this.getOption(paramObj);
+        const bodyReq = CaseFormat.convertKeysToSnakeCase(body);
+        return this.http.put(`${this.appConfig.API.ROOT_URL}${url}`, bodyReq, options)
+            .map(this.extractData.bind(this))
+            .catch(this.handleError.bind(this));
+    }
+
+    // Use to update one field
+    patch(url: string, body: Object, paramObj?: Object): Observable<any> {
+        const options: RequestOptions = this.getOption(paramObj);
+        const bodyReq = CaseFormat.convertKeysToSnakeCase(body);
+        return this.http.patch(`${this.appConfig.API.ROOT_URL}${url}`, bodyReq, options)
+            .map(this.extractData.bind(this))
+            .catch(this.handleError.bind(this));
+    }
+
+
+
     delete(url: string, paramObj?: Object): Observable<any> {
         const options: RequestOptions = this.getOption(paramObj);
         return this.http.delete(`${this.appConfig.API.ROOT_URL}${url}`, options)

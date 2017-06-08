@@ -2,41 +2,54 @@
   <task-status
     class="task-open"
     statusName="Open"
-    [tasks]="taskList$ | async | filterTask:1 "
+    statusValue="1"
+    [tasks]="taskList$ | async | filterTask:1"
+    (changeTaskStatus)="onChangeTaskStatus($event)"
+    (addTask)="onAddTask($event)"
+    (completeTask)="onCompleteTask($event)"
+    (removeTask)="onRemoveTask($event)"
   ></task-status>
   <task-status
     class="task-in-progress"
     statusName="In Progress"
-    [tasks]="taskList$ | async | filterTask:2 "
+    statusValue="2"
+    [tasks]="taskList$ | async | filterTask:2"
+    (changeTaskStatus)="onChangeTaskStatus($event)"
+    (completeTask)="onCompleteTask($event)"
+    (addTask)="onAddTask($event)"
+    (removeTask)="onRemoveTask($event)"
   ></task-status>
   <task-status
     class="task-done"
     statusName="Done"
-    [tasks]="taskList$ | async | filterTask:3 "
+    statusValue="3"
+    [tasks]="taskList$ | async | filterTask:3"
+    (changeTaskStatus)="onChangeTaskStatus($event)"
+    (completeTask)="onCompleteTask($event)"
+    (addTask)="onAddTask($event)"
+    (removeTask)="onRemoveTask($event)"
   ></task-status>
 </section>
 
 <!-- FIXME: update the way use dnd -->
-<!-- <div class="panel panel-warning"  dnd-sortable-container [sortableData]="arr1" dropZones="widget-dropZone">
-    <div class="panel-heading">ARR1</div>
-    <div class="panel-body">
-        <ul class="list-group">
-            <li *ngFor="let data of arr1; let x = index" class="list-group-item"
-                dnd-sortable [sortableIndex]="x" dragEnabled="true" dnd-draggable
-                [dragData]="{
-                  'zone': 'zone-a',
-                  'data': data
-                }" >{{data}}</li>
-        </ul>
-    </div>
-</div>
-<div class="panel panel-warning" dnd-sortable-container [sortableData]="arr2" dropZones="widget-dropZone" >
-    <div class="panel-heading">ARR2</div>
-    <div class="panel-body" >
-        <ul class="list-group">
-            <li *ngFor="let data of arr2; let x = index" class="list-group-item"
-                dnd-sortable [sortableIndex]="x" dragEnabled="true"
-                [dragData]="data" dnd-droppable (onDropSuccess)="aaa(, x)">{{data}}</li>
-        </ul>
-    </div>
-</div> -->
+<!-- <div class="panel panel-warning"
+                    dnd-sortable-container [sortableData]="arr1" [dropZones]="['widget-dropZone']">
+                    <div class="panel-body">
+                        <ul class="list-group">
+                            <li *ngFor="let data of arr1; let x = index" class="list-group-item"
+                                dnd-sortable [sortableIndex]="x"
+                                [dragData]="data" dnd-droppable (onDropSuccess)="onChangeTaskStatuss($event)">{{data}}</li>
+                        </ul>
+                    </div>
+                </div>
+
+<div class="panel panel-warning"
+                    dnd-sortable-container [sortableData]="arr2" [dropZones]="['widget-dropZone']" >
+                    <div class="panel-body">
+                        <ul class="list-group">
+                            <li *ngFor="let data of arr2; let x = index" class="list-group-item"
+                                dnd-sortable [sortableIndex]="x"
+                                [dragData]="data" dnd-droppable (onDropSuccess)="onChangeTaskStatuss($event)">{{data}}</li>
+                        </ul>
+                    </div>
+                </div> -->
