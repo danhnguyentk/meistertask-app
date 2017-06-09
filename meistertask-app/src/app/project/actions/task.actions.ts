@@ -7,7 +7,7 @@ import { ErrorMessage } from '../../shared/models/error-message.model';
 
 @Injectable()
 export class TaskActions {
-    static GET_TASK_LIST: string = '[Project] GET_TASK_LIST';
+    static GET_TASK_LIST_BY_PROJECT: string = '[Project] GET_TASK_LIST_BY_PROJECT';
     static GET_TASK_LIST_SUCCESS: string = '[Project] GET_TASK_LIST_SUCCESS';
     static GET_TASK_LIST_FAIL: string = '[Project] GET_TASK_LIST_FAIL';
     static ADD_TASK: string = '[Project] ADD_TASK';
@@ -23,9 +23,10 @@ export class TaskActions {
     static DELETE_TASK_SUCCESS: string = '[Project] DELETE_TASK_SUCCESS';
     static DELETE_TASK_FAIL: string = '[Project] DELETE_TASK_FAIL';
 
-    getTaskList(projectId: number): Action {
+
+    getTaskListByProject(projectId: number): Action {
         return {
-            type: TaskActions.GET_TASK_LIST,
+            type: TaskActions.GET_TASK_LIST_BY_PROJECT,
             payload: projectId
         };
     }

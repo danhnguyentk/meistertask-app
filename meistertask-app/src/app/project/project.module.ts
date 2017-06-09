@@ -9,6 +9,8 @@ import { TaskEffects } from './effects/task.effects';
 import { TaskService } from './services/task.service';
 import { TaskActions } from './actions/task.actions';
 import { FilterTaskPipe } from './pipes/filter-task.pipe';
+import { ProjectHeaderComponent } from './components/project-header/project-header.component';
+import { ProjectDetailComponent } from './components/project-detail/project-detail.component';
 
 const MODULES: any[] = [
     SharedModule,
@@ -17,7 +19,9 @@ const MODULES: any[] = [
 
 const COMPONENTS: any[] = [
     ProjectComponent,
-    TaskStatusComponent
+    TaskStatusComponent,
+    ProjectHeaderComponent,
+    ProjectDetailComponent
 ];
 
 const SERVICES: any[] = [

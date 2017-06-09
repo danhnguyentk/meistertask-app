@@ -15,7 +15,11 @@ export class TaskService {
         private httpWrapperService: HttpWrapperService,
         private appConfig: AppConfig) { }
 
-    getTaskList(projectId: number): Observable<Task[]> {
+    getAllTask(): Observable<Task[]> {
+        return this.httpWrapperService.get(this.appConfig.API.TASK);
+    }
+
+    getTaskListByProject(projectId: number): Observable<Task[]> {
         return this.httpWrapperService.get(this.appConfig.API.TASK, { projectId });
     }
 

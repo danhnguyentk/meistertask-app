@@ -1,0 +1,30 @@
+<header class="project-header">
+  <div class="block-logo-project">
+    <h1>
+      <a routerLink="/app/dashboard" class="logo"></a>
+    </h1>
+    <div class="dropdown dropdown-project" dropdown>
+      <a dropdown-open class="dropdown-project-btn">
+        <span>{{ project?.nameProject }}</span>
+        <span class="caret"></span>
+      </a>
+      <div class="dropdown-menu dropdown-menu-project" dropdown-not-closable-zone>
+        <h3 class="project-label">Project</h3>
+        <input type="text" placeholder="Search Project" class="search-project-input">
+        <ul class="project-list">
+          <li class="project-item" *ngFor="let item of projectList" (click)="onSwitchProject(item)">
+            <span>{{ item.nameProject }}</span>
+            <span>{{ item.numberTaskActive - item.numberTaskCompleted }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="block-auth">
+    <div class="statisic-task">
+      <span class="number-task-active">{{ project?.numberTaskActive }}</span>
+      <span class="active-label">ACTIVE</span>
+    </div>
+    <navbar-auth></navbar-auth>
+  </div>
+</header>

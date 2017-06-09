@@ -24,9 +24,9 @@ export class TaskEffects {
 
     @Effect()
     getTaskList$ = this.actions
-        .ofType(TaskActions.GET_TASK_LIST)
+        .ofType(TaskActions.GET_TASK_LIST_BY_PROJECT)
         .map(toPayload)
-        .switchMap((projectId: number) => this.taskService.getTaskList(projectId))
+        .switchMap((projectId: number) => this.taskService.getTaskListByProject(projectId))
         .map((taskList: Task[]) => this.taskActions.getTaskListSuccess(taskList));
 
     @Effect()

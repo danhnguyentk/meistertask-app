@@ -65,7 +65,7 @@ export class TaskStatusComponent implements OnInit {
             if (nameTask && this.isShowFormTask) {
                 this.logger.info(this.isShowFormTask);
                 const task: Task = { name: nameTask, status: +this.statusValue };
-                this.addTask.emit(task)
+                this.addTask.emit(task);
             }
             this.isShowFormTask = false;
         }
