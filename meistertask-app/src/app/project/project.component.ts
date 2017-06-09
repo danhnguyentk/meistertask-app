@@ -2,8 +2,10 @@ import {
     Component,
     OnInit
 } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Router } from '@angular/router';
+import {
+    Router,
+    ActivatedRoute
+} from '@angular/router';
 
 import * as _ from 'lodash';
 import { Observable } from 'rxjs/Observable';
@@ -44,7 +46,13 @@ export class ProjectComponent implements OnInit {
 
     ngOnInit() {
         this.logger.debug('Init Project component');
-        this.projectId = +this.route.snapshot.params['id'];
+        this.route.params.subscribe((params) => {
+            this.projectId = +params['id'];
+            this.init();
+        });
+    }
+
+    init() {
         this.logger.info('projectId: ', this.projectId);
         this.setSelectedProject();
         this.getTaskList();

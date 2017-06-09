@@ -3,10 +3,12 @@ import {
     OnInit,
     Input,
     Output,
-    EventEmitter
+    EventEmitter,
+    ViewChild
 } from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
+import { Dropdown } from 'ngx-dropdown';
 
 import { Project } from '../../../dashboard/models/project';
 
@@ -16,10 +18,11 @@ import { Project } from '../../../dashboard/models/project';
     styleUrls: [ './project-header.component.scss' ]
 })
 export class ProjectHeaderComponent implements OnInit {
+    @ViewChild(Dropdown) dropwdown: Dropdown;
     @Input() projectList: Project[];
     @Input() project: Project;
     @Output() switchProject: EventEmitter<Project> = new EventEmitter<Project>();
-
+    closeDropdownMenuProject: boolean;
 
     constructor() { }
 
@@ -27,6 +30,7 @@ export class ProjectHeaderComponent implements OnInit {
     }
 
     onSwitchProject(project: Project) {
+        this.dropwdown.close();
         this.switchProject.emit(project);
     }
 }

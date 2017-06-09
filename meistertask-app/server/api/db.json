@@ -29,7 +29,7 @@
   "task": [
     {
       "name": "ddddddd",
-      "status": 3,
+      "status": 2,
       "project_id": 1496636376065,
       "id": 1496917097307,
       "date_created": "Th/18/yyyy",
@@ -45,7 +45,7 @@
     },
     {
       "name": "7777",
-      "status": 2,
+      "status": 3,
       "project_id": 1496636376065,
       "id": 1496917455181,
       "date_created": "Th/24/yyyy",
