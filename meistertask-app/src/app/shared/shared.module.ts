@@ -20,6 +20,7 @@ import { ControlMessageComponent } from './components/control-message/control-me
 import { ErrorMessageComponent } from './components/error-message/error-message.component';
 import { ThirdaryLayoutComponent } from './components/thirdary-layout/thirdary-layout.component';
 import { FourthLayoutComponent } from './components/fourth-layout/fourth-layout.component';
+import { NavbarAuthComponent } from './components/navbar-auth/navbar-auth.component';
 
 const COMPONENTS = [
     MainHeaderComponent,
@@ -30,7 +31,8 @@ const COMPONENTS = [
     ThirdaryLayoutComponent,
     FourthLayoutComponent,
     ControlMessageComponent,
-    ErrorMessageComponent
+    ErrorMessageComponent,
+    NavbarAuthComponent
 ];
 
 const COMMON_MODULES = [
@@ -50,8 +52,7 @@ const COMMON_MODULES = [
         DndModule.forRoot()
     ],
     declarations: [
-        ...COMPONENTS,
-
+        ...COMPONENTS
     ],
     exports: [
         ...COMPONENTS,
