@@ -1,6 +1,6 @@
 <ul class="project-list">
   <li class="project-item" *ngFor="let project of projectList" (click)="onGoDetailProject(project)">
     <span class="name-project">{{ project.nameProject }}</span>
-    <span class="number-task">4</span>
+    <span class="number-task">{{ project.numberTaskActive - project.numberTaskCompleted }}</span>
   </li>
 </ul>

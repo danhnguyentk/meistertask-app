@@ -15,6 +15,7 @@ export class ProjectListActions {
     static CREATE_PROJECT = '[Project] CREATE_PROJECT';
     static CREATE_PROJECT_SUCCESS = '[Project] CREATE_PROJECT_SUCCESS';
     static CREATE_PROJECT_FAIL = '[Project] CREATE_PROJECT_FAIL';
+    static SET_SELECTED_PROJECT = '[Project] SET_SELECT_PROJECT';
 
     getProjectList(): Action {
         return {
@@ -47,6 +48,13 @@ export class ProjectListActions {
         return {
             type: ProjectListActions.CREATE_PROJECT_FAIL,
             payload: errorMessage
+        };
+    }
+
+    setSelectedProject(projectId: number) : Action {
+        return {
+            type: ProjectListActions.SET_SELECTED_PROJECT,
+            payload: projectId
         };
     }
 

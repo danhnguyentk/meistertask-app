@@ -10,11 +10,6 @@ import { ThirdaryLayoutComponent } from './shared/components/thirdary-layout/thi
 import { FourthLayoutComponent } from './shared/components/fourth-layout/fourth-layout.component';
 
 export const ROUTES: Routes = [
-    // {
-    //     path: '',
-    //     redirectTo: 'app/dashboard',
-    //     pathMatch: 'full'
-    // },
     {
         path: '',
         component: PrimaryLayoutComponent,
@@ -38,7 +33,6 @@ export const ROUTES: Routes = [
     },
     {
         path: '',
-        component: FourthLayoutComponent,
         children: [
             ...projectRoutes
         ]

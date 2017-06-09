@@ -7,11 +7,14 @@ import {
     Actions,
     toPayload
 } from '@ngrx/effects';
+import * as _ from 'lodash';
 
 import { ProjectListActions } from '../actions/project-list.actions';
 import { Project } from '../models/project';
 import { ErrorMessage } from '../../shared/models/error-message.model';
 import { ProjectService } from '../services/project.service';
+import { TaskService } from '../../project/services/task.service';
+import { Task } from '../../project/models/task';
 
 @Injectable()
 export class ProjectListEffects {
@@ -19,16 +22,29 @@ export class ProjectListEffects {
     constructor(
         private actions: Actions,
         private projectActions: ProjectListActions,
-        private projectService: ProjectService
+        private projectService: ProjectService,
+        private taskService: TaskService
     ) {}
 
     @Effect()
     getProjects = this.actions
         .ofType(ProjectListActions.GET_PROJECT_LIST)
         .switchMap(() => {
-            return this.projectService.getProjects()
-                .map((projectList: Project[]) => this.projectActions.getProjectListSuccess(projectList));
-        });
+            return Observable.zip(
+                this.projectService.getProjects(),
+                this.taskService.getAllTask(),
+                (projectList: Project[], taskList: Task[]) => {
+                    _.forEach(projectList, (project: Project) => {
+                        // Get number task active
+                        project.numberTaskActive = _.countBy(taskList, { projectId: project.id })['true'] | 0;
+                        // Get number task completed]
+                        console.log(_.countBy(taskList, { projectId: project.id, idCompleted: true }));
+                        project.numberTaskCompleted = _.countBy(taskList, { projectId: project.id, isCompleted: true })['true'] | 0;
+                    });
+                    return projectList;
+                });
+        })
+        .map((projectList: Project[]) => this.projectActions.getProjectListSuccess(projectList));
 
     @Effect()
     createProject = this.actions

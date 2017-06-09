@@ -1,3 +1,5 @@
+import * as _ from 'lodash';
+
 import { AppState } from '../../interface';
 import { ProjectListState } from './project-list.state';
 import { ErrorMessage } from '../../shared/models/error-message.model';
@@ -13,4 +15,8 @@ export function getProjectList(state: AppState): Project[] {
 
 export function getErrorMessage(state: AppState): ErrorMessage {
     return state.project.errorMessage;
+}
+
+export function getProjectSelected(state: AppState): Project {
+    return _.find(state.project.projectList, { id: state.project.projectIdSelected });
 }
