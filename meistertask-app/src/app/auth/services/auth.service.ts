@@ -11,6 +11,7 @@ import { Logger } from '../../core/logger.service';
 import { LocalStorageService } from '../../core/local-storage.service';
 import { AppState } from '../../interface';
 import { getAuthUser } from '../reducers/auth.selectors';
+import { AuthActions } from '../actions/auth.actions';
 
 @Injectable()
 export class AuthService {
@@ -20,7 +21,13 @@ export class AuthService {
         private appConfig: AppConfig,
         private logger: Logger,
         private store: Store<AppState>,
-        private localStorageService: LocalStorageService) {
+        private localStorageService: LocalStorageService,
+        private authActions: AuthActions) {
+        // Get user from localstorage and save to state
+        const user: User = this.localStorageService.getCurrentUser();
+        store.dispatch(this.authActions.saveUserToState(user));
+
+        // Update localstorage each state change
         store.select(getAuthUser)
             .subscribe((user: User) => {
                 if (user) {

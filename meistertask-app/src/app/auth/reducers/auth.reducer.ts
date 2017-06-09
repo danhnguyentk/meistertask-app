@@ -13,6 +13,9 @@ const initialState: AuthState = { isAuthenticated: false, errorMessage: null, us
 
 export function authReducer(state: AuthState = initialState, action: Action): AuthState {
     switch (action.type) {
+        case AuthActions.SAVE_USER_TO_STATE:
+            return _.assignIn({}, state, { user: action.payload });
+
         case AuthActions.SIGNUP_SUCCESS:
             return _.assignIn({}, state, { isAuthenticated: true, errorMessage: null, user: action.payload });
 

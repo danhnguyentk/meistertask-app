@@ -4,6 +4,7 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { LoggedOutComponent } from './components/logged-out/logged-out.component';
 import { AuthGuardService } from './services/auth-guard.service';
+import { AuthGuard } from './guards/auth.guard';
 
 export const ROUTES: Routes = [
     {
@@ -12,17 +13,17 @@ export const ROUTES: Routes = [
             {
                 path: 'login',
                 component: LoginComponent,
-                canActivate: [ AuthGuardService ]
+                canActivate: [ AuthGuard ]
             },
             {
                 path: 'signup',
                 component: SignupComponent,
-                canActivate: [ AuthGuardService ]
+                canActivate: [ AuthGuard ]
             },
             {
                 path: 'loggedout',
                 component: LoggedOutComponent,
-                canActivate: [ AuthGuardService ]
+                canActivate: [ AuthGuard ]
             }
         ]
     }

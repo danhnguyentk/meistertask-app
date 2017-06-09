@@ -10,6 +10,8 @@ import { AuthGuardService } from './services/auth-guard.service';
 import { AuthEffects } from './effects/auth.effects';
 import { AuthActions } from './actions/auth.actions';
 import { LoggedOutComponent } from './components/logged-out/logged-out.component';
+import { AuthGuard } from './guards/auth.guard';
+import { AuthRequiredPageGuard } from './guards/auth-required-page.guard';
 
 const COMPONENTS = [
     LoginComponent,
@@ -20,7 +22,9 @@ const COMPONENTS = [
 const SERVICES = [
     AuthService,
     AuthGuardService,
-    AuthActions
+    AuthActions,
+    AuthGuard,
+    AuthRequiredPageGuard
 ];
 
 @NgModule({

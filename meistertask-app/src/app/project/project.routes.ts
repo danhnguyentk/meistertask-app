@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 
 import { ProjectComponent } from './project.component';
+import { AuthRequiredPageGuard } from '../auth/guards/auth-required-page.guard';
 
 export const ROUTES: Routes = [
     {
@@ -8,7 +9,8 @@ export const ROUTES: Routes = [
         children: [
             {
                 path: 'app/project/:id/:nameProject',
-                component: ProjectComponent
+                component: ProjectComponent,
+                canActivate: [ AuthRequiredPageGuard ]
             }
         ]
     }

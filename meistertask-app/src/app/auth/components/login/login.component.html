@@ -11,9 +11,6 @@
       <input type="password" class="form-control" placeholder="Password" formControlName="password">
       <control-message [control]="form.controls.password" nameControl="Password"></control-message>
     </div>
-    <div class="check-box">
-      <label class="remmber"><input type="checkbox"> Remember me</label>
-    </div>
     <button type="submit" class="btn btn-login" [disabled]="!form.valid">Login</button>
   </form>
 </section>

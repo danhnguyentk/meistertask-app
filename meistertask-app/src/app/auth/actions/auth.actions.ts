@@ -8,6 +8,7 @@ import { ErrorMessage } from '../../shared/models/error-message.model';
 @Injectable()
 export class AuthActions {
 
+    static SAVE_USER_TO_STATE = '[Auth] SAVE_USER_TO_STATE';
     static SIGNUP = '[Auth] SIGNUP';
     static SIGNUP_SUCCESS= '[Auth] SIGNUP_SUCCESS';
     static SIGNUP_FAIL= '[Auth] SIGNUP_FAIL';
@@ -15,6 +16,13 @@ export class AuthActions {
     static LOGIN_SUCCESS = '[Auth] LOGIN_SUCCESS';
     static LOGIN_FAIL = '[Auth] LOGIN_FAIL';
     static LOGOUT = '[Auth] LOGOUT';
+
+    saveUserToState(user: User) : Action {
+        return {
+            type: AuthActions.SAVE_USER_TO_STATE,
+            payload: user
+        };
+    }
 
     signup(user: User): Action {
         return {

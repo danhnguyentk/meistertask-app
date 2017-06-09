@@ -5,6 +5,12 @@
       "email": "n@n.com",
       "password": "123",
       "id": "r1jIQNfM-"
+    },
+    {
+      "work_name": "Nguyen Danh",
+      "email": "danh@danh.danh",
+      "password": "123",
+      "id": "Nguyen Danh"
     }
   ],
   "project": [
@@ -219,7 +225,7 @@
     },
     {
       "name": "sssssssssss",
-      "status": 3,
+      "status": 2,
       "project_id": 1496636376065,
       "id": 1496916694797,
       "date_created": "Th/11/yyyy",
@@ -271,7 +277,7 @@
       "project_id": 1496636376065,
       "id": 1496916821115,
       "date_created": "Th/13/yyyy",
-      "is_completed": false
+      "is_completed": true
     },
     {
       "name": "ssss",
