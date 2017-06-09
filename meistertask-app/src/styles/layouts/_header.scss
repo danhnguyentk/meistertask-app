@@ -38,9 +38,10 @@
         }
 
         .name-user {
-            @extend %color-black;
+            @extend %cursor-pointer;
             @extend %text-uppercase;
             font-size: 22px;
+            color: blue;
         }
     }
 }
