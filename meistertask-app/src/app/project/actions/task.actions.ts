@@ -7,9 +7,12 @@ import { ErrorMessage } from '../../shared/models/error-message.model';
 
 @Injectable()
 export class TaskActions {
-    static GET_TASK_LIST_BY_PROJECT: string = '[Project] GET_TASK_LIST_BY_PROJECT';
+    static GET_TASK_LIST: string = '[Project] GET_TASK_LIST';
     static GET_TASK_LIST_SUCCESS: string = '[Project] GET_TASK_LIST_SUCCESS';
     static GET_TASK_LIST_FAIL: string = '[Project] GET_TASK_LIST_FAIL';
+    static GET_TASK_LIST_BY_PROJECT: string = '[Project] GET_TASK_LIST_BY_PROJECT';
+    static GET_TASK_LIST_BY_PROJECT_SUCCESS: string = '[Project] GET_TASK_LIST_BY_PROJECT_SUCCESS';
+    static GET_TASK_LIST_BY_PROJECT_FAIL: string = '[Project] GET_TASK_LIST_BY_PROJECT_FAIL';
     static ADD_TASK: string = '[Project] ADD_TASK';
     static ADD_TASK_SUCCESS: string = '[Project] ADD_TASK_SUCCESS';
     static ADD_TASK_FAIL: string = '[Project] ADD_TASK_FAIL';
@@ -25,12 +28,12 @@ export class TaskActions {
     static SEARCH_TASKS: string = '[Project] SEARCH_TASK';
     static SEARCH_TASKS_SUCCESS: string = '[Project] SEARCH_TASK_SUCCESS';
     static SEARCH_TASKS_FAIL: string = '[Project] SEARCH_TASK_FAIL';
+    static RESET_SEARCH_TASKS: string = '[Project] RESET_SEARCH_TASKS';
+    static UPDATE_QUERY_SEARCH: string = '[Project] UPDATE_QUERY_SEARCH';
 
-
-    getTaskListByProject(projectId: number): Action {
+    getTaskList(): Action {
         return {
-            type: TaskActions.GET_TASK_LIST_BY_PROJECT,
-            payload: projectId
+            type: TaskActions.GET_TASK_LIST,
         };
     }
 
@@ -44,6 +47,27 @@ export class TaskActions {
     getTaskListFail(errorMessage: ErrorMessage): Action {
         return {
             type: TaskActions.GET_TASK_LIST_FAIL,
+            payload: errorMessage
+        };
+    }
+
+    getTaskListByProject(projectId: number): Action {
+        return {
+            type: TaskActions.GET_TASK_LIST_BY_PROJECT,
+            payload: projectId
+        };
+    }
+
+    getTaskListByProjectSuccess(taskList: Task[]): Action {
+        return {
+            type: TaskActions.GET_TASK_LIST_BY_PROJECT_SUCCESS,
+            payload: taskList
+        };
+    }
+
+    getTaskListByProjectFail(errorMessage: ErrorMessage): Action {
+        return {
+            type: TaskActions.GET_TASK_LIST_BY_PROJECT_FAIL,
             payload: errorMessage
         };
     }
@@ -144,6 +168,19 @@ export class TaskActions {
         return {
             type: TaskActions.SEARCH_TASKS_SUCCESS,
             payload: tasks
+        };
+    }
+
+    resetSearchTasks(): Action {
+        return {
+            type: TaskActions.RESET_SEARCH_TASKS
+        };
+    }
+
+    updateQuerySearch(querySearch: string): Action {
+        return {
+            type: TaskActions.UPDATE_QUERY_SEARCH,
+            payload: querySearch
         };
     }
 }

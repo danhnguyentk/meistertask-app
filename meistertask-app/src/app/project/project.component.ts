@@ -14,7 +14,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from '../interface';
 import { TaskActions } from './actions/task.actions';
 import { ProjectListActions } from '../dashboard/actions/project-list.actions';
-import { getTaskList } from './reducers/task.selectors';
+import { getTaskListByProject } from './reducers/task.selectors';
 import { getProjectList } from '../dashboard/reducers/project-list.selector';
 import { Task } from './models/task';
 import { Project } from '../dashboard/models/project';
@@ -55,10 +55,10 @@ export class ProjectComponent implements OnInit {
     init() {
         this.logger.info('projectId: ', this.projectId);
         this.setSelectedProject();
-        this.getTaskList();
+        this.getTaskListByProject();
         this.getProjectList();
         this.project$ = this.store.select(getProjectSelected);
-        this.taskList$ = this.store.select(getTaskList);
+        this.taskList$ = this.store.select(getTaskListByProject);
         this.projectList$ = this.store.select(getProjectList);
     }
 
@@ -70,7 +70,7 @@ export class ProjectComponent implements OnInit {
         this.store.dispatch(this.projectListAction.getProjectList());
     }
 
-    getTaskList() {
+    getTaskListByProject() {
         this.store.dispatch(this.taskActions.getTaskListByProject(this.projectId));
     }
 

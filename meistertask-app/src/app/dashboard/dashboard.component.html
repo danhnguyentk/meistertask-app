@@ -2,9 +2,13 @@
   <dashboard-header
     [user]="user$ | async"
     [projectList]="projectList$ | async"
+    [taskListSearch]="taskListSearch$ | async"
     (addTask)="onAddTask($event)"
     (logout)="onLogout()"
     (searchTask)="onSearchTask($event)"
+    (resetSearchTask)="onResetSearchTask()"
+    (completeTask)="onCompleteTask($event)"
+    (removeTask)="onRemoveTask($event)"
   ></dashboard-header>
   <aside class="main-sidebar">
     <h1 class="logo"></h1>

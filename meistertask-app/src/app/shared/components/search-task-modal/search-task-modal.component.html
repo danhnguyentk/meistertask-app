@@ -2,22 +2,22 @@
   <modal-content>
     <div class="search-task-content">
       <h3 class="search-label">Search</h3>
-      <form [formGroup]="form" (ngSubmit)="onSearchTask" class="search-task-form">
+      <form [formGroup]="form" (ngSubmit)="onSearchTask()" class="search-task-form">
         <div class="form-group form-group-search">
-          <input type="text" placeholder="Search Tasks" class="form-control search-input">
+          <input type="text" placeholder="Search Tasks" class="form-control search-input" formControlName="task">
           <span class="close search-close" (click)="resetSearchInput()">X</span>
         </div>
         <button type="submit" class="btn btn-search">Search</button>
       </form>
       <ul class="result-task-list">
-        <li class="task-item">
+        <li class="task-item" *ngFor="let task of taskListSearch">
           <div class="task-info">
-            <span>dsfsffsfs adadv adad</span>
-            <span class="project-info"><span class="project-icon"></span> danh da </span>
+            <span>{{ task.name }}</span>
+            <!-- <span class="project-info"><span class="project-icon"></span>{{ task.project.nameProject }}</span> -->
           </div>
           <div class="task-action">
-            <span class="complete-task"></span>
-            <!-- <span class="remove-task"></span> -->
+            <span class="complete-task" *ngIf="!task.isCompleted" (click)="onCompleteTask(task)"></span>
+            <span class="remove-task" *ngIf="task.isCompleted" (click)="onRemoveTask(task)"></span>
           </div>
         </li>
       </ul>

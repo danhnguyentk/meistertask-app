@@ -3,7 +3,8 @@ import {
     OnInit,
     ViewChild,
     EventEmitter,
-    Output
+    Output,
+    Input
 } from '@angular/core';
 
 import {
@@ -15,6 +16,8 @@ import {
 import { Modal } from 'ngx-modal';
 import { Observable } from 'rxjs/Observable';
 
+import { Task } from '../../../project/models/task';
+
 @Component({
     selector: 'search-task-modal',
     templateUrl: './search-task-modal.component.html',
@@ -23,7 +26,11 @@ import { Observable } from 'rxjs/Observable';
 export class SearchTaskModalComponent implements OnInit {
     form: FormGroup;
     @ViewChild(Modal) modal: Modal;
-    searchTask: EventEmitter<string> = new EventEmitter<string>();
+    @Output() searchTask: EventEmitter<string> = new EventEmitter<string>();
+    @Output() resetSearchTask: EventEmitter<any> = new EventEmitter();
+    @Output() completeTask: EventEmitter<Task> = new EventEmitter<Task>();
+    @Output() removeTask: EventEmitter<Task> = new EventEmitter<Task>();
+    @Input() taskListSearch: Task[];
 
     constructor(private fb: FormBuilder) { }
 
@@ -39,13 +46,28 @@ export class SearchTaskModalComponent implements OnInit {
 
     onSearchTask() {
         if (!this.form.valid) {
+            this.resetSearchTask.emit();
             return;
         }
-        this.searchTask.emit(this.form.get('task').value);
+        this.searchTask.emit(this.form.controls['task'].value);
+    }
+
+    resetSearchInput() {
+        this.form.controls['task'].setValue('');
+        this.resetSearchTask.emit();
     }
 
     openModal() {
         this.modal.open();
+    }
+
+    onCompleteTask(task: Task) {
+        console.log(task);
+        this.completeTask.emit(task);
+    }
+
+    onRemoveTask(task: Task) {
+        this.removeTask.emit(task);
     }
 
 }

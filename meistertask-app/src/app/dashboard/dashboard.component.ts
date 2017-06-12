@@ -19,6 +19,7 @@ import { AppConfig } from '../core/app-config.service';
 import { Task } from '../project/models/task';
 import { TaskActions } from '../project/actions/task.actions';
 import { AuthActions } from '../auth/actions/auth.actions';
+import { getTaskListSearch, getTasksSearch } from '../project/reducers/task.selectors';
 import { getAuthUser } from '../auth/reducers/auth.selectors';
 import { User } from '../auth/models/user';
 
@@ -31,6 +32,7 @@ import { User } from '../auth/models/user';
 export class DashboardComponent implements OnInit {
     projectList$: Observable<Project[]>;
     user$: Observable<User>;
+    taskListSearch$: Observable<Task[]>;
 
     constructor(
         private projectActions: ProjectListActions,
@@ -44,6 +46,8 @@ export class DashboardComponent implements OnInit {
     ngOnInit() {
         this.getProjectList();
         this.user$ = this.store.select(getAuthUser);
+        this.taskListSearch$ = this.store.select(getTasksSearch);
+        this.store.dispatch(this.taskActions.getTaskList());
     }
 
     getProjectList() {
@@ -68,6 +72,21 @@ export class DashboardComponent implements OnInit {
     }
 
     onSearchTask(term: string) {
-        this.store.dispatch(this.taskActions.searchTasks(term));
+        this.store.dispatch(this.taskActions.updateQuerySearch(term));
     }
+
+    onResetSearchTask() {
+        this.store.dispatch(this.taskActions.resetSearchTasks());
+    }
+
+    onCompleteTask(task: Task) {
+        console.log('sss');
+        this.store.dispatch(this.taskActions.completeTask(task));
+    }
+
+    onRemoveTask(task: Task) {
+        console.log('sss');
+        this.store.dispatch(this.taskActions.deleteTask(task));
+    }
+
 }

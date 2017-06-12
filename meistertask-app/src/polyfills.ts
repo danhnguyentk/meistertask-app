@@ -80,3 +80,5 @@ import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/mapTo';
 import 'rxjs/add/observable/from';
+import 'rxjs/add/operator/withLatestFrom';
+import 'rxjs/add/operator/delay';

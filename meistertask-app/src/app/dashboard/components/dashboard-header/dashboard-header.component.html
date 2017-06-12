@@ -10,5 +10,9 @@
   ></dropdown-user>
 </header>
 <search-task-modal
+  [taskListSearch]="taskListSearch"
   (searchTask)="onSearchTask($event)"
+  (resetSearchTask)="onResetSearchTask()"
+  (completeTask)="onCompleteTask($event)"
+  (removeTask)="onRemoveTask($event)"
 ></search-task-modal>

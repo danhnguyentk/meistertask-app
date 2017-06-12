@@ -1,3 +1,5 @@
+import { Project } from '../../dashboard/models/project';
+
 export interface Task {
     id?: number;
     name: string;
@@ -5,4 +7,5 @@ export interface Task {
     status: number;
     projectId?: number;
     isCompleted?: boolean;
+    project?: Project;
 }

@@ -32,7 +32,11 @@ export class DashboardHeaderComponent implements OnInit {
     @Output() addTask: EventEmitter<Task> = new EventEmitter<Task>();
     @Output() logout: EventEmitter<any> = new EventEmitter();
     @ViewChild(SearchTaskModalComponent) searchTaskModalComponent: SearchTaskModalComponent;
-    searchTask: EventEmitter<string> = new EventEmitter<string>();
+    @Output() searchTask: EventEmitter<string> = new EventEmitter<string>();
+    @Output() resetSearchTask: EventEmitter<any> = new EventEmitter();
+    @Input() taskListSearch: Task[];
+    @Output() completeTask: EventEmitter<Task> = new EventEmitter<Task>();
+    @Output() removeTask: EventEmitter<Task> = new EventEmitter<Task>();
 
     constructor(
         private formBuilder: FormBuilder,
@@ -56,5 +60,17 @@ export class DashboardHeaderComponent implements OnInit {
 
     onSearchTask(term: string) {
         this.searchTask.emit(term);
+    }
+
+    onResetSearchTask() {
+        this.resetSearchTask.emit();
+    }
+
+    onCompleteTask(task: Task) {
+        this.completeTask.emit(task);
+    }
+
+    onRemoveTask(task: Task) {
+        this.removeTask.emit(task);
     }
 }

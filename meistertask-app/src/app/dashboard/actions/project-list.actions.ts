@@ -11,7 +11,7 @@ export class ProjectListActions {
     constructor() {}
 
     static GET_PROJECT_LIST = '[Project] GET_PROJECT_LIST';
-    static GET_PROJECT_LIST_SUCCESS = '[Project] GET_PROJECT_LISR_SUCCESS';
+    static GET_PROJECT_LIST_SUCCESS = '[Project] GET_PROJECT_LIST_SUCCESS';
     static CREATE_PROJECT = '[Project] CREATE_PROJECT';
     static CREATE_PROJECT_SUCCESS = '[Project] CREATE_PROJECT_SUCCESS';
     static CREATE_PROJECT_FAIL = '[Project] CREATE_PROJECT_FAIL';

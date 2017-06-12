@@ -16,12 +16,12 @@ export class ProjectService {
     ) { }
 
     getProjects(): Observable<Project[]> {
-        return this.httpWrapperService.get(this.appConfig.API.PROJECT);
+        return this.httpWrapperService.get(this.appConfig.API.PROJECT).delay(500);
     }
 
     createProject(project: Project): Observable<Project> {
         project = _.assignIn({}, project, { id: new Date().valueOf() });
-        return this.httpWrapperService.post(this.appConfig.API.PROJECT, project);
+        return this.httpWrapperService.post(this.appConfig.API.PROJECT, project).delay(1000);
     }
 
 }
