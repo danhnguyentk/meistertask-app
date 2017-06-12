@@ -21,6 +21,11 @@ import { ErrorMessageComponent } from './components/error-message/error-message.
 import { ThirdaryLayoutComponent } from './components/thirdary-layout/thirdary-layout.component';
 import { FourthLayoutComponent } from './components/fourth-layout/fourth-layout.component';
 import { NavbarAuthComponent } from './components/navbar-auth/navbar-auth.component';
+import { DropdownUserComponent } from './components/dropdown-user/dropdown-user.component';
+import { DropdownAssignComponent } from './components/dropdown-assign/dropdown-assign.component';
+import { FilterProjectPipe } from './pipes/filter-project.pipe';
+import { DropdownAddTaskComponent } from './components/dropdown-add-task/dropdown-add-task.component';
+import { SearchTaskModalComponent } from './components/search-task-modal/search-task-modal.component';
 
 const COMPONENTS = [
     MainHeaderComponent,
@@ -32,7 +37,11 @@ const COMPONENTS = [
     FourthLayoutComponent,
     ControlMessageComponent,
     ErrorMessageComponent,
-    NavbarAuthComponent
+    NavbarAuthComponent,
+    DropdownUserComponent,
+    DropdownAssignComponent,
+    DropdownAddTaskComponent,
+    SearchTaskModalComponent
 ];
 
 const COMMON_MODULES = [
@@ -42,7 +51,11 @@ const COMMON_MODULES = [
     ReactiveFormsModule,
     HttpModule,
     DropdownModule,
-    ModalModule,
+    ModalModule
+];
+
+const PIPES = [
+    FilterProjectPipe
 ];
 
 // Fixme
@@ -52,10 +65,12 @@ const COMMON_MODULES = [
         DndModule.forRoot()
     ],
     declarations: [
-        ...COMPONENTS
+        ...COMPONENTS,
+        ...PIPES
     ],
     exports: [
         ...COMPONENTS,
+        ...PIPES,
         ...COMMON_MODULES,
         DndModule
     ]

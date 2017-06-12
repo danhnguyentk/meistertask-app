@@ -1,10 +1,14 @@
-.project-item {
-    @extend %cursor-pointer;
-    @extend %flex-content-space;
-    border-bottom: 1px solid green;
-    padding: 10px 0;
+.project-panel {
+    .project-item {
+        @extend %cursor-pointer;
+        @extend %flex-content-space;
+        border-bottom: 1px solid green;
+        padding: 10px 0;
 
-    &:last-child {
-        @extend %no-border;
+        &:last-child {
+            @extend %no-border;
+        }
     }
 }
+
+

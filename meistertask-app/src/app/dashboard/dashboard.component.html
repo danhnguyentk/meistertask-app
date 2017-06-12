@@ -1,1 +1,17 @@
-<project-panel></project-panel>
+<section class="dashboard">
+  <dashboard-header
+    [user]="user$ | async"
+    [projectList]="projectList$ | async"
+    (addTask)="onAddTask($event)"
+    (logout)="onLogout()"
+    (searchTask)="onSearchTask($event)"
+  ></dashboard-header>
+  <aside class="main-sidebar">
+    <h1 class="logo"></h1>
+    <project-panel
+      [projectList]="projectList$ | async"
+      (addProject)="onAddProject($event)"
+      (goDetailProject)="onGoDetailProject()"
+    ></project-panel>
+  </aside>
+</section>

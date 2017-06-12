@@ -2,15 +2,16 @@
   <h3 class="project-label">Projects</h3>
   <project-list
     [projectList]="projectList"
-    (goDetailProject)="goDetailProject($event)"
+    (goDetailProject)="onGoDetailProject($event)"
   ></project-list>
   <a class="create-project" (click)="openModal()"><i class="glyphicon glyphicon-plus-sign plus-sign"></i>Create New Project</a>
 </div>
-<modal #myModal class="modal-new-project">
+<modal class="modal-new-project" modalClass="modal-dialog-new-project">
   <modal-content>
+    <div class="aaaa">
     <h3 class="new-project-label">New Project</h3>
     <p class="guide">Please choose a new name and description, and select the people you want to work with</p>
-    <form class="form-new-project" [formGroup]="form" (ngSubmit)="createProject()">
+    <form class="form-new-project" [formGroup]="form" (ngSubmit)="onAddProject()">
       <div class="form-group">
         <input type="text" class="form-control" placeholder="My New Project" formControlName="nameProject">
         <control-message [control]="form.controls.nameProject" nameControl="Name project"></control-message>
@@ -24,5 +25,6 @@
         <button type="submit" class="btn btn-create-project">Create Project</button>
       </div>
     </form>
+    </div>
   </modal-content>
 </modal>

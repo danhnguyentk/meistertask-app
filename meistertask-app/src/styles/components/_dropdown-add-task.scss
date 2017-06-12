@@ -1,0 +1,30 @@
+.dropdown-add-task {
+
+    .dropdown-menu-add-task {
+        width: 300px;
+    }
+
+    .add-task-input {
+        width: 100%;
+        height: 50px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    .btn-create-task {
+        border-color: #00AAFF;
+        color: #00AAFF;
+        border-radius: 3px;
+        width: 100%;
+        line-height: 35px;
+        background-color: white;
+        margin-top: 10px;
+    }
+
+    .dropdown-open-add-task {
+        margin-right: 20px;
+        font-size: 24px;
+        cursor: pointer;
+        color: white;
+    }
+}

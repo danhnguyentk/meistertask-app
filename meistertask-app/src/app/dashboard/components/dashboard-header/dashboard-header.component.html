@@ -1,0 +1,14 @@
+<header class="dashboard-header">
+  <dropdown-add-task
+    [projectList]="projectList"
+    (addTask)="onAddTask($event)"
+  ></dropdown-add-task>
+  <a href="javascript:void(0)" (click)="openModal()"><span class="glyphicon glyphicon-search search-task"></span></a>
+  <dropdown-user
+    [user]="user"
+    (logout)="onLogout()"
+  ></dropdown-user>
+</header>
+<search-task-modal
+  (searchTask)="onSearchTask($event)"
+></search-task-modal>

@@ -1,0 +1,10 @@
+.form-group-search {
+    @extend %relative;
+    width: 100%;
+
+    .search-close {
+        @include boxSize(20px, 20px);
+        @extend %vertical-center;
+        right: 0;
+    }
+}

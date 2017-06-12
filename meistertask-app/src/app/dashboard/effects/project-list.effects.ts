@@ -52,6 +52,7 @@ export class ProjectListEffects {
         .map(toPayload)
         .mergeMap((project: Project) => {
             return this.projectService.createProject(project)
+                .map((projectRes: Project) => _.assignIn({}, project, { numberTaskActive: 0, numberTaskCompleted: 0 }))
                 .map((projectRes: Project) => this.projectActions.createProjectSuccess(projectRes))
                 .catch((errorMessage: ErrorMessage) => Observable.of(this.projectActions.createProjectFail(errorMessage)));
         });

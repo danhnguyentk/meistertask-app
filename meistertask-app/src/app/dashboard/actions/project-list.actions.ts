@@ -16,6 +16,7 @@ export class ProjectListActions {
     static CREATE_PROJECT_SUCCESS = '[Project] CREATE_PROJECT_SUCCESS';
     static CREATE_PROJECT_FAIL = '[Project] CREATE_PROJECT_FAIL';
     static SET_SELECTED_PROJECT = '[Project] SET_SELECT_PROJECT';
+    static INCREASE_NUMBER_TASK = '[Project] INCREASE_NUMBER_TASK';
 
     getProjectList(): Action {
         return {
@@ -54,6 +55,13 @@ export class ProjectListActions {
     setSelectedProject(projectId: number) : Action {
         return {
             type: ProjectListActions.SET_SELECTED_PROJECT,
+            payload: projectId
+        };
+    }
+
+    increaseNumberTask(projectId: number): Action {
+        return {
+            type: ProjectListActions.INCREASE_NUMBER_TASK,
             payload: projectId
         };
     }

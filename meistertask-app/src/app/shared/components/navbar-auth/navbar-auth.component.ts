@@ -32,7 +32,7 @@ export class NavbarAuthComponent implements OnInit {
         this.user$ = this.store.select(getAuthUser);
     }
 
-    logout() {
+    onLogout() {
         this.router.navigateByUrl(this.appConfig.ROUTES.LOGGED_OUT);
         this.store.dispatch(this.authActions.logout());
     }

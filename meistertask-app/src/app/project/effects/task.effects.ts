@@ -9,6 +9,7 @@ import {
 } from '@ngrx/effects';
 
 import { TaskActions } from '../actions/task.actions';
+import { ProjectListActions } from '../../dashboard/actions/project-list.actions';
 import { Task } from '../models/task';
 import { ErrorMessage } from '../../shared/models/error-message.model';
 import { TaskService } from '../services/task.service';
@@ -19,7 +20,8 @@ export class TaskEffects {
     constructor(
         private actions: Actions,
         private taskActions: TaskActions,
-        private taskService: TaskService
+        private taskService: TaskService,
+        private projectListActions: ProjectListActions
     ) {}
 
     @Effect()
@@ -33,8 +35,12 @@ export class TaskEffects {
     addTask$ = this.actions
         .ofType(TaskActions.ADD_TASK)
         .map(toPayload)
-        .switchMap((task: Task) => this.taskService.addTask(task))
-        .map((taskRes: Task) => this.taskActions.addTaskSuccess(taskRes));
+        .mergeMap((task: Task) => this.taskService.addTask(task))
+        .mergeMap((taskRes: Task) => {
+            return Observable.of(
+                this.taskActions.addTaskSuccess(taskRes),
+                this.projectListActions.increaseNumberTask(taskRes.projectId));
+        });
 
     @Effect()
     updateTaskStatus$ = this.actions
@@ -58,4 +64,5 @@ export class TaskEffects {
         .map(toPayload)
         .switchMap((task: Task) => this.taskService.removeTask(task.id))
         .map((taskId: number) => this.taskActions.deleteTaskSuccess(taskId));
+
 }

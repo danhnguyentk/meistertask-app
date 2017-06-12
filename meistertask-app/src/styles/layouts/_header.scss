@@ -20,28 +20,3 @@
     }
 }
 
-.auth {
-    .auth-list {
-        @extend %flex-align-center;
-
-        .login {
-            color: #00AAFF;
-        }
-
-        .signup {
-            @extend %color-white;
-            @extend %block;
-            background-color: #00AAFF;
-            padding: 10px 10px;
-            margin-left: 20px;
-            border-radius: 5px;
-        }
-
-        .name-user {
-            @extend %cursor-pointer;
-            @extend %text-uppercase;
-            font-size: 22px;
-            color: blue;
-        }
-    }
-}

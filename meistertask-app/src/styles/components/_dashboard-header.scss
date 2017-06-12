@@ -1,0 +1,32 @@
+.dashboard-header {
+    @extend %flex-content-end;
+    padding: 10px 20px;
+
+    .dropdown-user {
+        .name-user {
+            color: snow;
+        }
+    }
+
+    .search-task {
+        font-size: 24px;
+        color: white;
+        margin: 0 20px;
+    }
+}
+
+.dropdown-default {
+    .dropdown-menu-default {
+        @extend %background-white;
+        right: 0;
+        left: auto;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .title {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+}

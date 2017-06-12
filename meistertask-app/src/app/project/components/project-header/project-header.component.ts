@@ -23,6 +23,7 @@ export class ProjectHeaderComponent implements OnInit {
     @Input() project: Project;
     @Output() switchProject: EventEmitter<Project> = new EventEmitter<Project>();
     closeDropdownMenuProject: boolean;
+    searchInput: string;
 
     constructor() { }
 
@@ -32,5 +33,9 @@ export class ProjectHeaderComponent implements OnInit {
     onSwitchProject(project: Project) {
         this.dropwdown.close();
         this.switchProject.emit(project);
+    }
+
+    resetSearchInput() {
+        this.searchInput = '';
     }
 }

@@ -1,0 +1,59 @@
+.dropdown-assign {
+    .project-icon {
+        @include format-icon('project.png', 24px, 24px, contain);
+        margin-right: 5px;
+    }
+
+    .status-icon {
+        margin-left: 5px;
+        margin-right: 5px;
+        @include format-icon('status.png', 24px, 24px, contain);
+    }
+
+    .dropdown-open-assign {
+        @extend %flex;
+    }
+
+    .search-input {
+        width: 100%;
+        border-radius: 5px;
+        padding: 5px 20px 5px 5px;
+    }
+
+    .project-icon {
+        @include format-icon('project.png', 24px, 24px, contain);
+    }
+
+    .project-list {
+
+    }
+
+    .project-item,
+    .status-item {
+        @extend %flex;
+        padding: 5px;
+        @extend %cursor-pointer;
+
+        &:hover {
+            background: #F0F5F7;
+        }
+    }
+
+    .back-sign {
+        color: #00aaff;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .status-open-icon {
+        @include format-icon('open.png', 24px, 24px, contain);
+    }
+
+    .status-progress-icon {
+        @include format-icon('in-progress.png', 24px, 24px, contain);
+    }
+
+    .status-done-icon {
+        @include format-icon('done.png', 24px, 24px, contain);
+    }
+}

@@ -42,4 +42,16 @@
         line-height: 30px;
         padding: 0 16px;
     }
+
+    .modal.in.fade {
+        background-color: rgba(218, 226, 229, 0.9);
+
+        .modal-dialog-new-project {
+            width: 480px;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            margin: 0;
+        }
+    }
 }

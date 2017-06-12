@@ -14,7 +14,6 @@ const initialState: ProjectListState = { projectList: [], errorMessage: null, pr
 export function projectListReducer(state: ProjectListState = initialState, action: Action ): ProjectListState {
     switch (action.type) {
         case ProjectListActions.GET_PROJECT_LIST_SUCCESS:
-            console.log(state, action.payload);
             return _.assignIn({}, state, {
                 projectList: [ ...action.payload ]
             });
@@ -29,6 +28,18 @@ export function projectListReducer(state: ProjectListState = initialState, actio
 
         case ProjectListActions.SET_SELECTED_PROJECT:
             return _.assignIn({}, state, { projectIdSelected: action.payload });
+
+        case ProjectListActions.INCREASE_NUMBER_TASK:
+            const index: number = _.findIndex(state.projectList, { id: action.payload });
+            if (index >= 0) {
+                const projectList = [
+                    ...state.projectList.slice(0, index),
+                    _.assignIn({}, state.projectList[index], { numberTaskActive: state.projectList[index].numberTaskActive + 1 }),
+                    ...state.projectList.slice(index + 1)
+                ];
+                return _.assignIn({}, state, { projectList });
+            }
+            return state;
 
         default:
             return state;

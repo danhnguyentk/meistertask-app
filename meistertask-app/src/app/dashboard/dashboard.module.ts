@@ -9,11 +9,13 @@ import { ProjectListActions } from './actions/project-list.actions';
 import { ProjectService } from './services/project.service';
 import { ProjectListComponent } from './components/project-list/project-list.component';
 import { ProjectPanelComponent } from './components/project-panel/project-panel.component';
+import { DashboardHeaderComponent } from './components/dashboard-header/dashboard-header.component';
 
 const COMPONENTS: any[] = [
     DashboardComponent,
     ProjectListComponent,
-    ProjectPanelComponent
+    ProjectPanelComponent,
+    DashboardHeaderComponent
 ];
 
 const MODULES: any[] = [
@@ -31,7 +33,7 @@ const SERVICES: any[] = [
         ...MODULES
     ],
     declarations: [
-        ...COMPONENTS,
+        ...COMPONENTS
     ],
     providers: [
         ...SERVICES

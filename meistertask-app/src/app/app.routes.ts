@@ -26,7 +26,6 @@ export const ROUTES: Routes = [
     },
     {
         path: '',
-        component: ThirdaryLayoutComponent,
         children: [
             ...dashboardRoutes
         ]

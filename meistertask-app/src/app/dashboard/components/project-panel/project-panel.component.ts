@@ -2,7 +2,10 @@ import {
     Component,
     OnInit,
     ViewChild,
-    OnDestroy
+    OnDestroy,
+    Output,
+    EventEmitter,
+    Input
 } from '@angular/core';
 import {
     FormBuilder,
@@ -16,8 +19,6 @@ import { Observable } from 'rxjs/Observable';
 import { Modal } from 'ngx-modal';
 import { Store } from '@ngrx/store';
 
-import { AppState } from '../../../interface';
-import { ProjectListActions } from '../../actions/project-list.actions';
 import {
     getProjectList,
     getErrorMessage
@@ -32,26 +33,22 @@ import { AppConfig } from '../../../core/app-config.service';
     styleUrls: [ './project-panel.component.scss' ]
 })
 export class ProjectPanelComponent implements OnInit, OnDestroy {
+    x: boolean = false;
     @ViewChild(Modal) modal: Modal;
     form: FormGroup;
     isShowDesc: boolean = false;
-    projectList: Project[];
-    projectList$: Subscription;
+    @Input() projectList: Project[];
+    @Output() addProject: EventEmitter<Project> = new EventEmitter<Project>();
+    @Output() goDetailProject: EventEmitter<Project> = new EventEmitter<Project>();
 
     constructor(
         private fb: FormBuilder,
         private router: Router,
-        private store: Store<AppState>,
-        private projectActions: ProjectListActions,
         private appConfig: AppConfig
     ) { }
 
     ngOnInit() {
         this.buildForm();
-        this.getProjectList();
-        this.projectList$ = this.store.select(getProjectList).subscribe((projectList: Project[]) => {
-            this.projectList = projectList;
-        });
     }
 
     closeModal() {
@@ -60,6 +57,8 @@ export class ProjectPanelComponent implements OnInit, OnDestroy {
 
     openModal() {
         this.modal.open();
+        // document.querySelector('.modal-backdrop').classList.remove('modal-backdrop');
+        // console.log(document.getElementsByClassName("modal-backdrop"));
     }
 
     buildForm() {
@@ -76,29 +75,19 @@ export class ProjectPanelComponent implements OnInit, OnDestroy {
         this.isShowDesc = !this.isShowDesc;
     }
 
-    createProject() {
+    onAddProject() {
         if (!this.form.valid) {
             return;
         }
-        this.store.dispatch(this.projectActions.createProject(this.form.value));
-        // Fix me
-        this.store.select(getErrorMessage)
-            .subscribe((errorMessage: ErrorMessage) => {
-                if (!errorMessage) {
-                    this.closeModal();
-                }
-            });
-    }
-
-    getProjectList() {
-        this.store.dispatch(this.projectActions.getProjectList());
+        this.addProject.emit(this.form.value);
+        this.closeModal();
     }
 
     ngOnDestroy() {
-        this.projectList$.unsubscribe();
     }
 
-    goDetailProject(project: Project) {
+    onGoDetailProject(project: Project) {
         this.router.navigate([ this.appConfig.ROUTES.PROJECT, project.id, project.nameProject ]);
     }
+
 }

@@ -10,9 +10,12 @@
       </a>
       <div class="dropdown-menu dropdown-menu-project" dropdown-not-closable-zone>
         <h3 class="project-label">Project</h3>
-        <input type="text" placeholder="Search Project" class="search-project-input">
+        <div class="form-group form-group-search">
+          <input type="text" placeholder="Search Project" class="search-project-input" [(ngModel)]="searchInput">
+          <span class="close search-close" *ngIf="searchInput" (click)="resetSearchInput()">X</span>
+        </div>
         <ul class="project-list">
-          <li class="project-item" *ngFor="let item of projectList" (click)="onSwitchProject(item)">
+          <li class="project-item" *ngFor="let item of projectList | filterProject:searchInput" (click)="onSwitchProject(item)">
             <span>{{ item.nameProject }}</span>
             <span>{{ item.numberTaskActive - item.numberTaskCompleted }}</span>
           </li>

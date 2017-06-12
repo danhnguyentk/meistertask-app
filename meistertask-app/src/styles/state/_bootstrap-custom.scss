@@ -1,0 +1,16 @@
+.modal {
+    .modal-dialog {
+        .modal-header {
+            display: none;
+        }
+
+        .modal-footer {
+            display: none;
+        }
+    }
+}
+
+.modal-backdrop.in {
+    opacity: 1;
+    background: transparent;
+}

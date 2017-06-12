@@ -1,0 +1,68 @@
+.search-task-modal {
+    .modal.in.fade {
+        background-color: rgba(218, 226, 229, 0.9);
+    }
+
+    .search-task-content {
+        width: 400px;
+        background: #f0f5f7;
+        padding: 20px;
+        border-radius: 10px;
+        height: 400px;
+
+        .search-task-form {
+            display: flex;
+            align-items: flex-start;
+
+            .btn-search {
+                color: white;
+                border-color: #00aaff;
+                background: #00aaff;
+                margin-left: 10px;
+            }
+        }
+
+        .result-task-list {
+            max-height: 400px;
+            overflow-y: auto;
+
+            .task-item {
+                display: flex;
+                background: white;
+                padding: 5px 10px;
+                align-items: center;
+                margin-bottom: 5px;
+            }
+
+            .task-info {
+                display: flex;
+                flex-direction: column;
+                width: 80%;
+            }
+
+            .project-info {
+                display: flex;
+                margin-top: 5px;
+            }
+
+            .task-action {
+
+            }
+
+            .project-icon {
+                @include format-icon('project.png', 24px, 24px, contain);
+                margin-right: 10px;
+            }
+
+            .complete-task {
+                cursor: pointer;
+                @include format-icon('done.png', 24px, 24px, contain);
+            }
+
+            .remove-task {
+                cursor: pointer;
+                @include format-icon('remove.png', 24px, 24px, contain);
+            }
+        }
+    }
+}

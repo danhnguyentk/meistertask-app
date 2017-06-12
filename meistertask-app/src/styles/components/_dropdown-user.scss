@@ -1,0 +1,8 @@
+.dropdown-user {
+    .name-user {
+        @extend %cursor-pointer;
+        @extend %text-uppercase;
+        font-size: 22px;
+        color: blue;
+    }
+}

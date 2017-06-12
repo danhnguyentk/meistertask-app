@@ -13,59 +13,36 @@
       "id": "Nguyen Danh"
     }
   ],
-  "project": [
+  "projects": [
     {
-      "name_project": "danh",
-      "desc_project": "",
+      "nameProject": "danh",
+      "descProject": "",
       "id": 1496636376065,
-      "is_completed": true
+      "isCompleted": true
     },
     {
-      "name_project": "dadada",
-      "desc_project": "",
-      "id": 1496636649852
+      "nameProject": "tu",
+      "descProject": "",
+      "id": 1496636376064,
+      "isCompleted": true
     }
   ],
-  "task": [
+  "tasks": [
     {
       "name": "ddddddd",
       "status": 2,
-      "project_id": 1496636376065,
+      "projectId": 1496636376065,
       "id": 1496917097307,
-      "date_created": "Th/18/yyyy",
-      "is_completed": false
+      "dateCreated": "Th/18/yyyy",
+      "isCompleted": false
     },
     {
-      "name": "dada",
-      "status": 3,
-      "project_id": 1496636376065,
-      "id": 1496917417511,
-      "date_created": "Th/23/yyyy",
-      "is_completed": false
-    },
-    {
-      "name": "7777",
-      "status": 3,
-      "project_id": 1496636376065,
-      "id": 1496917455181,
-      "date_created": "Th/24/yyyy",
-      "is_completed": false
-    },
-    {
-      "name": "sdađa",
-      "status": 3,
-      "project_id": 1496636376065,
-      "id": 1496917820358,
-      "date_created": "Th/30/yyyy",
-      "is_completed": false
-    },
-    {
-      "name": "fsfsfs",
+      "name": "dad dada",
       "status": 2,
-      "project_id": 1496636376065,
-      "id": 1496917823707,
-      "date_created": "Th/30/yyyy",
-      "is_completed": true
+      "projectId": 1496636376065,
+      "id": 1496917097307,
+      "dateCreated": "Th/18/yyyy",
+      "isCompleted": false
     }
   ]
 }
