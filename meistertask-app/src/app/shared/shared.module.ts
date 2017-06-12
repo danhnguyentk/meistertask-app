@@ -26,6 +26,7 @@ import { DropdownAssignComponent } from './components/dropdown-assign/dropdown-a
 import { FilterProjectPipe } from './pipes/filter-project.pipe';
 import { DropdownAddTaskComponent } from './components/dropdown-add-task/dropdown-add-task.component';
 import { SearchTaskModalComponent } from './components/search-task-modal/search-task-modal.component';
+import { FocusDirective } from './directives/focus.directive';
 
 const COMPONENTS = [
     MainHeaderComponent,
@@ -58,6 +59,10 @@ const PIPES = [
     FilterProjectPipe
 ];
 
+const DIRECTIVES = [
+    FocusDirective
+];
+
 // Fixme
 @NgModule({
     imports: [
@@ -66,12 +71,14 @@ const PIPES = [
     ],
     declarations: [
         ...COMPONENTS,
-        ...PIPES
+        ...PIPES,
+        ...DIRECTIVES
     ],
     exports: [
         ...COMPONENTS,
         ...PIPES,
         ...COMMON_MODULES,
+        ...DIRECTIVES,
         DndModule
     ]
 })

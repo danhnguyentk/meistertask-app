@@ -25,12 +25,17 @@
       "descProject": "",
       "id": 1496636376064,
       "isCompleted": true
+    },
+    {
+      "name_project": "tu dinh",
+      "desc_project": "",
+      "id": 1497263081866
     }
   ],
   "task": [
     {
       "name": "danh tu",
-      "status": 3,
+      "status": 2,
       "project_id": 1496636376065,
       "id": 1497258135208,
       "date_created": "Mo/02/yyyy",
@@ -46,7 +51,7 @@
     },
     {
       "name": "jjj",
-      "status": 3,
+      "status": 2,
       "project_id": 1496636376065,
       "id": 1497258587271,
       "date_created": "Mo/09/yyyy",
@@ -62,7 +67,7 @@
     },
     {
       "name": "dddd daa",
-      "status": 3,
+      "status": 2,
       "project_id": 1496636376065,
       "id": 1497258654898,
       "date_created": "Mo/10/yyyy",
@@ -70,7 +75,7 @@
     },
     {
       "name": "d dadd dd",
-      "status": 3,
+      "status": 2,
       "project_id": 1496636376065,
       "id": 1497258667111,
       "date_created": "Mo/11/yyyy",
@@ -78,7 +83,7 @@
     },
     {
       "name": "ad ada ",
-      "status": 2,
+      "status": 3,
       "project_id": 1496636376065,
       "id": 1497258674599,
       "date_created": "Mo/11/yyyy",
@@ -86,7 +91,7 @@
     },
     {
       "name": "tu",
-      "status": 2,
+      "status": 1,
       "project_id": 1496636376065,
       "id": 1497261051864,
       "date_created": "Mo/50/yyyy",
@@ -94,10 +99,34 @@
     },
     {
       "name": "dinh",
-      "status": 2,
+      "status": 3,
       "project_id": 1496636376065,
       "id": 1497261057552,
       "date_created": "Mo/50/yyyy",
+      "is_completed": false
+    },
+    {
+      "name": "tu danh",
+      "status": 2,
+      "project_id": 1496636376065,
+      "id": 1497262422754,
+      "date_created": "12/06/2017",
+      "is_completed": true
+    },
+    {
+      "name": "hong",
+      "status": 2,
+      "project_id": 1496636376065,
+      "id": 1497263095032,
+      "date_created": "12/06/2017",
+      "is_completed": false
+    },
+    {
+      "name": "d dad dad adddddddddddada dada dada ddad ad",
+      "status": 1,
+      "project_id": 1496636376065,
+      "id": 1497264742308,
+      "date_created": "12/06/2017",
       "is_completed": false
     }
   ]

@@ -27,7 +27,7 @@ export class TaskService {
      * Add task to project
      */
     addTask(task: Task): Observable<Task> {
-        task = _.assignIn({}, task, { id: new Date().valueOf(), dateCreated: moment().format('dd/mm/yyyy'), isCompleted: false });
+        task = _.assignIn({}, task, { id: new Date().valueOf(), dateCreated: moment().format('DD/MM/YYYY'), isCompleted: false });
         return this.httpWrapperService.post(this.appConfig.API.TASK, task).delay(1500);
     }
 

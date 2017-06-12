@@ -25,7 +25,7 @@
   </ul>
   </div>
   <div class="form-group form-group-task" *ngIf="isShowFormTask">
-    <input type="textarea" class="task-input" (keyup)="onAddTask($event, taskInput.value)" #taskInput (focusout)="onAddTask($event, taskInput.value)">
+    <input type="textarea" class="task-input" (keyup)="onAddTask($event, taskInput.value)" #taskInput (focusout)="onAddTask($event, taskInput.value)" focus>
   </div>
   <div class="block-add-task" >
     <a class="add-task" (click)="showFormTask()"><i class="glyphicon glyphicon-plus-sign plus-sign"></i></a>

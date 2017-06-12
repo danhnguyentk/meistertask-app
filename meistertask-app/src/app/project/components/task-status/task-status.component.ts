@@ -22,7 +22,7 @@ import { Logger } from '../../../core/logger.service';
     styleUrls: [ './task-status.component.scss' ]
 })
 export class TaskStatusComponent implements OnInit {
-    @Input() statusValue: number;
+    _statusValue: number;
     @Input() statusName: string;
     @Input() tasks: Task;
     @Output() changeTaskStatus: EventEmitter<Task> = new EventEmitter<Task>();
@@ -36,6 +36,14 @@ export class TaskStatusComponent implements OnInit {
         private store: Store<AppState>,
         private taskActions: TaskActions,
         private logger: Logger) { }
+
+    @Input() set statusValue(value) {
+        this._statusValue = +value;
+    }
+
+    get statusValue(): number {
+        return this._statusValue;
+    }
 
     ngOnInit() {
     }
@@ -55,7 +63,7 @@ export class TaskStatusComponent implements OnInit {
     onAddTask(event, nameTask: string) {
         if (event.type === 'keyup' && (event.which === 13 || event.keyCode === 13)) {
             if (nameTask) {
-                const task: Task = { name: nameTask, status: +this.statusValue };
+                const task: Task = { name: nameTask, status: this.statusValue };
                 this.logger.info(task);
                 this.addTask.emit(task)
             }
@@ -64,7 +72,7 @@ export class TaskStatusComponent implements OnInit {
             // Not execute event focusout when hiden form input from keyup
             if (nameTask && this.isShowFormTask) {
                 this.logger.info(this.isShowFormTask);
-                const task: Task = { name: nameTask, status: +this.statusValue };
+                const task: Task = { name: nameTask, status: this.statusValue };
                 this.addTask.emit(task);
             }
             this.isShowFormTask = false;
