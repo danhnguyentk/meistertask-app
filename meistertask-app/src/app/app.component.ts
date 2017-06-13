@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
             .filter((event: any) => event instanceof NavigationStart)
             .subscribe(() => {
                 this.store.dispatch(this.errorActions.resetError());
-            })
+            });
     }
 
 

@@ -52,7 +52,7 @@ export class ProjectListActions {
         };
     }
 
-    setSelectedProject(projectId: number) : Action {
+    setSelectedProject(projectId: number): Action {
         return {
             type: ProjectListActions.SET_SELECTED_PROJECT,
             payload: projectId

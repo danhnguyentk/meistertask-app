@@ -43,7 +43,7 @@
     },
     {
       "name": "hhh",
-      "status": 1,
+      "status": 2,
       "project_id": 1496636376065,
       "id": 1497258507629,
       "date_created": "Mo/08/yyyy",
@@ -67,7 +67,7 @@
     },
     {
       "name": "dddd daa",
-      "status": 2,
+      "status": 3,
       "project_id": 1496636376065,
       "id": 1497258654898,
       "date_created": "Mo/10/yyyy",
@@ -75,7 +75,7 @@
     },
     {
       "name": "d dadd dd",
-      "status": 2,
+      "status": 3,
       "project_id": 1496636376065,
       "id": 1497258667111,
       "date_created": "Mo/11/yyyy",
@@ -127,6 +127,14 @@
       "project_id": 1496636376065,
       "id": 1497264742308,
       "date_created": "12/06/2017",
+      "is_completed": false
+    },
+    {
+      "name": "tu hooo",
+      "status": 3,
+      "project_id": 1496636376065,
+      "id": 1497321929622,
+      "date_created": "13/06/2017",
       "is_completed": false
     }
   ]

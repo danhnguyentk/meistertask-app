@@ -12,20 +12,20 @@ export class ErrorActions {
 
     constructor() {}
 
-    resetError() : Action {
+    resetError(): Action {
         return {
             type: ErrorActions.RESET_ERROR
         };
     }
 
-    loginError(error: ErrorMessage) : Action {
+    loginError(error: ErrorMessage): Action {
         return {
             type: ErrorActions.LOGIN_ERROR,
             payload: error
         };
     }
 
-    signupError(error: ErrorMessage) : Action {
+    signupError(error: ErrorMessage): Action {
         return {
             type: ErrorActions.SIGNUP_ERROR,
             payload: error

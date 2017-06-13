@@ -51,7 +51,7 @@ export function taskReducer(state: TaskState = initialState, action: Action ): T
                     ...state.taskListByProject.slice(0, index),
                     action.payload,
                     ...state.taskListByProject.slice(index + 1)
-                ]
+                ];
             }
             index = _.findIndex(state.taskList, { id: action.payload.id });
             if (index >= 0) {
@@ -59,7 +59,7 @@ export function taskReducer(state: TaskState = initialState, action: Action ): T
                     ...state.taskList.slice(0, index),
                     action.payload,
                     ...state.taskList.slice(index + 1)
-                ]
+                ];
             }
             return _.assignIn({}, state, { taskList, taskListByProject });
 

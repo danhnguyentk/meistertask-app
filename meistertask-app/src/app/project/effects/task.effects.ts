@@ -74,7 +74,7 @@ export class TaskEffects {
             return Observable.of(
                 this.taskActions.completeTaskSuccess(task),
                 this.projectListActions.getProjectList()
-                )
+                );
         });
 
     @Effect()

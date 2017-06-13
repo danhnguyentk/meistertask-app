@@ -38,5 +38,5 @@ export class AuthEffects {
         .map(toPayload)
         .switchMap((user: User) => this.authService.login(user))
         .map((userRes: User) => this.authActions.loginSuccess(userRes))
-        .catch((errorMessage: ErrorMessage) => Observable.of(this.errorActions.loginError(errorMessage)))
+        .catch((errorMessage: ErrorMessage) => Observable.of(this.errorActions.loginError(errorMessage)));
 }

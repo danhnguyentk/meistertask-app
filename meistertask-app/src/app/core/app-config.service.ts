@@ -30,19 +30,10 @@ export class AppConfig {
 
     ROUTES = {
         LOGIN: '/login',
+        SIGNUP: '/signup',
         DASHBOARD: '/app/dashboard',
         LOGGED_OUT: '/loggedout',
         PROJECT: '/app/project'
     };
 
-    PUBLIC_PAGES = [
-        '/login',
-        '/signup',
-        '/loggedout'
-    ];
-
-    PRIVATE_PAGES = [
-        '/app/dashboard',
-        '/app/project'
-    ];
 }

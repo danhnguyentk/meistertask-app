@@ -97,7 +97,7 @@ export class TaskActions {
         return {
             type: TaskActions.UPDATE_TASK_STATUS,
             payload: task
-        }
+        };
     }
 
     updateTaskStatusSuccess(task: Task): Action {

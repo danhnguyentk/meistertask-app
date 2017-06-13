@@ -17,7 +17,7 @@ export class AuthActions {
     static LOGIN_FAIL = '[Auth] LOGIN_FAIL';
     static LOGOUT = '[Auth] LOGOUT';
 
-    saveUserToState(user: User) : Action {
+    saveUserToState(user: User): Action {
         return {
             type: AuthActions.SAVE_USER_TO_STATE,
             payload: user
