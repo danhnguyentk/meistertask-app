@@ -29,9 +29,9 @@ export class AuthService {
 
         // Update localstorage each state change
         store.select(getAuthUser)
-            .subscribe((user: User) => {
-                if (user) {
-                    this.localStorageService.setCurrentUser(user);
+            .subscribe((userAuth: User) => {
+                if (userAuth) {
+                    this.localStorageService.setCurrentUser(userAuth);
                 } else {
                     this.localStorageService.removeCurrentUser();
                 }

@@ -52,7 +52,7 @@ export class DashboardComponent implements OnInit {
 
     getProjectList() {
         this.store.dispatch(this.projectActions.getProjectList());
-        this.projectList$ = this.store.select(getProjectList)
+        this.projectList$ = this.store.select(getProjectList);
     }
 
     onAddProject(project: Project) {
