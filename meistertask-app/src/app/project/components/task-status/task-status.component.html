@@ -1,5 +1,4 @@
 <div class="task-status" dnd-sortable-container [dropZones]="['task-dropZone']">
-  <div>
   <div class="task-header">
     <div class="block-status-icon-name">
       <div class="status-icon"></div>
@@ -23,7 +22,6 @@
       </div>
     </li>
   </ul>
-  </div>
   <div class="form-group form-group-task" *ngIf="isShowFormTask">
     <input type="textarea" class="task-input" (keyup)="onAddTask($event, taskInput.value)" #taskInput (focusout)="onAddTask($event, taskInput.value)" focus>
   </div>
