@@ -2,7 +2,7 @@ import { Action } from '@ngrx/store';
 
 import * as _ from 'lodash';
 
-import { ErrorState } from './error.state';
+import { ErrorState } from '../models/error.state';
 import { ErrorActions } from '../actions/error.actions';
 import { ErrorMessage } from '../models/error-message.model';
 

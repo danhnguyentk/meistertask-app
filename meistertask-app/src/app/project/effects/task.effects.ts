@@ -18,7 +18,7 @@ import { Project } from '../../dashboard/models/project';
 import { ErrorMessage } from '../../shared/models/error-message.model';
 import { TaskService } from '../services/task.service';
 import { Logger } from '../../core/logger.service';
-import { getProjectList } from '../../dashboard/reducers/project-list.selector';
+import { getProjectList } from '../../dashboard/selectors/project-list.selector';
 
 @Injectable()
 export class TaskEffects {

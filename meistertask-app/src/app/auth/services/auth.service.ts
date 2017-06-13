@@ -10,7 +10,7 @@ import { HttpWrapperService } from '../../core/http-wrapper.service';
 import { Logger } from '../../core/logger.service';
 import { LocalStorageService } from '../../core/local-storage.service';
 import { AppState } from '../../interface';
-import { getAuthUser } from '../reducers/auth.selectors';
+import { getAuthUser } from '../selectors/auth.selectors';
 import { AuthActions } from '../actions/auth.actions';
 
 @Injectable()

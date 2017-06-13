@@ -1,5 +1,5 @@
 import { AppState } from '../../interface';
-import { AuthState } from './auth.state';
+import { AuthState } from '../models/auth.state';
 import { ErrorMessage } from '../../shared/models/error-message.model';
 import { User } from '../models/user';
 

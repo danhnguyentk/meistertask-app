@@ -6,7 +6,7 @@ import {
 import * as _ from 'lodash';
 
 import { TaskActions } from '../actions/task.actions';
-import { TaskState } from './task.state';
+import { TaskState } from '../models/task.state';
 import { Task } from '../models/task';
 
 const initialState: TaskState = { taskList: [], taskListByProject: [], taskListSearch: [], querySearch: '' };

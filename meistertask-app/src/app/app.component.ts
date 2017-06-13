@@ -11,7 +11,7 @@ import {
 import { Store } from '@ngrx/store';
 
 import { ErrorActions } from './shared/actions/error.actions';
-import { getErrorLogin} from './shared/reducers/error.selectors';
+import { getErrorLogin} from './shared/selectors/error.selectors';
 import { AppState } from './interface';
 
 @Component({

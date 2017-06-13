@@ -1,7 +1,7 @@
 import * as _ from 'lodash';
 
 import { AppState } from '../../interface';
-import { ProjectListState } from './project-list.state';
+import { ProjectListState } from '../models/project-list.state';
 import { ErrorMessage } from '../../shared/models/error-message.model';
 import { Project } from '../models/project';
 

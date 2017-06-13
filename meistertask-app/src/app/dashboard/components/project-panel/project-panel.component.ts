@@ -15,17 +15,9 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { Subscription } from 'rxjs/Subscription';
-import { Observable } from 'rxjs/Observable';
 import { Modal } from 'ngx-modal';
-import { Store } from '@ngrx/store';
 
-import {
-    getProjectList,
-    getErrorMessage
-} from '../../reducers/project-list.selector';
 import { Project } from '../../models/project';
-import { ErrorMessage } from '../../../shared/models/error-message.model';
 import { AppConfig } from '../../../core/app-config.service';
 
 @Component({

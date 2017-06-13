@@ -25,9 +25,9 @@ import {
     getAuthStatus,
     getAuthErrorMessage,
     getAuthUser
-} from '../../reducers/auth.selectors';
+} from '../../selectors/auth.selectors';
 import { ErrorActions } from '../../../shared/actions/error.actions';
-import { getErrorLogin } from '../../../shared/reducers/error.selectors';
+import { getErrorLogin } from '../../../shared/selectors/error.selectors';
 
 @Component({
     selector: 'login',

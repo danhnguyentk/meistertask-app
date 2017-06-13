@@ -15,13 +15,13 @@ import { Store } from '@ngrx/store';
 import { AppState } from '../interface';
 import { TaskActions } from './actions/task.actions';
 import { ProjectListActions } from '../dashboard/actions/project-list.actions';
-import { getTaskListByProject } from './reducers/task.selectors';
-import { getProjectList } from '../dashboard/reducers/project-list.selector';
+import { getTaskListByProject } from './selectors/task.selectors';
+import { getProjectList } from '../dashboard/selectors/project-list.selector';
 import { Task } from './models/task';
 import { Project } from '../dashboard/models/project';
 import { TaskStatus } from './models/task-status';
 import { Logger } from '../core/logger.service';
-import { getProjectSelected } from '../dashboard/reducers/project-list.selector';
+import { getProjectSelected } from '../dashboard/selectors/project-list.selector';
 import { AppConfig } from '../core/app-config.service';
 
 @Component({

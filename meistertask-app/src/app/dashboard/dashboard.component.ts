@@ -13,14 +13,17 @@ import { AppState } from '../interface';
 import {
     getProjectList,
     getErrorMessage
-} from './reducers/project-list.selector';
+} from './selectors/project-list.selector';
 import { Project } from './models/project';
 import { AppConfig } from '../core/app-config.service';
 import { Task } from '../project/models/task';
 import { TaskActions } from '../project/actions/task.actions';
 import { AuthActions } from '../auth/actions/auth.actions';
-import { getTaskListSearch, getTasksSearch } from '../project/reducers/task.selectors';
-import { getAuthUser } from '../auth/reducers/auth.selectors';
+import {
+    getTaskListSearch,
+    getTasksSearch
+} from '../project/selectors/task.selectors';
+import { getAuthUser } from '../auth/selectors/auth.selectors';
 import { User } from '../auth/models/user';
 
 

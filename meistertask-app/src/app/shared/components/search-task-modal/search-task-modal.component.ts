@@ -22,8 +22,7 @@ import { Task } from '../../../project/models/task';
 @Component({
     selector: 'search-task-modal',
     templateUrl: './search-task-modal.component.html',
-    styleUrls: ['./search-task-modal.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    styleUrls: ['./search-task-modal.component.scss']
 })
 export class SearchTaskModalComponent implements OnInit {
     form: FormGroup;

@@ -25,7 +25,7 @@ import {
     getAuthStatus,
     getAuthErrorMessage,
     getAuthUser
-} from '../../reducers/auth.selectors';
+} from '../../selectors/auth.selectors';
 
 @Component({
     selector: 'signup',

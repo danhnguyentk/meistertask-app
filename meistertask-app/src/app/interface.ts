@@ -1,7 +1,7 @@
-import { AuthState } from './auth/reducers/auth.state';
-import { ProjectListState } from './dashboard/reducers/project-list.state';
-import { TaskState } from './project/reducers/task.state';
-import { ErrorState } from './shared/reducers/error.state';
+import { AuthState } from './auth/models/auth.state';
+import { ProjectListState } from './dashboard/models/project-list.state';
+import { TaskState } from './project/models/task.state';
+import { ErrorState } from './shared/models/error.state';
 
 export interface AppState {
     auth: AuthState;

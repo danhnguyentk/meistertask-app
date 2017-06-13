@@ -1,7 +1,7 @@
 import * as _ from 'lodash';
 
 import { AppState } from '../../interface';
-import { TaskState } from './task.state';
+import { TaskState } from '../models/task.state';
 import { ErrorMessage } from '../../shared/models/error-message.model';
 import { Task } from '../models/task';
 import { Project } from '../../dashboard/models/project';
