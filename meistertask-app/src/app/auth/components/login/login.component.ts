@@ -25,6 +25,8 @@ import {
     getAuthErrorMessage,
     getAuthUser
 } from '../../reducers/auth.selectors';
+import { ErrorActions } from '../../../shared/actions/error.actions';
+import { getErrorLogin } from '../../../shared/reducers/error.selectors';
 
 @Component({
     selector: 'login',
@@ -43,11 +45,12 @@ export class LoginComponent implements OnInit {
         private router: Router,
         private customValidator: CustomValidator,
         private authService: AuthService,
-        private appConfig: AppConfig
+        private appConfig: AppConfig,
+        private errorActions: ErrorActions
     ) { }
 
     ngOnInit() {
-        this.errorMessage$ = this.store.select(getAuthErrorMessage);
+        this.errorMessage$ = this.store.select(getErrorLogin);
         this.user$ = this.store.select(getAuthUser);
         this.redirectPage();
         this.buildForm();

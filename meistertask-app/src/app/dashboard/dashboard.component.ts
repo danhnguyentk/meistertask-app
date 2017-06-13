@@ -69,6 +69,7 @@ export class DashboardComponent implements OnInit {
 
     onLogout() {
         this.store.dispatch(this.authActions.logout());
+        this.router.navigateByUrl(this.appConfig.ROUTES.LOGIN);
     }
 
     onSearchTask(term: string) {
@@ -85,7 +86,6 @@ export class DashboardComponent implements OnInit {
     }
 
     onRemoveTask(task: Task) {
-        console.log('sss');
         this.store.dispatch(this.taskActions.deleteTask(task));
     }
 

@@ -27,6 +27,7 @@ import { FilterProjectPipe } from './pipes/filter-project.pipe';
 import { DropdownAddTaskComponent } from './components/dropdown-add-task/dropdown-add-task.component';
 import { SearchTaskModalComponent } from './components/search-task-modal/search-task-modal.component';
 import { FocusDirective } from './directives/focus.directive';
+import { ErrorActions } from './actions/error.actions';
 
 const COMPONENTS = [
     MainHeaderComponent,
@@ -63,6 +64,10 @@ const DIRECTIVES = [
     FocusDirective
 ];
 
+const SERVICES = [
+    ErrorActions
+];
+
 // Fixme
 @NgModule({
     imports: [
@@ -73,6 +78,9 @@ const DIRECTIVES = [
         ...COMPONENTS,
         ...PIPES,
         ...DIRECTIVES
+    ],
+    providers: [
+        ...SERVICES
     ],
     exports: [
         ...COMPONENTS,
