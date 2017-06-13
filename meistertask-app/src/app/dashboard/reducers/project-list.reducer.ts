@@ -9,18 +9,24 @@ import { ProjectListActions } from '../actions/project-list.actions';
 import { ProjectListState } from '../models/project-list.state';
 import { ErrorMessage } from '../../shared/models/error-message.model';
 
-const initialState: ProjectListState = { projectList: [], errorMessage: null, projectIdSelected: null };
+const initialState: ProjectListState = { projectList: [], errorMessage: null, projectIdSelected: null, isLoading: false };
 
 export function projectListReducer(state: ProjectListState = initialState, action: Action ): ProjectListState {
+    let isLoading: boolean;
     switch (action.type) {
+        case ProjectListActions.GET_PROJECT_LIST:
+            return _.assignIn({}, state, { isLoading: true });
+
         case ProjectListActions.GET_PROJECT_LIST_SUCCESS:
             return _.assignIn({}, state, {
-                projectList: [ ...action.payload ]
+                projectList: [ ...action.payload ],
+                isLoading: false
             });
 
         case ProjectListActions.CREATE_PROJECT_SUCCESS:
             return _.assignIn({}, state, {
-                projectList: [ ...state.projectList, action.payload ]
+                projectList: [ ...state.projectList, action.payload ],
+                isLoading: false
             });
 
         case ProjectListActions.CREATE_PROJECT_FAIL:

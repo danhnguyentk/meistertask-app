@@ -25,7 +25,8 @@ import {
 } from '../project/selectors/task.selectors';
 import { getAuthUser } from '../auth/selectors/auth.selectors';
 import { User } from '../auth/models/user';
-
+import { getIsLoading } from './selectors/project-list.selector';
+import { getLoadingProject } from '../shared/selectors/loading.selectors';
 
 @Component({
     selector: 'dashboard',
@@ -36,6 +37,7 @@ export class DashboardComponent implements OnInit {
     projectList$: Observable<Project[]>;
     user$: Observable<User>;
     taskListSearch$: Observable<Task[]>;
+    isLoading$: Observable<boolean>;
 
     constructor(
         private projectActions: ProjectListActions,
@@ -51,6 +53,7 @@ export class DashboardComponent implements OnInit {
         this.user$ = this.store.select(getAuthUser);
         this.taskListSearch$ = this.store.select(getTasksSearch);
         this.store.dispatch(this.taskActions.getTaskList());
+        this.isLoading$ = this.store.select(getLoadingProject);
     }
 
     getProjectList() {

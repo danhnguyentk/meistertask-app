@@ -26,6 +26,7 @@ import { DropdownAddTaskComponent } from './components/dropdown-add-task/dropdow
 import { SearchTaskModalComponent } from './components/search-task-modal/search-task-modal.component';
 import { FocusDirective } from './directives/focus.directive';
 import { ErrorActions } from './actions/error.actions';
+import { IndicatorComponent } from './components/indicator/indicator.component';
 
 const COMPONENTS = [
     MainHeaderComponent,
@@ -39,7 +40,8 @@ const COMPONENTS = [
     DropdownUserComponent,
     DropdownAssignComponent,
     DropdownAddTaskComponent,
-    SearchTaskModalComponent
+    SearchTaskModalComponent,
+    IndicatorComponent
 ];
 
 const COMMON_MODULES = [

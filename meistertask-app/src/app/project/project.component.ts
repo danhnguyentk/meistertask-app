@@ -23,6 +23,8 @@ import { TaskStatus } from './models/task-status';
 import { Logger } from '../core/logger.service';
 import { getProjectSelected } from '../dashboard/selectors/project-list.selector';
 import { AppConfig } from '../core/app-config.service';
+import { getIsLoading } from './selectors/task.selectors';
+import { getLoadingTask } from '../shared/selectors/loading.selectors';
 
 @Component({
     selector: 'project',
@@ -35,6 +37,7 @@ export class ProjectComponent implements OnInit {
     taskList$: Observable<Task[]>;
     projectList$: Observable<Project[]>;
     project$: Observable<Project>;
+    isLoadingTaskByProject$: Observable<boolean>;
 
     constructor(
         private store: Store<AppState>,
@@ -62,6 +65,7 @@ export class ProjectComponent implements OnInit {
         this.project$ = this.store.select(getProjectSelected);
         this.taskList$ = this.store.select(getTaskListByProject);
         this.projectList$ = this.store.select(getProjectList);
+        this.isLoadingTaskByProject$ = this.store.select(getLoadingTask);
     }
 
     setSelectedProject() {

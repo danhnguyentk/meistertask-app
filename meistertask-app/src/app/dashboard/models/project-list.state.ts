@@ -5,4 +5,5 @@ export interface ProjectListState {
    projectList: Project[];
    errorMessage: ErrorMessage;
    projectIdSelected: number;
+   isLoading: boolean;
 }

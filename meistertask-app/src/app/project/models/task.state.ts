@@ -5,4 +5,5 @@ export interface TaskState {
     taskListByProject: Task[];
     taskListSearch: Task[];
     querySearch: string;
+    isLoading: boolean;
 };
