@@ -4,7 +4,8 @@ import {
     Input,
     ViewChild,
     Output,
-    EventEmitter
+    EventEmitter,
+    ChangeDetectionStrategy
 } from '@angular/core';
 import {
     FormGroup,
@@ -24,7 +25,8 @@ import { SearchTaskModalComponent } from '../../../shared/components/search-task
 @Component({
     selector: 'dashboard-header',
     templateUrl: './dashboard-header.component.html',
-    styleUrls: [ './dashboard-header.component.scss' ]
+    styleUrls: [ './dashboard-header.component.scss' ],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DashboardHeaderComponent implements OnInit {
     @Input() projectList: Project[];

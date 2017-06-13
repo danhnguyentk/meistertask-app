@@ -5,7 +5,8 @@ import {
     OnDestroy,
     Output,
     EventEmitter,
-    Input
+    Input,
+    ChangeDetectionStrategy
 } from '@angular/core';
 import {
     FormBuilder,
@@ -30,7 +31,8 @@ import { AppConfig } from '../../../core/app-config.service';
 @Component({
     selector: 'project-panel',
     templateUrl: './project-panel.component.html',
-    styleUrls: [ './project-panel.component.scss' ]
+    styleUrls: [ './project-panel.component.scss' ],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProjectPanelComponent implements OnInit, OnDestroy {
     x: boolean = false;

@@ -4,7 +4,8 @@ import {
     Input,
     Output,
     EventEmitter,
-    ViewChild
+    ViewChild,
+    ChangeDetectionStrategy
 } from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
@@ -15,7 +16,8 @@ import { Project } from '../../../dashboard/models/project';
 @Component({
     selector: 'project-header',
     templateUrl: './project-header.component.html',
-    styleUrls: [ './project-header.component.scss' ]
+    styleUrls: [ './project-header.component.scss' ],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProjectHeaderComponent implements OnInit {
     @ViewChild(Dropdown) dropwdown: Dropdown;

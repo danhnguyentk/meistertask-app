@@ -18,8 +18,6 @@ import { SecondaryLayoutComponent } from './components/secondary-layout/secondar
 import { MainBodyComponent } from './components/main-body/main-body.component';
 import { ControlMessageComponent } from './components/control-message/control-message.component';
 import { ErrorMessageComponent } from './components/error-message/error-message.component';
-import { ThirdaryLayoutComponent } from './components/thirdary-layout/thirdary-layout.component';
-import { FourthLayoutComponent } from './components/fourth-layout/fourth-layout.component';
 import { NavbarAuthComponent } from './components/navbar-auth/navbar-auth.component';
 import { DropdownUserComponent } from './components/dropdown-user/dropdown-user.component';
 import { DropdownAssignComponent } from './components/dropdown-assign/dropdown-assign.component';
@@ -35,8 +33,6 @@ const COMPONENTS = [
     MainBodyComponent,
     PrimaryLayoutComponent,
     SecondaryLayoutComponent,
-    ThirdaryLayoutComponent,
-    FourthLayoutComponent,
     ControlMessageComponent,
     ErrorMessageComponent,
     NavbarAuthComponent,

@@ -5,7 +5,8 @@ import {
     OnChanges,
     ViewChild,
     Output,
-    EventEmitter
+    EventEmitter,
+    ChangeDetectionStrategy
 } from '@angular/core';
 
 
@@ -17,7 +18,8 @@ import { Dropdown } from 'ngx-dropdown';
 @Component({
     selector: 'dropdown-assign',
     templateUrl: './dropdown-assign.component.html',
-    styleUrls: [ './dropdown-assign.component.scss' ]
+    styleUrls: [ './dropdown-assign.component.scss' ],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DropdownAssignComponent implements OnInit, OnChanges {
     @ViewChild(Dropdown) dropdown: Dropdown;

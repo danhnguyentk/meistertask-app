@@ -3,7 +3,8 @@ import {
     OnInit,
     Input,
     Output,
-    EventEmitter
+    EventEmitter,
+    ChangeDetectionStrategy
 } from '@angular/core';
 
 import * as _ from 'lodash';
@@ -19,7 +20,8 @@ import { Logger } from '../../../core/logger.service';
 @Component({
     selector: 'task-status',
     templateUrl: './task-status.component.html',
-    styleUrls: [ './task-status.component.scss' ]
+    styleUrls: [ './task-status.component.scss' ],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TaskStatusComponent implements OnInit {
     _statusValue: number;

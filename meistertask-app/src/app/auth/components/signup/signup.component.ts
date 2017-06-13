@@ -1,6 +1,7 @@
 import {
     Component,
-    OnInit
+    OnInit,
+    ChangeDetectionStrategy
 } from '@angular/core';
 import {
     FormBuilder,
@@ -29,7 +30,8 @@ import {
 @Component({
     selector: 'signup',
     templateUrl: './signup.component.html',
-    styleUrls: [ './signup.component.scss' ]
+    styleUrls: [ './signup.component.scss' ],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SignupComponent implements OnInit {
     form: FormGroup;

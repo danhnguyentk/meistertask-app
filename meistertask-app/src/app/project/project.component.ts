@@ -1,6 +1,7 @@
 import {
     Component,
-    OnInit
+    OnInit,
+    ChangeDetectionStrategy
 } from '@angular/core';
 import {
     Router,
@@ -26,7 +27,8 @@ import { AppConfig } from '../core/app-config.service';
 @Component({
     selector: 'project',
     templateUrl: './project.component.html',
-    styleUrls: [ './project.component.scss' ]
+    styleUrls: [ './project.component.scss' ],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProjectComponent implements OnInit {
     projectId: number;

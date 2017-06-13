@@ -3,7 +3,8 @@ import {
     OnInit,
     Input,
     Output,
-    EventEmitter
+    EventEmitter,
+    ChangeDetectionStrategy
 } from '@angular/core';
 
 import { User } from '../../../auth/models/user';
@@ -11,7 +12,8 @@ import { User } from '../../../auth/models/user';
 @Component({
   selector: 'dropdown-user',
   templateUrl: './dropdown-user.component.html',
-  styleUrls: [ './dropdown-user.component.scss' ]
+  styleUrls: [ './dropdown-user.component.scss' ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DropdownUserComponent implements OnInit {
     @Input() user: User;

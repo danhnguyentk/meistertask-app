@@ -1,6 +1,7 @@
 import {
   Component,
-  OnInit
+  OnInit,
+  ChangeDetectionStrategy
 } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -16,7 +17,8 @@ import { AppConfig } from '../../../core/app-config.service';
 @Component({
     selector: 'main-header',
     templateUrl: './main-header.component.html',
-    styleUrls: [ './main-header.component.scss' ]
+    styleUrls: [ './main-header.component.scss' ],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MainHeaderComponent implements OnInit {
     user$: Observable<User>;

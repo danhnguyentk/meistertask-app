@@ -4,7 +4,8 @@ import {
     ViewChild,
     EventEmitter,
     Output,
-    Input
+    Input,
+    ChangeDetectionStrategy
 } from '@angular/core';
 
 import {
@@ -21,7 +22,8 @@ import { Task } from '../../../project/models/task';
 @Component({
     selector: 'search-task-modal',
     templateUrl: './search-task-modal.component.html',
-    styleUrls: ['./search-task-modal.component.scss']
+    styleUrls: ['./search-task-modal.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SearchTaskModalComponent implements OnInit {
     form: FormGroup;

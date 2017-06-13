@@ -1,6 +1,7 @@
 import {
     Component,
-    OnInit
+    OnInit,
+    ChangeDetectionStrategy
 } from '@angular/core';
 import {
     Router,
@@ -16,7 +17,8 @@ import { AppState } from './interface';
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
-    styleUrls: [ './app.component.css' ]
+    styleUrls: [ './app.component.css' ],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent implements OnInit {
     constructor(

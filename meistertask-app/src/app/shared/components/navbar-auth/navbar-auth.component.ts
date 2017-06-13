@@ -1,6 +1,7 @@
 import {
   Component,
-  OnInit
+  OnInit,
+  ChangeDetectionStrategy
 } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -16,7 +17,8 @@ import { AppConfig } from '../../../core/app-config.service';
 @Component({
     selector: 'navbar-auth',
     templateUrl: './navbar-auth.component.html',
-    styleUrls: [ './navbar-auth.component.scss' ]
+    styleUrls: [ './navbar-auth.component.scss' ],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NavbarAuthComponent implements OnInit {
     user$: Observable<User>;

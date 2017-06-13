@@ -1,6 +1,7 @@
 import {
     Component,
-    OnInit
+    OnInit,
+    ChangeDetectionStrategy
 } from '@angular/core';
 import {
     FormBuilder,
@@ -31,7 +32,8 @@ import { getErrorLogin } from '../../../shared/reducers/error.selectors';
 @Component({
     selector: 'login',
     templateUrl: './login.component.html',
-    styleUrls: [ './login.component.scss' ]
+    styleUrls: [ './login.component.scss' ],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginComponent implements OnInit {
     form: FormGroup;

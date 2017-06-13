@@ -3,7 +3,8 @@ import {
     OnInit,
     Output,
     Input,
-    EventEmitter
+    EventEmitter,
+    ChangeDetectionStrategy
 } from '@angular/core';
 
 import { Store } from '@ngrx/store';
@@ -14,7 +15,8 @@ import { AppState } from '../../../interface';
 @Component({
     selector: 'project-detail',
     templateUrl: './project-detail.component.html',
-    styleUrls: [ './project-detail.component.scss' ]
+    styleUrls: [ './project-detail.component.scss' ],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProjectDetailComponent implements OnInit {
     @Input() taskList: Task[];

@@ -3,7 +3,8 @@ import {
     OnInit,
     Input,
     Output,
-    EventEmitter
+    EventEmitter,
+    ChangeDetectionStrategy
 } from '@angular/core';
 
 import { Project } from '../../models/project';
@@ -11,7 +12,8 @@ import { Project } from '../../models/project';
 @Component({
     selector: 'project-list',
     templateUrl: './project-list.component.html',
-    styleUrls: [ './project-list.component.scss' ]
+    styleUrls: [ './project-list.component.scss' ],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProjectListComponent implements OnInit {
     @Input() projectList: Project[];
