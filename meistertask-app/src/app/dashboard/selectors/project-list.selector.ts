@@ -20,7 +20,3 @@ export function getErrorMessage(state: AppState): ErrorMessage {
 export function getProjectSelected(state: AppState): Project {
     return _.find(state.project.projectList, { id: state.project.projectIdSelected });
 }
-
-export function getIsLoading(state: AppState): boolean {
-    return state.project.isLoading;
-}

@@ -25,7 +25,6 @@ import {
 } from '../project/selectors/task.selectors';
 import { getAuthUser } from '../auth/selectors/auth.selectors';
 import { User } from '../auth/models/user';
-import { getIsLoading } from './selectors/project-list.selector';
 import { getLoadingProject } from '../shared/selectors/loading.selectors';
 
 @Component({

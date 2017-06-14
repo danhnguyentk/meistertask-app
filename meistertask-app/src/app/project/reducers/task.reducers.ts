@@ -9,7 +9,7 @@ import { TaskActions } from '../actions/task.actions';
 import { TaskState } from '../models/task.state';
 import { Task } from '../models/task';
 
-const initialState: TaskState = { taskList: [], taskListByProject: [], taskListSearch: [], querySearch: '', isLoading: false };
+const initialState: TaskState = { taskList: [], taskListByProject: [], taskListSearch: [], querySearch: '' };
 
 export function taskReducer(state: TaskState = initialState, action: Action ): TaskState {
     let index: number;
@@ -17,21 +17,15 @@ export function taskReducer(state: TaskState = initialState, action: Action ): T
     let taskListByProject: Task[];
     let taskListSearch: Task[];
     let querySearch: string;
-    let isLoading: boolean;
     switch (action.type) {
 
         case TaskActions.GET_TASK_LIST_SUCCESS:
             taskList = action.payload;
             return _.assignIn({}, state, { taskList });
 
-        case TaskActions.GET_TASK_LIST_BY_PROJECT:
-            isLoading = true;
-            return _.assignIn({}, state, { isLoading });
-
         case TaskActions.GET_TASK_LIST_BY_PROJECT_SUCCESS:
             taskListByProject = action.payload;
-            isLoading = false;
-            return _.assignIn({}, state, { taskListByProject, isLoading });
+            return _.assignIn({}, state, { taskListByProject });
 
         case TaskActions.ADD_TASK_SUCCESS:
             taskListByProject = [ ...state.taskListByProject, action.payload ];
@@ -49,12 +43,7 @@ export function taskReducer(state: TaskState = initialState, action: Action ): T
             }
             return state;
 
-        case TaskActions.COMPLETE_TASK:
-            isLoading = true;
-            return _.assignIn({}, state, { isLoading });
-
         case TaskActions.COMPLETE_TASK_SUCCESS:
-            isLoading = false;
             index = _.findIndex(state.taskListByProject, { id: action.payload.id });
             taskList = _.cloneDeep(state.taskList);
             taskListByProject = _.cloneDeep(state.taskListByProject);
@@ -73,7 +62,7 @@ export function taskReducer(state: TaskState = initialState, action: Action ): T
                     ...state.taskList.slice(index + 1)
                 ];
             }
-            return _.assignIn({}, state, { taskList, taskListByProject, isLoading });
+            return _.assignIn({}, state, { taskList, taskListByProject });
 
         case TaskActions.DELETE_TASK_SUCCESS:
             taskList = _.filter(state.taskList, (task: Task) => task.id !== action.payload);

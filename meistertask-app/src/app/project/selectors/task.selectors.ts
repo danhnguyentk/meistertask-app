@@ -19,10 +19,6 @@ export function getTaskListSearch(state: AppState): Task[] {
     return state.task.taskListSearch;
 }
 
-export function getIsLoading(state: AppState): boolean {
-    return state.task.isLoading;
-}
-
 export function getTasksSearch(state: AppState): Task[] {
     const querySearch: string = state.task.querySearch;
     const projectList: Project[] = state.project.projectList;
