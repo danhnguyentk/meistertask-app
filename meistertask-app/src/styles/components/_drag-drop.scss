@@ -1,0 +1,21 @@
+.dnd-drag-start-custom {
+    opacity: 0.5;
+}
+
+.dnd-drag-over {
+    border: 2px dashed;
+}
+
+.dragHelper {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: -1000px;
+}
+
+.desc-move-task {
+    position: absolute;
+    align-self: center;
+    width: 100%;
+    text-align: center;
+}

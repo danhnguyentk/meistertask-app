@@ -28,7 +28,6 @@ const MODULES: any[] = [
     ...optionalImports,
     BrowserModule,
     CoreModule,
-    SharedModule,
     HomeModule,
     AuthModule,
     DashboardModule,

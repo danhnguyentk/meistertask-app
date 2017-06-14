@@ -36,4 +36,6 @@ export class AppConfig {
         PROJECT: '/app/project'
     };
 
+    MOVE_TASK = 'YOU JUST MOVE TASK';
+
 }

@@ -1,29 +1,8 @@
 <section class="project-detail">
   <task-status
-    class="task-open"
-    statusName="Open"
-    statusValue="1"
-    [tasks]="taskList | filterTask:1"
-    (changeTaskStatus)="onChangeTaskStatus($event)"
-    (addTask)="onAddTask($event)"
-    (completeTask)="onCompleteTask($event)"
-    (removeTask)="onRemoveTask($event)"
-  ></task-status>
-  <task-status
-    class="task-in-progress"
-    statusName="In Progress"
-    statusValue="2"
-    [tasks]="taskList | filterTask:2"
-    (changeTaskStatus)="onChangeTaskStatus($event)"
-    (completeTask)="onCompleteTask($event)"
-    (addTask)="onAddTask($event)"
-    (removeTask)="onRemoveTask($event)"
-  ></task-status>
-  <task-status
-    class="task-done"
-    statusName="Done"
-    statusValue="3"
-    [tasks]="taskList | filterTask:3"
+    *ngFor="let state of taskStates"
+    [statusValue]="state"
+    [tasks]="taskList | filterTask:state"
     (changeTaskStatus)="onChangeTaskStatus($event)"
     (completeTask)="onCompleteTask($event)"
     (addTask)="onAddTask($event)"

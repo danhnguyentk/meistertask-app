@@ -11,6 +11,7 @@ import { Store } from '@ngrx/store';
 
 import { Task } from '../../models/task';
 import { AppState } from '../../../interface';
+import { TaskStatus } from '../../models/task-status';
 
 @Component({
     selector: 'project-detail',
@@ -24,6 +25,7 @@ export class ProjectDetailComponent implements OnInit {
     @Output() addTask: EventEmitter<Task> = new EventEmitter<Task>();
     @Output() completeTask: EventEmitter<Task> = new EventEmitter<Task>();
     @Output() removeTask: EventEmitter<Task> = new EventEmitter<Task>();
+    taskStates: number[] = [ TaskStatus.OPEN, TaskStatus.IN_PROGRESS, TaskStatus.DONE ];
 
     constructor(
         private store: Store<AppState>) { }
