@@ -82,6 +82,10 @@ see [@ngrx/store-devtools](https://github.com/ngrx/store-devtools)
 see [ngrx-store-freeze](https://www.npmjs.com/package/ngrx-store-freeze)
 > The ngrx-store-freeze is library very useful during development mode to ensure that no part of the app accidentally mutates the state. When mutation occurs, an exception will be thrown.
 
+##### ngrx-store-logger 0.1.8
+see [ngrx-store-logger](https://github.com/btroncone/ngrx-store-logger)
+> The ngrx-store-logger is library very usefull durung developing mode to logger state, action for @ngrx/store application 
+
 ##### Json-server 0.10.1
 see [json-server](https://github.com/typicode/json-server)
 > The json-server is library get a full fake REST API with zero coding in less than 30 seconds. 

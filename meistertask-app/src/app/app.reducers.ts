@@ -5,6 +5,7 @@ import {
     combineReducers,
     ActionReducer
 } from '@ngrx/store';
+import { storeLogger } from 'ngrx-store-logger';
 
 import { authReducer } from './auth/reducers/auth.reducer';
 import { projectListReducer } from './dashboard/reducers/project-list.reducer';
@@ -21,7 +22,7 @@ const reducers: any = {
     error: errorReducer,
     loading: loadingReducer
 };
-export const developmentReducer: ActionReducer<AppState> = compose(storeFreeze, combineReducers)(reducers);
+export const developmentReducer: ActionReducer<AppState> = compose(storeFreeze, storeLogger(), combineReducers)(reducers);
 export const productionReducer: ActionReducer<AppState> = combineReducers(reducers);
 
 export function reducer(state: AppState, action: Action) {

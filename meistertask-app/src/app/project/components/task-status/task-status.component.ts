@@ -10,7 +10,6 @@ import {
 
 import * as _ from 'lodash';
 import { Observable } from 'rxjs/Observable';
-import { Store } from '@ngrx/store';
 import { DragDropData } from 'ng2-dnd';
 
 import { AppState } from '../../../interface';
@@ -44,7 +43,6 @@ export class TaskStatusComponent implements OnInit {
     parentElement: HTMLElement;
 
     constructor(
-        private store: Store<AppState>,
         private taskActions: TaskActions,
         private logger: Logger,
         private elementRef: ElementRef,
