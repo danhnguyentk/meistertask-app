@@ -12,7 +12,7 @@ import * as _ from 'lodash';
 
 import { AppConfig } from './app-config.service';
 import { Logger } from './logger.service';
-import { CaseFormat } from '../helper/case-format';
+import { CaseFormat } from '../core/helper/case-format';
 
 @Injectable()
 export class HttpWrapperService {

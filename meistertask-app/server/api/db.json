@@ -47,7 +47,7 @@
       "project_id": 1496636376065,
       "id": 1497258507629,
       "date_created": "Mo/08/yyyy",
-      "is_completed": false
+      "is_completed": true
     },
     {
       "name": "jjj",
@@ -59,7 +59,7 @@
     },
     {
       "name": "ggg",
-      "status": 3,
+      "status": 2,
       "project_id": 1496636376065,
       "id": 1497258595494,
       "date_created": "Mo/09/yyyy",
@@ -67,23 +67,15 @@
     },
     {
       "name": "dddd daa",
-      "status": 3,
+      "status": 2,
       "project_id": 1496636376065,
       "id": 1497258654898,
       "date_created": "Mo/10/yyyy",
       "is_completed": true
     },
     {
-      "name": "d dadd dd",
-      "status": 2,
-      "project_id": 1496636376065,
-      "id": 1497258667111,
-      "date_created": "Mo/11/yyyy",
-      "is_completed": true
-    },
-    {
       "name": "ad ada ",
-      "status": 3,
+      "status": 2,
       "project_id": 1496636376065,
       "id": 1497258674599,
       "date_created": "Mo/11/yyyy",
@@ -99,7 +91,7 @@
     },
     {
       "name": "dinh",
-      "status": 3,
+      "status": 2,
       "project_id": 1496636376065,
       "id": 1497261057552,
       "date_created": "Mo/50/yyyy",
@@ -107,7 +99,7 @@
     },
     {
       "name": "tu danh",
-      "status": 1,
+      "status": 2,
       "project_id": 1496636376065,
       "id": 1497262422754,
       "date_created": "12/06/2017",
@@ -115,7 +107,7 @@
     },
     {
       "name": "hong",
-      "status": 1,
+      "status": 2,
       "project_id": 1496636376065,
       "id": 1497263095032,
       "date_created": "12/06/2017",
@@ -123,7 +115,7 @@
     },
     {
       "name": "d dad dad adddddddddddada dada dada ddad ad",
-      "status": 3,
+      "status": 2,
       "project_id": 1496636376065,
       "id": 1497264742308,
       "date_created": "12/06/2017",
@@ -131,7 +123,7 @@
     },
     {
       "name": "tu hooo",
-      "status": 2,
+      "status": 3,
       "project_id": 1496636376065,
       "id": 1497321929622,
       "date_created": "13/06/2017",
@@ -143,6 +135,14 @@
       "project_id": 1496636376065,
       "id": 1497323675257,
       "date_created": "13/06/2017",
+      "is_completed": false
+    },
+    {
+      "name": "g gdgd ",
+      "status": 2,
+      "project_id": 1496636376065,
+      "id": 1497437253421,
+      "date_created": "14/06/2017",
       "is_completed": false
     }
   ]
