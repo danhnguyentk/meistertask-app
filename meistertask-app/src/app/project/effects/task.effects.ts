@@ -1,3 +1,4 @@
+
 import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
@@ -83,21 +84,5 @@ export class TaskEffects {
         .map(toPayload)
         .switchMap((task: Task) => this.taskService.removeTask(task.id))
         .map((taskId: number) => this.taskActions.deleteTaskSuccess(taskId));
-
-    @Effect()
-    searchTask$ = this.actions
-        .ofType(TaskActions.SEARCH_TASKS)
-        .map(toPayload)
-        .switchMap((term: string) => this.taskService.searchTaskByTerm(term))
-        .withLatestFrom(this.store.select(getProjectList))
-        .map(([ tasks, projects ]) => {
-            this.logger.info('Task list with value: ', tasks);
-            this.logger.info('Projects list with value: ', projects);
-            _.forEach(tasks, (task: Task) => {
-                task.project = _.find(projects, { id: task.projectId });
-            });
-            this.logger.info('Task combind with project: ', tasks);
-            return this.taskActions.searchTasksSuccess(tasks);
-        });
 
 }

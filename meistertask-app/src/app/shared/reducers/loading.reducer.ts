@@ -28,6 +28,23 @@ export function loadingReducer(state: LoadingState = initialState, action: Actio
         case TaskActions.GET_TASK_LIST_BY_PROJECT_SUCCESS:
             return _.assignIn({}, state, { task: false });
 
+        case TaskActions.COMPLETE_TASK:
+            return _.assignIn({}, state, { task: true });
+
+        case TaskActions.COMPLETE_TASK_SUCCESS:
+            return _.assignIn({}, state, { task: false });
+
+        case TaskActions.DELETE_TASK:
+            return _.assignIn({}, state, { task: true });
+
+        case TaskActions.DELETE_TASK_SUCCESS:
+            return _.assignIn({}, state, { task: false });
+
+        case TaskActions.UPDATE_TASK_STATUS:
+            return _.assignIn({}, state, { task: true });
+
+        case TaskActions.UPDATE_TASK_STATUS_SUCCESS:
+            return _.assignIn({}, state, { task: false });
         default:
             return state;
     }

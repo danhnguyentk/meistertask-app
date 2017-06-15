@@ -10,6 +10,7 @@ import { ROUTES } from './app.routes';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './home/home.module';
+import { LayoutModule } from './layout/layout.module';
 import { AuthModule } from './auth/auth.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { ProjectModule } from './project/project.module';
@@ -31,7 +32,8 @@ const MODULES: any[] = [
     HomeModule,
     AuthModule,
     DashboardModule,
-    ProjectModule
+    ProjectModule,
+    LayoutModule
 ];
 
 @NgModule({

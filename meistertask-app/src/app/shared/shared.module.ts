@@ -10,11 +10,8 @@ import { HttpModule } from '@angular/http';
 import { DropdownModule } from 'ngx-dropdown';
 import { ModalModule } from 'ngx-modal';
 import { DndModule } from 'ng2-dnd';
+import { EffectsModule } from '@ngrx/effects';
 
-import { MainHeaderComponent } from './components/main-header/main-header.component';
-import { MainFooterComponent } from './components/main-footer/main-footer.component';
-import { PrimaryLayoutComponent } from './components/primary-layout/primary-layout.component';
-import { SecondaryLayoutComponent } from './components/secondary-layout/secondary-layout.component';
 import { MainBodyComponent } from './components/main-body/main-body.component';
 import { ControlMessageComponent } from './components/control-message/control-message.component';
 import { ErrorMessageComponent } from './components/error-message/error-message.component';
@@ -26,14 +23,12 @@ import { DropdownAddTaskComponent } from './components/dropdown-add-task/dropdow
 import { SearchTaskModalComponent } from './components/search-task-modal/search-task-modal.component';
 import { FocusDirective } from './directives/focus.directive';
 import { ErrorActions } from './actions/error.actions';
+import { SearchActions } from './actions/search.actions';
 import { IndicatorComponent } from './components/indicator/indicator.component';
+import { SearchEffects } from './effects/search.effects';
 
 const COMPONENTS = [
-    MainHeaderComponent,
-    MainFooterComponent,
     MainBodyComponent,
-    PrimaryLayoutComponent,
-    SecondaryLayoutComponent,
     ControlMessageComponent,
     ErrorMessageComponent,
     NavbarAuthComponent,
@@ -63,14 +58,16 @@ const DIRECTIVES = [
 ];
 
 const SERVICES = [
-    ErrorActions
+    ErrorActions,
+    SearchActions
 ];
 
 // Fixme
 @NgModule({
     imports: [
         ...COMMON_MODULES,
-        DndModule.forRoot()
+        DndModule.forRoot(),
+        EffectsModule.run(SearchEffects)
     ],
     declarations: [
         ...COMPONENTS,

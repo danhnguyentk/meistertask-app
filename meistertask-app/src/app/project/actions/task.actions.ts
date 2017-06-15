@@ -25,11 +25,6 @@ export class TaskActions {
     static DELETE_TASK: string = '[Project] DELETE_TASK';
     static DELETE_TASK_SUCCESS: string = '[Project] DELETE_TASK_SUCCESS';
     static DELETE_TASK_FAIL: string = '[Project] DELETE_TASK_FAIL';
-    static SEARCH_TASKS: string = '[Project] SEARCH_TASK';
-    static SEARCH_TASKS_SUCCESS: string = '[Project] SEARCH_TASK_SUCCESS';
-    static SEARCH_TASKS_FAIL: string = '[Project] SEARCH_TASK_FAIL';
-    static RESET_SEARCH_TASKS: string = '[Project] RESET_SEARCH_TASKS';
-    static UPDATE_QUERY_SEARCH: string = '[Project] UPDATE_QUERY_SEARCH';
 
     getTaskList(): Action {
         return {
@@ -157,30 +152,4 @@ export class TaskActions {
         };
     }
 
-    searchTasks(term: string): Action {
-        return {
-            type: TaskActions.SEARCH_TASKS,
-            payload: term
-        };
-    }
-
-    searchTasksSuccess(tasks: Task[]): Action {
-        return {
-            type: TaskActions.SEARCH_TASKS_SUCCESS,
-            payload: tasks
-        };
-    }
-
-    resetSearchTasks(): Action {
-        return {
-            type: TaskActions.RESET_SEARCH_TASKS
-        };
-    }
-
-    updateQuerySearch(querySearch: string): Action {
-        return {
-            type: TaskActions.UPDATE_QUERY_SEARCH,
-            payload: querySearch
-        };
-    }
 }

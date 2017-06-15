@@ -12,6 +12,7 @@ import { projectListReducer } from './dashboard/reducers/project-list.reducer';
 import { taskReducer } from './project/reducers/task.reducers';
 import { errorReducer } from './shared/reducers/error.reducer';
 import { loadingReducer } from './shared/reducers/loading.reducer';
+import { searchReducer } from './shared/reducers/search.reducers';
 import { AppState } from './interface';
 import { environment } from '../environments/environment';
 
@@ -20,7 +21,8 @@ const reducers: any = {
     project: projectListReducer,
     task: taskReducer,
     error: errorReducer,
-    loading: loadingReducer
+    loading: loadingReducer,
+    search: searchReducer
 };
 export const developmentReducer: ActionReducer<AppState> = compose(storeFreeze, storeLogger(), combineReducers)(reducers);
 export const productionReducer: ActionReducer<AppState> = combineReducers(reducers);

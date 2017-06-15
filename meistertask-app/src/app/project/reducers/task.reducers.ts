@@ -9,7 +9,7 @@ import { TaskActions } from '../actions/task.actions';
 import { TaskState } from '../models/task.state';
 import { Task } from '../models/task';
 
-const initialState: TaskState = { taskList: [], taskListByProject: [], taskListSearch: [], querySearch: '' };
+const initialState: TaskState = { taskList: [], taskListByProject: [], taskListSearch: [] };
 
 export function taskReducer(state: TaskState = initialState, action: Action ): TaskState {
     let index: number;
@@ -68,19 +68,6 @@ export function taskReducer(state: TaskState = initialState, action: Action ): T
             taskList = _.filter(state.taskList, (task: Task) => task.id !== action.payload);
             taskListByProject = _.filter(state.taskListByProject, (task: Task) => task.id !== action.payload);
             return _.assignIn({}, state, { taskListByProject, taskList });
-
-        case TaskActions.SEARCH_TASKS_SUCCESS:
-            taskListSearch = action.payload;
-            return _.assignIn({}, state, { taskListSearch });
-
-        case TaskActions.RESET_SEARCH_TASKS:
-            taskListSearch = [];
-            querySearch = '';
-            return _.assignIn({}, state, { taskListSearch, querySearch });
-
-        case TaskActions.UPDATE_QUERY_SEARCH:
-            querySearch = action.payload;
-            return _.assignIn({}, state, { querySearch });
 
         default:
             return state;

@@ -18,11 +18,9 @@ import { Project } from './models/project';
 import { AppConfig } from '../core/app-config.service';
 import { Task } from '../project/models/task';
 import { TaskActions } from '../project/actions/task.actions';
+import { SearchActions } from '../shared/actions/search.actions';
 import { AuthActions } from '../auth/actions/auth.actions';
-import {
-    getTaskListSearch,
-    getTasksSearch
-} from '../project/selectors/task.selectors';
+import { getTasksSearch } from '../shared/selectors/search.selectors';
 import { getAuthUser } from '../auth/selectors/auth.selectors';
 import { User } from '../auth/models/user';
 import { getLoadingProject } from '../shared/selectors/loading.selectors';
@@ -44,7 +42,8 @@ export class DashboardComponent implements OnInit {
         private store: Store<AppState>,
         private appConfig: AppConfig,
         private router: Router,
-        private authActions: AuthActions
+        private authActions: AuthActions,
+        private searchActions: SearchActions
     ) { }
 
     ngOnInit() {
@@ -78,11 +77,12 @@ export class DashboardComponent implements OnInit {
     }
 
     onSearchTask(term: string) {
-        this.store.dispatch(this.taskActions.updateQuerySearch(term));
+        this.store.dispatch(this.searchActions.searchTasks(term));
+        this.store.dispatch(this.searchActions.updateQuerySearch(term));
     }
 
     onResetSearchTask() {
-        this.store.dispatch(this.taskActions.resetSearchTasks());
+        this.store.dispatch(this.searchActions.resetSearchTasks());
     }
 
     onCompleteTask(task: Task) {
