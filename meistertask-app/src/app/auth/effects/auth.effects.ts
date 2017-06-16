@@ -10,9 +10,9 @@ import {
 
 import { AuthActions } from '../actions/auth.actions';
 import { User } from '../models/user';
-import { ErrorMessage } from '../../shared/models/error-message.model';
+import { ErrorMessage } from '../../core/shared/models/error-message.model';
 import { AuthService } from '../services/auth.service';
-import { ErrorActions } from '../../shared/actions/error.actions';
+import { ErrorActions } from '../../core/shared/actions/error.actions';
 
 @Injectable()
 export class AuthEffects {

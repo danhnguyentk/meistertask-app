@@ -10,6 +10,6 @@
   (completeTask)="onCompleteTask($event)"
   (removeTask)="onRemoveTask($event)"
 ></project-detail>
-<indicator
+<loading-indicator
   [show]="isLoadingTaskByProject$ | async"
-></indicator>
+></loading-indicator>

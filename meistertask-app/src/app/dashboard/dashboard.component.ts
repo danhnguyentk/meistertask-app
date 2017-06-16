@@ -15,15 +15,15 @@ import {
     getErrorMessage
 } from './selectors/project-list.selector';
 import { Project } from './models/project';
-import { AppConfig } from '../core/app-config.service';
+import { AppConfig } from '../core/shared/services/app-config.service';
 import { Task } from '../project/models/task';
 import { TaskActions } from '../project/actions/task.actions';
-import { SearchActions } from '../shared/actions/search.actions';
+import { SearchActions } from '../core/search-task-modal/actions/search.actions';
 import { AuthActions } from '../auth/actions/auth.actions';
-import { getTasksSearch } from '../shared/selectors/search.selectors';
+import { getTasksSearch } from '../core/search-task-modal/selectors/search.selectors';
 import { getAuthUser } from '../auth/selectors/auth.selectors';
 import { User } from '../auth/models/user';
-import { getLoadingProject } from '../shared/selectors/loading.selectors';
+import { getLoadingProject } from '../core/loading-indicator/selectors/loading.selectors';
 
 @Component({
     selector: 'dashboard',

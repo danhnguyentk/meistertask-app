@@ -16,11 +16,11 @@ import {
 import * as _ from 'lodash';
 import { Dropdown } from 'ngx-dropdown';
 
-import { Logger } from '../../../core/logger.service';
+import { Logger } from '../../../core/shared/services/logger.service';
 import { Project } from '../../models/project';
 import { Task } from '../../../project/models/task';
 import { User } from '../../../auth/models/user';
-import { SearchTaskModalComponent } from '../../../shared/components/search-task-modal/search-task-modal.component';
+import { SearchTaskModalComponent } from '../../../core/search-task-modal/components/search-task-modal/search-task-modal.component';
 
 @Component({
     selector: 'dashboard-header',

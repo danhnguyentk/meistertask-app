@@ -35,7 +35,7 @@
   "task": [
     {
       "name": "danh tu",
-      "status": 3,
+      "status": 1,
       "project_id": 1496636376065,
       "id": 1497258135208,
       "date_created": "Mo/02/yyyy",
@@ -75,7 +75,7 @@
     },
     {
       "name": "tu",
-      "status": 1,
+      "status": 2,
       "project_id": 1496636376065,
       "id": 1497261051864,
       "date_created": "Mo/50/yyyy",
@@ -83,7 +83,7 @@
     },
     {
       "name": "dinh",
-      "status": 3,
+      "status": 2,
       "project_id": 1496636376065,
       "id": 1497261057552,
       "date_created": "Mo/50/yyyy",
@@ -91,7 +91,7 @@
     },
     {
       "name": "tu danh",
-      "status": 2,
+      "status": 1,
       "project_id": 1496636376065,
       "id": 1497262422754,
       "date_created": "12/06/2017",
@@ -103,11 +103,11 @@
       "project_id": 1496636376065,
       "id": 1497264742308,
       "date_created": "12/06/2017",
-      "is_completed": false
+      "is_completed": true
     },
     {
       "name": "tu hooo",
-      "status": 3,
+      "status": 2,
       "project_id": 1496636376065,
       "id": 1497321929622,
       "date_created": "13/06/2017",
@@ -115,7 +115,7 @@
     },
     {
       "name": "dad dad dad",
-      "status": 3,
+      "status": 1,
       "project_id": 1496636376065,
       "id": 1497323675257,
       "date_created": "13/06/2017",
@@ -123,7 +123,7 @@
     },
     {
       "name": "g gdgd ",
-      "status": 3,
+      "status": 2,
       "project_id": 1496636376065,
       "id": 1497437253421,
       "date_created": "14/06/2017",

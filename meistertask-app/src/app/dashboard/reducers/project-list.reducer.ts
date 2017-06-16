@@ -7,7 +7,7 @@ import * as _ from 'lodash';
 
 import { ProjectListActions } from '../actions/project-list.actions';
 import { ProjectListState } from '../models/project-list.state';
-import { ErrorMessage } from '../../shared/models/error-message.model';
+import { ErrorMessage } from '../../core/shared/models/error-message.model';
 
 const initialState: ProjectListState = { projectList: [], errorMessage: null, projectIdSelected: null };
 

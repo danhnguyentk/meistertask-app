@@ -16,9 +16,9 @@ import { TaskActions } from '../actions/task.actions';
 import { ProjectListActions } from '../../dashboard/actions/project-list.actions';
 import { Task } from '../models/task';
 import { Project } from '../../dashboard/models/project';
-import { ErrorMessage } from '../../shared/models/error-message.model';
+import { ErrorMessage } from '../../core/shared/models/error-message.model';
 import { TaskService } from '../services/task.service';
-import { Logger } from '../../core/logger.service';
+import { Logger } from '../../core/shared/services/logger.service';
 import { getProjectList } from '../../dashboard/selectors/project-list.selector';
 
 @Injectable()

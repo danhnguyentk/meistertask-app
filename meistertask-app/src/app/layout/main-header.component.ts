@@ -12,7 +12,7 @@ import { AppState } from '../interface';
 import { getAuthUser } from '../auth/selectors/auth.selectors';
 import { User } from '../auth/models/user';
 import { AuthActions } from '../auth/actions/auth.actions';
-import { AppConfig } from '../core/app-config.service';
+import { AppConfig } from '../core/shared/services/app-config.service';
 
 @Component({
     selector: 'main-header',

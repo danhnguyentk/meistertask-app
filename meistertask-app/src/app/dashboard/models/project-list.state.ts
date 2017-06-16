@@ -1,5 +1,5 @@
 import { Project } from '../models/project';
-import { ErrorMessage } from '../../shared/models/error-message.model';
+import { ErrorMessage } from '../../core/shared/models/error-message.model';
 
 export interface ProjectListState {
     projectList: Project[];

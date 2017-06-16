@@ -16,8 +16,8 @@ import { AppState } from '../../../interface';
 import { Task } from '../../models/task';
 import { TaskStatus } from '../../models/task-status';
 import { TaskActions } from '../../actions/task.actions';
-import { Logger } from '../../../core/logger.service';
-import { AppConfig } from '../../../core/app-config.service';
+import { Logger } from '../../../core/shared/services/logger.service';
+import { AppConfig } from '../../../core/shared/services/app-config.service';
 
 @Component({
     selector: 'task-status',

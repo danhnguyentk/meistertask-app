@@ -11,7 +11,7 @@ import * as _ from 'lodash';
 
 import { ProjectListActions } from '../actions/project-list.actions';
 import { Project } from '../models/project';
-import { ErrorMessage } from '../../shared/models/error-message.model';
+import { ErrorMessage } from '../../core/shared/models/error-message.model';
 import { ProjectService } from '../services/project.service';
 import { TaskService } from '../../project/services/task.service';
 import { Task } from '../../project/models/task';

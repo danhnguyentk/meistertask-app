@@ -4,7 +4,7 @@ import { PrimaryLayoutComponent } from './primary-layout.component';
 import { SecondaryLayoutComponent } from './secondary-layout.component';
 import { MainFooterComponent } from './main-footer.component';
 import { MainHeaderComponent } from './main-header.component';
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../core/shared/shared.module';
 
 const COMPONENTS: any[] = [
     MainFooterComponent,

@@ -3,7 +3,10 @@ import { NgModule } from '@angular/core';
 import { EffectsModule } from '@ngrx/effects';
 
 import { DashboardComponent } from './dashboard.component';
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../core/shared/shared.module';
+import { LoadingIndicatorModule } from '../core/loading-indicator/loading-indicator.module';
+import { SearchTaskModalModule } from '../core/search-task-modal/search-task-modal.module';
+import { FormModule } from '../core/form/form.module';
 import { ProjectListEffects } from './effects/project-list.effects';
 import { ProjectListActions } from './actions/project-list.actions';
 import { ProjectService } from './services/project.service';
@@ -20,7 +23,10 @@ const COMPONENTS: any[] = [
 
 const MODULES: any[] = [
     EffectsModule.run(ProjectListEffects),
-    SharedModule
+    SharedModule,
+    FormModule,
+    SearchTaskModalModule,
+    LoadingIndicatorModule
 ];
 
 const SERVICES: any[] = [

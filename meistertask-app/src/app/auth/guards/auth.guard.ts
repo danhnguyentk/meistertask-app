@@ -9,8 +9,8 @@ import {
 import { Observable } from 'rxjs/Observable';
 
 import { User } from '../models/user';
-import { AppConfig } from '../../core/app-config.service';
-import { LocalStorageService } from '../../core/local-storage.service';
+import { AppConfig } from '../../core/shared/services/app-config.service';
+import { LocalStorageService } from '../../core/shared/services/local-storage.service';
 import { AuthService } from '../services/auth.service';
 
 @Injectable()

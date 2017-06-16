@@ -2,7 +2,7 @@ import * as _ from 'lodash';
 
 import { AppState } from '../../interface';
 import { ProjectListState } from '../models/project-list.state';
-import { ErrorMessage } from '../../shared/models/error-message.model';
+import { ErrorMessage } from '../../core/shared/models/error-message.model';
 import { Project } from '../models/project';
 
 export function getProject(state: AppState): ProjectListState {

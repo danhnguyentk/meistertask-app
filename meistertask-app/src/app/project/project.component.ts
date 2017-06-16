@@ -20,10 +20,10 @@ import { getProjectList } from '../dashboard/selectors/project-list.selector';
 import { Task } from './models/task';
 import { Project } from '../dashboard/models/project';
 import { TaskStatus } from './models/task-status';
-import { Logger } from '../core/logger.service';
+import { Logger } from '../core/shared/services/logger.service';
 import { getProjectSelected } from '../dashboard/selectors/project-list.selector';
-import { AppConfig } from '../core/app-config.service';
-import { getLoadingTask } from '../shared/selectors/loading.selectors';
+import { AppConfig } from '../core/shared/services/app-config.service';
+import { getLoadingTask } from '../core/loading-indicator/selectors/loading.selectors';
 
 @Component({
     selector: 'project',

@@ -1,6 +1,6 @@
 import { AppState } from '../../interface';
 import { AuthState } from '../models/auth.state';
-import { ErrorMessage } from '../../shared/models/error-message.model';
+import { ErrorMessage } from '../../core/shared/models/error-message.model';
 import { User } from '../models/user';
 
 export function getAuth(state: AppState): AuthState {

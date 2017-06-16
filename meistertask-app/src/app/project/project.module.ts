@@ -2,7 +2,10 @@ import { NgModule } from '@angular/core';
 
 import { EffectsModule } from '@ngrx/effects';
 
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../core/shared/shared.module';
+import { LoadingIndicatorModule } from '../core/loading-indicator/loading-indicator.module';
+import { SearchTaskModalModule } from '../core/search-task-modal/search-task-modal.module';
+import { FormModule } from '../core/form/form.module';
 import { ProjectComponent } from './project.component';
 import { TaskStatusComponent } from './components/task-status/task-status.component';
 import { TaskEffects } from './effects/task.effects';
@@ -14,6 +17,9 @@ import { ProjectDetailComponent } from './components/project-detail/project-deta
 
 const MODULES: any[] = [
     SharedModule,
+    FormModule,
+    SearchTaskModalModule,
+    LoadingIndicatorModule,
     EffectsModule.run(TaskEffects)
 ];
 
