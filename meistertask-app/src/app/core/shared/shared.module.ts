@@ -13,8 +13,6 @@ import { DndModule } from 'ng2-dnd';
 
 import { DropdownAssignComponent } from './components/dropdown-assign/dropdown-assign.component';
 import { DropdownAddTaskComponent } from './components/dropdown-add-task/dropdown-add-task.component';
-import { DropdownUserComponent } from './components/dropdown-user/dropdown-user.component';
-import { NavbarAuthComponent } from './components/navbar-auth/navbar-auth.component';
 import { AppConfig } from './services/app-config.service';
 import { HttpWrapperService } from './services/http-wrapper.service';
 import { LocalStorageService } from './services/local-storage.service';
@@ -46,9 +44,7 @@ const DIRECTIVES = [
 
 const COMPONENTS: any[] = [
     DropdownAssignComponent,
-    DropdownAddTaskComponent,
-    DropdownUserComponent,
-    NavbarAuthComponent
+    DropdownAddTaskComponent
 ];
 
 const SERVICES: any[] = [

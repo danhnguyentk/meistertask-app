@@ -50,7 +50,6 @@ export class TaskStatusComponent implements OnInit {
     }
 
     @Input() set statusValue(value) {
-        console.log(value);
         this._statusValue = +value;
         this.statusName = _.upperCase(TaskStatus[this._statusValue]);
         this.className = this.getClass(this._statusValue);
@@ -63,7 +62,6 @@ export class TaskStatusComponent implements OnInit {
 
    ngOnInit() {
         this.parentElement = this.elementRef.nativeElement.querySelector('.task-list');
-        console.log(this.parentElement);
     }
 
     /**
@@ -154,12 +152,12 @@ export class TaskStatusComponent implements OnInit {
      * Add class when drag element
      */
     dragStart(event: any) {
-        event.mouseEvent.target.classList.add('dnd-drag-start-custom')
+        event.mouseEvent.target.classList.add('dnd-drag-start-custom');
         this.setDragImage(event.mouseEvent);
     }
 
     dragEnd(event: any) {
-        event.mouseEvent.target.classList.remove('dnd-drag-start-custom')
+        event.mouseEvent.target.classList.remove('dnd-drag-start-custom');
         this.removeDragImage();
     }
 

@@ -1,20 +1,22 @@
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 import { PrimaryLayoutComponent } from './primary-layout.component';
 import { SecondaryLayoutComponent } from './secondary-layout.component';
-import { MainFooterComponent } from './main-footer.component';
-import { MainHeaderComponent } from './main-header.component';
-import { SharedModule } from '../core/shared/shared.module';
+import { MainHeaderModule } from '../main-header/main-header.module';
+import { MainFooterModule } from '../main-footer/main-footer.module';
 
 const COMPONENTS: any[] = [
-    MainFooterComponent,
-    MainHeaderComponent,
     PrimaryLayoutComponent,
     SecondaryLayoutComponent
 ];
 
 const MODULES: any[] = [
-    SharedModule
+    CommonModule,
+    RouterModule,
+    MainHeaderModule,
+    MainFooterModule
 ];
 
 const SERVICES: any[] = [

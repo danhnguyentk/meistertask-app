@@ -52,7 +52,6 @@ export class ProjectPanelComponent implements OnInit, OnDestroy {
     openModal() {
         this.modal.open();
         // document.querySelector('.modal-backdrop').classList.remove('modal-backdrop');
-        // console.log(document.getElementsByClassName("modal-backdrop"));
     }
 
     buildForm() {

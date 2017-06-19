@@ -38,7 +38,6 @@ export class ProjectListEffects {
                         // Get number task active
                         project.numberTaskActive = _.countBy(taskList, { projectId: project.id })['true'] || 0;
                         // Get number task completed]
-                        console.log(_.countBy(taskList, { projectId: project.id, idCompleted: true }));
                         project.numberTaskCompleted = _.countBy(taskList, { projectId: project.id, isCompleted: true })['true'] || 0;
                     });
                     return projectList;

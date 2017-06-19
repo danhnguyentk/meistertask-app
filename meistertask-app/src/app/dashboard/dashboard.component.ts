@@ -86,7 +86,6 @@ export class DashboardComponent implements OnInit {
     }
 
     onCompleteTask(task: Task) {
-        console.log('sss');
         this.store.dispatch(this.taskActions.completeTask(task));
     }
 

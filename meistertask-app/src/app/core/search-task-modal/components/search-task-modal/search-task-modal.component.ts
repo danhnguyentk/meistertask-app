@@ -63,7 +63,6 @@ export class SearchTaskModalComponent implements OnInit {
     }
 
     onCompleteTask(task: Task) {
-        console.log(task);
         this.completeTask.emit(task);
     }
 

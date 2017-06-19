@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { EffectsModule } from '@ngrx/effects';
 
 import { SharedModule } from '../core/shared/shared.module';
+import { MainHeaderModule } from '../core/main-header/main-header.module';
 import { LoadingIndicatorModule } from '../core/loading-indicator/loading-indicator.module';
 import { SearchTaskModalModule } from '../core/search-task-modal/search-task-modal.module';
 import { FormModule } from '../core/form/form.module';
@@ -17,6 +18,7 @@ import { ProjectDetailComponent } from './components/project-detail/project-deta
 
 const MODULES: any[] = [
     SharedModule,
+    MainHeaderModule,
     FormModule,
     SearchTaskModalModule,
     LoadingIndicatorModule,
