@@ -4,8 +4,8 @@ import { EffectsModule } from '@ngrx/effects';
 
 import { SharedModule } from '../core/shared/shared.module';
 import { FormModule } from '../core/form/form.module';
-import { LoginComponent } from './components/login/login.component';
-import { SignupComponent } from './components/signup/signup.component';
+import { LoginComponent } from './login.component';
+import { SignupComponent } from './signup.component';
 import { AuthService } from './services/auth.service';
 import { AuthEffects } from './effects/auth.effects';
 import { AuthActions } from './actions/auth.actions';

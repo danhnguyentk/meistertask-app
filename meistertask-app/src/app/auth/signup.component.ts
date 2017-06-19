@@ -14,28 +14,26 @@ import * as _ from 'lodash';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 
-import { AuthService } from '../../services/auth.service';
-import { CustomValidator } from '../../../core/shared/services/custom-validator.service';
-import { AppState } from '../../../interface';
-import { AuthActions } from '../../actions/auth.actions';
-import { User } from '../../models/user';
-import { ErrorMessage } from '../../../core/shared/models/error-message.model';
-import { AppConfig } from '../../../core/shared/services/app-config.service';
+import { AuthService } from './services/auth.service';
+import { CustomValidator } from '../core/shared/services/custom-validator.service';
+import { AppState } from '../interface';
+import { AuthActions } from './actions/auth.actions';
+import { User } from './models/user';
+import { ErrorMessage } from '../core/shared/models/error-message.model';
+import { AppConfig } from '../core/shared/services/app-config.service';
 import {
     getAuthStatus,
     getAuthErrorMessage,
     getAuthUser
-} from '../../selectors/auth.selectors';
-import { ErrorActions } from '../../../core/shared/actions/error.actions';
-import { getErrorLogin } from '../../../core/shared/selectors/error.selectors';
+} from './selectors/auth.selectors';
 
 @Component({
-    selector: 'login',
-    templateUrl: './login.component.html',
-    styleUrls: [ './login.component.scss' ],
+    selector: 'signup',
+    templateUrl: './signup.component.html',
+    styleUrls: [ './signup.component.scss' ],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LoginComponent implements OnInit {
+export class SignupComponent implements OnInit {
     form: FormGroup;
     errorMessage$: Observable<ErrorMessage>;
     user$: Observable<User>;
@@ -47,12 +45,11 @@ export class LoginComponent implements OnInit {
         private router: Router,
         private customValidator: CustomValidator,
         private authService: AuthService,
-        private appConfig: AppConfig,
-        private errorActions: ErrorActions
+        private appConfig: AppConfig
     ) { }
 
     ngOnInit() {
-        this.errorMessage$ = this.store.select(getErrorLogin);
+        this.errorMessage$ = this.store.select(getAuthErrorMessage);
         this.user$ = this.store.select(getAuthUser);
         this.redirectPage();
         this.buildForm();
@@ -60,6 +57,7 @@ export class LoginComponent implements OnInit {
 
     buildForm() {
         this.form = this.fb.group({
+            workName: [ '', Validators.required ],
             email: [ '', [
                 Validators.required,
                 this.customValidator.validateEmail()
@@ -68,12 +66,11 @@ export class LoginComponent implements OnInit {
         });
     }
 
-    login() {
+    signup() {
         if (!this.form.valid) {
             return;
         }
-        const user: User = _.assignIn({}, this.form.value);
-        this.store.dispatch(this.authActions.login(user));
+        this.store.dispatch(this.authActions.signup(this.form.value));
     }
 
     /**
