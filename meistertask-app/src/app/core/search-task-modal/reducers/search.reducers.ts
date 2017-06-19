@@ -7,7 +7,7 @@ import * as _ from 'lodash';
 
 import { SearchActions } from '../actions/search.actions';
 import { SearchState } from '../models/search.state';
-import { Task } from '../../../project/models/task';
+import { Task } from '../../../task/models/task';
 
 const initialState: SearchState = { results: [], query: '' };
 

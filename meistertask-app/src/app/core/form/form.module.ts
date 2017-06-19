@@ -6,6 +6,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { SharedModule } from '../shared/shared.module';
 import { ErrorMessageComponent } from './components/error-message/error-message.component';
 import { ControlMessageComponent } from './components/control-message/control-message.component';
+import { FocusDirective } from './directives/focus.directive';
 
 const COMPONENTS: any[] = [
     ErrorMessageComponent,
@@ -17,6 +18,10 @@ const MODULES: any[] = [
     SharedModule
 ];
 
+const DIRECTIVES: any[] = [
+    FocusDirective
+];
+
 const SERVICES: any[] = [
 ];
 
@@ -25,13 +30,15 @@ const SERVICES: any[] = [
         ...MODULES
     ],
     declarations: [
-        ...COMPONENTS
+        ...COMPONENTS,
+        ...DIRECTIVES
     ],
     providers: [
         ...SERVICES
     ],
     exports: [
-        ...COMPONENTS
+        ...COMPONENTS,
+        ...DIRECTIVES
     ]
 })
 export class FormModule { }

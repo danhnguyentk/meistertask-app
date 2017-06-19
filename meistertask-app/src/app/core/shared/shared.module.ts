@@ -11,16 +11,12 @@ import { DropdownModule } from 'ngx-dropdown';
 import { ModalModule } from 'ngx-modal';
 import { DndModule } from 'ng2-dnd';
 
-import { DropdownAssignComponent } from './components/dropdown-assign/dropdown-assign.component';
-import { DropdownAddTaskComponent } from './components/dropdown-add-task/dropdown-add-task.component';
 import { AppConfig } from './services/app-config.service';
 import { HttpWrapperService } from './services/http-wrapper.service';
 import { LocalStorageService } from './services/local-storage.service';
 import { ValidationMessage } from './services/validation-message.service';
 import { CustomValidator } from './services/custom-validator.service';
 import { Logger } from './services/logger.service';
-import { FocusDirective } from './directives/focus.directive';
-import { FilterProjectPipe } from './pipes/filter-project.pipe';
 import { ErrorActions } from './actions/error.actions';
 
 
@@ -35,16 +31,12 @@ const MODULES = [
 ];
 
 const PIPES = [
-    FilterProjectPipe
 ];
 
 const DIRECTIVES = [
-    FocusDirective
 ];
 
 const COMPONENTS: any[] = [
-    DropdownAssignComponent,
-    DropdownAddTaskComponent
 ];
 
 const SERVICES: any[] = [

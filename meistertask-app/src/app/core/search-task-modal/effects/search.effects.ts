@@ -13,13 +13,13 @@ import * as _ from 'lodash';
 
 import { AppState } from '../../../interface';
 import { SearchActions } from '../actions/search.actions';
-import { ProjectListActions } from '../../../dashboard/actions/project-list.actions';
-import { Task } from '../../../project/models/task';
-import { Project } from '../../../dashboard/models/project';
+import { ProjectListActions } from '../../../project/actions/project-list.actions';
+import { Task } from '../../../task/models/task';
+import { Project } from '../../../project/models/project';
 import { ErrorMessage } from '../../../core/shared/models/error-message.model';
-import { TaskService } from '../../../project/services/task.service';
+import { TaskService } from '../../../task/services/task.service';
 import { Logger } from '../../../core/shared/services/logger.service';
-import { getProjectList } from '../../../dashboard/selectors/project-list.selector';
+import { getProjectList } from '../../../project/selectors/project-list.selector';
 
 @Injectable()
 export class SearchEffects {

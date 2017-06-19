@@ -6,8 +6,8 @@ import {
 import * as _ from 'lodash';
 
 import { LoadingState } from '../models/loading.state';
-import { ProjectListActions } from '../../../dashboard/actions/project-list.actions';
-import { TaskActions } from '../../../project/actions/task.actions';
+import { ProjectListActions } from '../../../project/actions/project-list.actions';
+import { TaskActions } from '../../../task/actions/task.actions';
 
 const initialState: LoadingState = { project: false, task: false };
 

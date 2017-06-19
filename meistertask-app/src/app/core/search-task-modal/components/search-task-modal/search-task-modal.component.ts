@@ -17,7 +17,7 @@ import {
 import { Modal } from 'ngx-modal';
 import { Observable } from 'rxjs/Observable';
 
-import { Task } from '../../../../project/models/task';
+import { Task } from '../../../../task/models/task';
 
 @Component({
     selector: 'search-task-modal',
