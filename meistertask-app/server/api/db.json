@@ -75,7 +75,7 @@
     },
     {
       "name": "tu",
-      "status": 2,
+      "status": 3,
       "project_id": 1496636376065,
       "id": 1497261051864,
       "date_created": "Mo/50/yyyy",
@@ -91,7 +91,7 @@
     },
     {
       "name": "tu danh",
-      "status": 1,
+      "status": 2,
       "project_id": 1496636376065,
       "id": 1497262422754,
       "date_created": "12/06/2017",
@@ -99,7 +99,7 @@
     },
     {
       "name": "d dad dad adddddddddddada dada dada ddad ad",
-      "status": 1,
+      "status": 2,
       "project_id": 1496636376065,
       "id": 1497264742308,
       "date_created": "12/06/2017",
@@ -115,7 +115,7 @@
     },
     {
       "name": "dad dad dad",
-      "status": 1,
+      "status": 2,
       "project_id": 1496636376065,
       "id": 1497323675257,
       "date_created": "13/06/2017",

@@ -57,7 +57,7 @@ export class ProjectComponent implements OnInit {
     }
 
     init() {
-        this.logger.info('projectId: ', this.projectId);
+        this.logger.info('ProjectId: ', this.projectId);
         this.setSelectedProject();
         this.getTaskListByProject();
         this.getProjectList();

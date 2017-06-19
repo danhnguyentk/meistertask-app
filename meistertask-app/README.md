@@ -54,7 +54,7 @@ see [ngx-dropdown](https://github.com/pleerock/ngx-dropdown)
 see [ngx-modal](https://github.com/pleerock/ngx-modal)
 > Ngx-dropdown create modal for angular2 application using bootstrap3, not depend of jquery.
 
-##### Ng2-dnd 4.1.0
+##### Ng2-dnd 2.2.2
 see [ng2-dnd](https://github.com/akserg/ng2-dnd)
 > Ng2-dnd drag and drop between elements or components
 

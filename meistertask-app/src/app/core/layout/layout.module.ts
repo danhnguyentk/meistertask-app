@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
-import { PrimaryLayoutComponent } from './primary-layout.component';
-import { SecondaryLayoutComponent } from './secondary-layout.component';
+import { PrimaryLayoutComponent } from './components/primary-layout/primary-layout.component';
+import { SecondaryLayoutComponent } from './components/secondary-layout/secondary-layout.component';
 import { MainHeaderModule } from '../main-header/main-header.module';
 import { MainFooterModule } from '../main-footer/main-footer.module';
 

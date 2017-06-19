@@ -5,7 +5,9 @@ import {
     Output,
     EventEmitter,
     ChangeDetectionStrategy,
-    ElementRef
+    ElementRef,
+    Renderer,
+    ViewContainerRef
 } from '@angular/core';
 
 import * as _ from 'lodash';
@@ -19,6 +21,10 @@ import { TaskActions } from '../../actions/task.actions';
 import { Logger } from '../../../core/shared/services/logger.service';
 import { AppConfig } from '../../../core/shared/services/app-config.service';
 
+export enum Key {
+    ENTER = 13
+}
+
 @Component({
     selector: 'task-status',
     templateUrl: './task-status.component.html',
@@ -26,16 +32,17 @@ import { AppConfig } from '../../../core/shared/services/app-config.service';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TaskStatusComponent implements OnInit {
-    _statusValue: number;
-    statusName: string;
-    className: string;
     @Input() tasks: Task;
-    dropZones: number[];
-    dragZones: number[];
     @Output() changeTaskStatus: EventEmitter<Task> = new EventEmitter<Task>();
     @Output() addTask: EventEmitter<Task> = new EventEmitter<Task>();
     @Output() completeTask: EventEmitter<Task> = new EventEmitter<Task>();
     @Output() removeTask: EventEmitter<Task> = new EventEmitter<Task>();
+
+    _statusValue: number;
+    statusName: string;
+    className: string;
+    dropZones: number[];
+    dragZones: number[];
     isShowFormTask: boolean = false;
     // Element when drag data
     dragHelper: HTMLElement;
@@ -46,7 +53,9 @@ export class TaskStatusComponent implements OnInit {
         private taskActions: TaskActions,
         private logger: Logger,
         private elementRef: ElementRef,
-        private appConfig: AppConfig) {
+        private appConfig: AppConfig,
+        private renderer: Renderer,
+        private viewContainerRef: ViewContainerRef) {
     }
 
     @Input() set statusValue(value) {
@@ -119,17 +128,17 @@ export class TaskStatusComponent implements OnInit {
     }
 
     onAddTask(event, nameTask: string) {
-        if (event.type === 'keyup' && (event.which === 13 || event.keyCode === 13)) {
+        // Check if user type Enter key, add task
+        if (event.type === 'keyup' && (event.which === Key.ENTER || event.keyCode === Key.ENTER)) {
             if (nameTask) {
                 const task: Task = { name: nameTask, status: this.statusValue };
-                this.logger.info(task);
+                this.logger.info('Add task: ', task);
                 this.addTask.emit(task);
             }
             this.isShowFormTask = false;
         } else if (event.type === 'focusout') {
             // Not execute event focusout when hiden form input from keyup
             if (nameTask && this.isShowFormTask) {
-                this.logger.info(this.isShowFormTask);
                 const task: Task = { name: nameTask, status: this.statusValue };
                 this.addTask.emit(task);
             }
@@ -137,11 +146,17 @@ export class TaskStatusComponent implements OnInit {
         }
     }
 
+    /**
+     * Completed task
+     */
     onCompleteTask(event: Event, task: Task) {
         event.stopPropagation();
         this.completeTask.emit(task);
     }
 
+    /**
+     * Remove task
+     */
     onRemoveTask(event: Event, task: Task) {
         this.logger.info('Remove task with: ', task);
         event.stopPropagation();
@@ -149,29 +164,35 @@ export class TaskStatusComponent implements OnInit {
     }
 
     /**
-     * Add class when drag element
+     * Add class and dragimage when drag start
      */
     dragStart(event: any) {
-        event.mouseEvent.target.classList.add('dnd-drag-start-custom');
+        this.renderer.setElementClass(event.mouseEvent.target, 'dnd-drag-start-custom', true);
         this.setDragImage(event.mouseEvent);
     }
 
+    /**
+     * Remove class and dragimage when drag end
+     */
     dragEnd(event: any) {
-        event.mouseEvent.target.classList.remove('dnd-drag-start-custom');
+        this.renderer.setElementClass(event.mouseEvent.target, 'dnd-drag-start-custom', false);
         this.removeDragImage();
     }
 
+    /**
+     * Set drag image from element drag
+     */
     setDragImage(event: DragEvent | any) {
+
         this.dragHelper = (event.target).cloneNode(true);
-        this.dragHelper.classList.add('dragHelper');
-        this.parentElement.appendChild(this.dragHelper);
+        this.renderer.setElementClass(this.dragHelper, 'dragHelper', true);
+        this.renderer.projectNodes(this.parentElement, [ this.dragHelper ]);
         // Add child element
-        let descMoveTask: HTMLElement = document.createElement('span');
-        descMoveTask.innerText = this.appConfig.MOVE_TASK;
-        descMoveTask.classList.add('desc-move-task');
-        this.dragHelper.appendChild(descMoveTask);
+        let descMoveTask: HTMLElement = this.renderer.createElement(this.dragHelper, 'span');
+        this.renderer.createText(descMoveTask, this.appConfig.MOVE_TASK);
         this.logger.info('Clone drag data:', this.dragHelper);
         this.logger.info('Mouse event: ', event);
+        // Set drag image at position mouse
         event.dataTransfer.setDragImage(this.dragHelper, event.offsetX, event.offsetY);
     }
 
