@@ -13,15 +13,15 @@ import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 
 import { AppState } from '../interface';
-import { TaskActions } from './actions/task.actions';
-import { ProjectListActions } from '../dashboard/actions/project-list.actions';
-import { getTaskListByProject } from './selectors/task.selectors';
-import { getProjectList } from '../dashboard/selectors/project-list.selector';
-import { Task } from './models/task';
-import { Project } from '../dashboard/models/project';
-import { TaskStatus } from './models/task-status';
+import { TaskActions } from '../task/actions/task.actions';
+import { ProjectListActions } from '../project/actions/project-list.actions';
+import { getTaskListByProject } from '../task/selectors/task.selectors';
+import { getProjectList } from '../project/selectors/project-list.selector';
+import { Task } from '../task/models/task';
+import { Project } from '../project/models/project';
+import { TaskStatus } from '../task/models/task-status';
 import { Logger } from '../core/shared/services/logger.service';
-import { getProjectSelected } from '../dashboard/selectors/project-list.selector';
+import { getProjectSelected } from '../project/selectors/project-list.selector';
 import { AppConfig } from '../core/shared/services/app-config.service';
 import { getLoadingTask } from '../core/loading-indicator/selectors/loading.selectors';
 

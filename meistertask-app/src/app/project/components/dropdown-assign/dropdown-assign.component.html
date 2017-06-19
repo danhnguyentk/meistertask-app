@@ -1,0 +1,23 @@
+<div dropdown class="dropdown dropdown-default dropdown-assign" (onClose)="onCloseDropdown()">
+  <div dropdown-open class="dropdown-open-assign">
+    <span class="project-icon"></span>
+    <span>{{ projectAssign?.nameProject }}</span>
+    <ng-container [ngPlural]="statusAssign">
+      <template ngPluralCase="=1">
+        <span class="status-icon status-open-icon"></span>
+        <span>Open</span>
+      </template>
+      <template ngPluralCase="=2">
+        <span class="status-icon status-progress-icon"></span>
+        <span>Progress</span>
+      </template>
+      <template ngPluralCase="=3">
+        <span class="status-icon status-done-icon"></span>
+        <span>Done</span>
+      </template>
+    </ng-container>
+  </div>
+  <div dropdown-not-closable-zone class="dropdown-menu dropdown-menu-default dropdown-menu-assign-project">
+    <assign-project></assign-project>
+  </div>
+</div>

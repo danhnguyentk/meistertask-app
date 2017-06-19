@@ -3,16 +3,16 @@ import {
     inject
 } from '@angular/core/testing';
 
-import { TaskService } from './task.service';
+import { ProjectService } from './project.service';
 
 describe('ProjectService', () => {
     beforeEach(() => {
         TestBed.configureTestingModule({
-            providers: [ TaskService ]
+            providers: [ ProjectService ]
         });
     });
 
-    it('should ...', inject([ TaskService ], (service: TaskService) => {
+    it('should ...', inject([ProjectService], (service: ProjectService) => {
         expect(service).toBeTruthy();
     }));
 });

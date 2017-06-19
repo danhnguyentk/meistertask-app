@@ -1,0 +1,41 @@
+<!-- Assign project content -->
+<div class="assign-project-content" *ngIf="showProjectAssign">
+  <h3 class="title">Assign Project</h3>
+  <div class="form-group form-group-search">
+    <input type="text" placeholder="Search Projects" class="search-input form-control" [(ngModel)]="searchProject">
+    <span class="close search-close" *ngIf="searchProject" (click)="resetSearchInput()">X</span>
+  </div>
+  <ul class="project-list">
+    <li class="project-item" *ngFor="let project of projectList | filterProject: searchProject"
+    (click)="onSelectProjectAssign(project)">
+      <span class="project-icon"></span>
+      <span>{{ project.nameProject }}</span>
+    </li>
+  </ul>
+</div>
+<!-- Assign section content -->
+<div class="assign-section-content" *ngIf="!showProjectAssign">
+  <h3 class="title">
+    <a href="javascript:void(0)" (click)="backAssignProject()">
+      <span class="back-sign"><</span>
+      <span>Assign Section</span>
+    </a>
+  </h3>
+  <!-- <div class="form-group">
+    <input type="text" placeholder="Search Sections" class="search-input form-control">
+  </div> -->
+  <ul class="status-list">
+    <li class="status-item" (click)="onSelectStatusAssign(1)">
+      <span class="status-open-icon"></span>
+      <span>Open</span>
+    </li>
+    <li class="status-item" (click)="onSelectStatusAssign(2)">
+      <span class="status-progress-icon"></span>
+      <span>In Progress</span>
+    </li>
+    <li class="status-item" (click)="onSelectStatusAssign(3)">
+      <span class="status-done-icon"></span>
+      <span>Done</span>
+    </li>
+  </ul>
+</div>

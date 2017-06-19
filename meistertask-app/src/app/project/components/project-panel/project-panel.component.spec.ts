@@ -4,20 +4,20 @@ import {
     TestBed
 } from '@angular/core/testing';
 
-import { TaskStatusComponent } from './task-status.component';
+import { ProjectPanelComponent } from './project-panel.component';
 
-describe('TaskStatusComponent', () => {
-    let component: TaskStatusComponent;
-    let fixture: ComponentFixture<TaskStatusComponent>;
+describe('ProjectPanelComponent', () => {
+    let component: ProjectPanelComponent;
+    let fixture: ComponentFixture<ProjectPanelComponent>;
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [ TaskStatusComponent ]
+            declarations: [ ProjectPanelComponent ]
         }).compileComponents();
     }));
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(TaskStatusComponent);
+        fixture = TestBed.createComponent(ProjectPanelComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

@@ -11,7 +11,7 @@ import {
 import { Observable } from 'rxjs/Observable';
 import { Dropdown } from 'ngx-dropdown';
 
-import { Project } from '../../../dashboard/models/project';
+import { Project } from '../../../project/models/project';
 
 @Component({
     selector: 'project-header',

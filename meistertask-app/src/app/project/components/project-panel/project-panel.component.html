@@ -1,0 +1,28 @@
+<div class="project-panel">
+  <h3 class="project-label">Projects</h3>
+  <project-list
+    [projectList]="projectList"
+    (goDetailProject)="onGoDetailProject($event)"
+  ></project-list>
+  <a class="create-project" (click)="openModal()"><i class="glyphicon glyphicon-plus-sign plus-sign"></i>Create New Project</a>
+</div>
+<modal class="modal-new-project" modalClass="modal-dialog-new-project">
+  <modal-content>
+    <h3 class="new-project-label">New Project</h3>
+    <p class="guide">Please choose a new name and description, and select the people you want to work with</p>
+    <form class="form-new-project" [formGroup]="form" (ngSubmit)="onAddProject()">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="My New Project" formControlName="nameProject">
+        <control-message [control]="form.controls.nameProject" nameControl="Name project"></control-message>
+      </div>
+      <a class="add-desc" (click)="addDesc()">Add description</a>
+      <div class="form-group" *ngIf="isShowDesc">
+        <textarea class="form-control description" rows="3" placeholder="This is optional" formControlName="descProject"></textarea>
+      </div>
+      <div class="form-new-project-action">
+        <button type="button" class="btn btn-cancel" click="closeModal()">Cancel</button>
+        <button type="submit" class="btn btn-create-project">Create Project</button>
+      </div>
+    </form>
+  </modal-content>
+</modal>

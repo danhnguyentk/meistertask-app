@@ -7,8 +7,8 @@ import {
     ChangeDetectionStrategy
 } from '@angular/core';
 
-import { Task } from '../../models/task';
-import { TaskStatus } from '../../models/task-status';
+import { Task } from '../../../task/models/task';
+import { TaskStatus } from '../../../task/models/task-status';
 
 @Component({
     selector: 'project-detail',

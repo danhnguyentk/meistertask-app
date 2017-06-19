@@ -3,42 +3,50 @@ import { NgModule } from '@angular/core';
 import { EffectsModule } from '@ngrx/effects';
 
 import { SharedModule } from '../core/shared/shared.module';
+import { TaskModule } from '../task/task.module';
 import { MainHeaderModule } from '../core/main-header/main-header.module';
 import { LoadingIndicatorModule } from '../core/loading-indicator/loading-indicator.module';
 import { SearchTaskModalModule } from '../core/search-task-modal/search-task-modal.module';
 import { FormModule } from '../core/form/form.module';
 import { ProjectComponent } from './project.component';
-import { TaskStatusComponent } from './components/task-status/task-status.component';
-import { TaskEffects } from './effects/task.effects';
-import { TaskService } from './services/task.service';
-import { TaskActions } from './actions/task.actions';
-import { FilterTaskPipe } from './pipes/filter-task.pipe';
+import { FilterProjectPipe } from './pipes/filter-project.pipe';
 import { ProjectHeaderComponent } from './components/project-header/project-header.component';
 import { ProjectDetailComponent } from './components/project-detail/project-detail.component';
+import { ProjectListComponent } from './components/project-list/project-list.component';
+import { ProjectPanelComponent } from './components/project-panel/project-panel.component';
+import { DropdownAssignComponent } from './components/dropdown-assign/dropdown-assign.component';
+import { AssignProjectComponent } from './components/assign-project/assign-project.component';
+import { ProjectListEffects } from './effects/project-list.effects';
+import { ProjectListActions } from './actions/project-list.actions';
+import { ProjectService } from './services/project.service';
 
 const MODULES: any[] = [
+    EffectsModule.run(ProjectListEffects),
     SharedModule,
     MainHeaderModule,
     FormModule,
     SearchTaskModalModule,
     LoadingIndicatorModule,
-    EffectsModule.run(TaskEffects)
+    TaskModule
 ];
 
 const COMPONENTS: any[] = [
     ProjectComponent,
-    TaskStatusComponent,
     ProjectHeaderComponent,
-    ProjectDetailComponent
+    ProjectDetailComponent,
+    ProjectListComponent,
+    ProjectPanelComponent,
+    DropdownAssignComponent,
+    AssignProjectComponent
 ];
 
 const SERVICES: any[] = [
-    TaskService,
-    TaskActions
+    ProjectService,
+    ProjectListActions
 ];
 
 const PIPES: any[] = [
-    FilterTaskPipe
+    FilterProjectPipe
 ];
 
 @NgModule({
