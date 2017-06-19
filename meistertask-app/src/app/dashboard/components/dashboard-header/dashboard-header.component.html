@@ -2,7 +2,14 @@
   <dropdown-add-task
     [projectList]="projectList"
     (addTask)="onAddTask($event)"
-  ></dropdown-add-task>
+  >
+    <add-task>
+      <dropdown-assign
+        [projectList]="projectList"
+        (closeDropdown)="showDropdownAddTask()"
+      ></dropdown-assign>
+    </add-task>
+  </dropdown-add-task>
   <a href="javascript:void(0)" (click)="openModal()"><span class="glyphicon glyphicon-search search-task"></span></a>
   <dropdown-user
     [user]="user"

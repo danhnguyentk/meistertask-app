@@ -1,6 +1,6 @@
 import { AuthState } from './auth/models/auth.state';
-import { ProjectListState } from './dashboard/models/project-list.state';
-import { TaskState } from './project/models/task.state';
+import { ProjectListState } from './project/models/project-list.state';
+import { TaskState } from './task/models/task.state';
 import { ErrorState } from './core/shared/models/error.state';
 import { LoadingState } from './core/loading-indicator/models/loading.state';
 import { SearchState } from './core/search-task-modal/models/search.state';

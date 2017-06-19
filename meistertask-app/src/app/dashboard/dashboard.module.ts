@@ -1,30 +1,24 @@
 import { NgModule } from '@angular/core';
 
-import { EffectsModule } from '@ngrx/effects';
-
 import { DashboardComponent } from './dashboard.component';
 import { SharedModule } from '../core/shared/shared.module';
 import { MainHeaderModule } from '../core/main-header/main-header.module';
 import { LoadingIndicatorModule } from '../core/loading-indicator/loading-indicator.module';
 import { SearchTaskModalModule } from '../core/search-task-modal/search-task-modal.module';
 import { FormModule } from '../core/form/form.module';
-import { ProjectListEffects } from './effects/project-list.effects';
-import { ProjectListActions } from './actions/project-list.actions';
-import { ProjectService } from './services/project.service';
-import { ProjectListComponent } from './components/project-list/project-list.component';
-import { ProjectPanelComponent } from './components/project-panel/project-panel.component';
 import { DashboardHeaderComponent } from './components/dashboard-header/dashboard-header.component';
+import { ProjectModule } from '../project/project.module';
+import { TaskModule } from '../task/task.module';
 
 const COMPONENTS: any[] = [
     DashboardComponent,
-    ProjectListComponent,
-    ProjectPanelComponent,
     DashboardHeaderComponent
 ];
 
 const MODULES: any[] = [
-    EffectsModule.run(ProjectListEffects),
     SharedModule,
+    ProjectModule,
+    TaskModule,
     MainHeaderModule,
     FormModule,
     SearchTaskModalModule,
@@ -32,8 +26,6 @@ const MODULES: any[] = [
 ];
 
 const SERVICES: any[] = [
-    ProjectService,
-    ProjectListActions
 ];
 
 @NgModule({

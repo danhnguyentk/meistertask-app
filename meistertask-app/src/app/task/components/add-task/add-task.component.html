@@ -1,0 +1,8 @@
+<form novalidate (ngSubmit)="onAddTask()" [formGroup]="formTask">
+  <h3 class="title">Add Task</h3>
+  <div class="form-group">
+    <input class="form-control add-task-input" type="textarea" placeholder="Click to add task title" formControlName="name">
+  </div>
+  <ng-content></ng-content>
+  <button type="submit" class="btn btn-create-task">Create Task</button>
+</form>

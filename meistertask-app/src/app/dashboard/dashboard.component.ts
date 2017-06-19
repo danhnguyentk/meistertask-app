@@ -8,16 +8,16 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 
-import { ProjectListActions } from './actions/project-list.actions';
+import { ProjectListActions } from '../project/actions/project-list.actions';
 import { AppState } from '../interface';
 import {
     getProjectList,
     getErrorMessage
-} from './selectors/project-list.selector';
-import { Project } from './models/project';
+} from '../project/selectors/project-list.selector';
+import { Project } from '../project/models/project';
 import { AppConfig } from '../core/shared/services/app-config.service';
-import { Task } from '../project/models/task';
-import { TaskActions } from '../project/actions/task.actions';
+import { Task } from '../task/models/task';
+import { TaskActions } from '../task/actions/task.actions';
 import { SearchActions } from '../core/search-task-modal/actions/search.actions';
 import { AuthActions } from '../auth/actions/auth.actions';
 import { getTasksSearch } from '../core/search-task-modal/selectors/search.selectors';
