@@ -2,11 +2,9 @@ import * as _ from 'lodash';
 
 import { AppState } from '../../interface';
 import { TaskState } from '../models/task.state';
-import { ErrorMessage } from '../../core/shared/models/error-message.model';
 import { Task } from '../models/task';
 import { Project } from '../../project/models/project';
 
-// FIXME: rename function
 export function getTask(state: AppState): TaskState {
     return state.task;
 }

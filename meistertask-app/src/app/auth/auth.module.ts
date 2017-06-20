@@ -12,6 +12,7 @@ import { AuthActions } from './actions/auth.actions';
 import { LoggedOutComponent } from './components/logged-out/logged-out.component';
 import { AuthGuard } from './guards/auth.guard';
 import { AuthRequiredPageGuard } from './guards/auth-required-page.guard';
+import { DropdownUserComponent } from './components/dropdown-user/dropdown-user.component';
 
 const MODULES = [
     EffectsModule.run(AuthEffects),
@@ -22,7 +23,8 @@ const MODULES = [
 const COMPONENTS = [
     LoginComponent,
     SignupComponent,
-    LoggedOutComponent
+    LoggedOutComponent,
+    DropdownUserComponent
 ];
 
 const SERVICES = [

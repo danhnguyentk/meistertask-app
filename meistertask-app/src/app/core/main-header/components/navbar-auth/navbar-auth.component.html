@@ -1,9 +1,0 @@
-<nav class="auth">
-  <ul class="auth-list">
-    <li *ngIf="!(user$ | async)"><a routerLink="/login" class="login">Log In</a></li>
-    <li *ngIf="!(user$ | async)"><a routerLink="/signup" class="signup">Sign Up</a></li>
-    <li *ngIf="user$ | async">
-      <dropdown-user [user]="user$ | async" (logout)="onLogout()"></dropdown-user>
-    </li>
-  </ul>
-</nav>

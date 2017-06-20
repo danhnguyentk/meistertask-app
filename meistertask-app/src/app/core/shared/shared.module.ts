@@ -17,8 +17,6 @@ import { LocalStorageService } from './services/local-storage.service';
 import { ValidationMessage } from './services/validation-message.service';
 import { CustomValidator } from './services/custom-validator.service';
 import { Logger } from './services/logger.service';
-import { ErrorActions } from './actions/error.actions';
-
 
 const MODULES = [
     CommonModule,
@@ -45,8 +43,7 @@ const SERVICES: any[] = [
     LocalStorageService,
     Logger,
     ValidationMessage,
-    CustomValidator,
-    ErrorActions
+    CustomValidator
 ];
 
 @NgModule({

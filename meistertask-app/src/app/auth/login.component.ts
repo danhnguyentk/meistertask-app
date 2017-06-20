@@ -19,15 +19,14 @@ import { CustomValidator } from '../core/shared/services/custom-validator.servic
 import { AppState } from '../interface';
 import { AuthActions } from './actions/auth.actions';
 import { User } from './models/user';
-import { ErrorMessage } from '../core/shared/models/error-message.model';
+import { ErrorMessage } from '../core/form/models/error-message.model';
 import { AppConfig } from '../core/shared/services/app-config.service';
 import {
     getAuthStatus,
-    getAuthErrorMessage,
     getAuthUser
 } from './selectors/auth.selectors';
-import { ErrorActions } from '../core/shared/actions/error.actions';
-import { getErrorLogin } from '../core/shared/selectors/error.selectors';
+import { ErrorActions } from '../core/form/actions/error.actions';
+import { getErrorLogin } from '../core/form/selectors/error.selectors';
 
 @Component({
     selector: 'login',

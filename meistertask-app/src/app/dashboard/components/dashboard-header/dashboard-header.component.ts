@@ -21,6 +21,8 @@ import { Project } from '../../../project/models/project';
 import { Task } from '../../../task/models/task';
 import { User } from '../../../auth/models/user';
 import { SearchTaskModalComponent } from '../../../core/search-task-modal/components/search-task-modal/search-task-modal.component';
+import { DropdownAssignComponent } from '../../../project/components/dropdown-assign/dropdown-assign.component';
+import { DropdownAddTaskComponent } from '../../../task/components/dropdown-add-task/dropdown-add-task.component';
 
 @Component({
     selector: 'dashboard-header',
@@ -30,6 +32,8 @@ import { SearchTaskModalComponent } from '../../../core/search-task-modal/compon
 })
 export class DashboardHeaderComponent implements OnInit {
     @ViewChild(SearchTaskModalComponent) searchTaskModalComponent: SearchTaskModalComponent;
+    @ViewChild(DropdownAssignComponent) dropdownAssignComponent: DropdownAssignComponent;
+    @ViewChild(DropdownAddTaskComponent) dropdownAddTaskComponent: DropdownAddTaskComponent;
 
     @Input() projectList: Project[];
     @Input() user: User;
@@ -50,10 +54,20 @@ export class DashboardHeaderComponent implements OnInit {
 
     }
 
+    /**
+     * Add task
+     */
     onAddTask(task: Task) {
+        task = _.assignIn({}, task,
+            { status: this.dropdownAssignComponent.statusAssign, projectId: this.dropdownAssignComponent.projectAssign.id });
+        this.logger.info('Add task with value: ', task);
         this.addTask.emit(task);
+        this.dropdownAddTaskComponent.dropdown.close();
     }
 
+    /**
+     * Logout page
+     */
     onLogout() {
         this.logout.emit();
     }

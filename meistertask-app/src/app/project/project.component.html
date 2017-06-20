@@ -1,6 +1,7 @@
 <project-header
   [projectList]="projectList$ | async"
   [project]="project$ | async"
+  [user]="user$ | async"
   (switchProject)="onSwitchProject($event)"
 ></project-header>
 <project-detail

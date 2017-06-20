@@ -7,7 +7,7 @@ import {
     ChangeDetectionStrategy
 } from '@angular/core';
 
-import { User } from '../../../../auth/models/user';
+import { User } from '../../models/user';
 
 @Component({
   selector: 'dropdown-user',

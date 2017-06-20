@@ -1,9 +1,6 @@
 <header class="dashboard-header">
-  <dropdown-add-task
-    [projectList]="projectList"
-    (addTask)="onAddTask($event)"
-  >
-    <add-task>
+  <dropdown-add-task>
+    <add-task (addTask)="onAddTask($event)">
       <dropdown-assign
         [projectList]="projectList"
         (closeDropdown)="showDropdownAddTask()"

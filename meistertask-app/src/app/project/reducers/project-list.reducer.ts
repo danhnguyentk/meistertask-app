@@ -7,9 +7,8 @@ import * as _ from 'lodash';
 
 import { ProjectListActions } from '../actions/project-list.actions';
 import { ProjectListState } from '../models/project-list.state';
-import { ErrorMessage } from '../../core/shared/models/error-message.model';
 
-const initialState: ProjectListState = { projectList: [], errorMessage: null, projectIdSelected: null };
+const initialState: ProjectListState = { projectList: [], projectIdSelected: null };
 
 export function projectListReducer(state: ProjectListState = initialState, action: Action ): ProjectListState {
     switch (action.type) {

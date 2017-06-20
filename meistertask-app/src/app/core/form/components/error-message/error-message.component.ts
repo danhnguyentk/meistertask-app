@@ -5,7 +5,7 @@ import {
     ChangeDetectionStrategy
 } from '@angular/core';
 
-import { ErrorMessage } from '../../../shared/models/error-message.model';
+import { ErrorMessage } from '../../../form/models/error-message.model';
 
 @Component({
     selector: 'error-message',

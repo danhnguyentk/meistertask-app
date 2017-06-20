@@ -2,17 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MainHeaderComponent } from './main-header.component';
-import { NavbarAuthComponent } from './components/navbar-auth/navbar-auth.component';
-import { DropdownUserComponent } from './components/dropdown-user/dropdown-user.component';
+import { AuthModule } from '../../auth/auth.module';
 
 const COMPONENTS: any[] = [
-    MainHeaderComponent,
-    NavbarAuthComponent,
-    DropdownUserComponent
+    MainHeaderComponent
 ];
 
 const MODULES: any[] = [
-    CommonModule
+    CommonModule,
+    AuthModule
 ];
 
 const SERVICES: any[] = [

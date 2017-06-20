@@ -24,6 +24,8 @@ import { Logger } from '../core/shared/services/logger.service';
 import { getProjectSelected } from '../project/selectors/project-list.selector';
 import { AppConfig } from '../core/shared/services/app-config.service';
 import { getLoadingTask } from '../core/loading-indicator/selectors/loading.selectors';
+import { User } from '../auth/models/user';
+import { getAuthUser } from '../auth/selectors/auth.selectors';
 
 @Component({
     selector: 'project',
@@ -37,6 +39,7 @@ export class ProjectComponent implements OnInit {
     projectList$: Observable<Project[]>;
     project$: Observable<Project>;
     isLoadingTaskByProject$: Observable<boolean>;
+    user$: Observable<User>;
 
     constructor(
         private store: Store<AppState>,
@@ -61,6 +64,7 @@ export class ProjectComponent implements OnInit {
         this.setSelectedProject();
         this.getTaskListByProject();
         this.getProjectList();
+        this.user$ = this.store.select(getAuthUser);
         this.project$ = this.store.select(getProjectSelected);
         this.taskList$ = this.store.select(getTaskListByProject);
         this.projectList$ = this.store.select(getProjectList);

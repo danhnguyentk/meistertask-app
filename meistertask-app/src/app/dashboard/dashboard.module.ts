@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 
 import { DashboardComponent } from './dashboard.component';
 import { SharedModule } from '../core/shared/shared.module';
-import { MainHeaderModule } from '../core/main-header/main-header.module';
+import { AuthModule } from '../auth/auth.module';
 import { LoadingIndicatorModule } from '../core/loading-indicator/loading-indicator.module';
 import { SearchTaskModalModule } from '../core/search-task-modal/search-task-modal.module';
 import { FormModule } from '../core/form/form.module';
@@ -19,7 +19,7 @@ const MODULES: any[] = [
     SharedModule,
     ProjectModule,
     TaskModule,
-    MainHeaderModule,
+    AuthModule,
     FormModule,
     SearchTaskModalModule,
     LoadingIndicatorModule

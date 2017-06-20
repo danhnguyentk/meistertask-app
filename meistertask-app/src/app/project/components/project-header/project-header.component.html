@@ -28,6 +28,9 @@
       <span class="number-task-active">{{ project?.numberTaskActive }}</span>
       <span class="active-label">ACTIVE</span>
     </div>
-    <navbar-auth></navbar-auth>
+    <dropdown-user
+      [user]="user"
+      (logout)="onLogout()"
+    ></dropdown-user>
   </div>
 </header>

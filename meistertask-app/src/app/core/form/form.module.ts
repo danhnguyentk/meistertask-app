@@ -7,6 +7,7 @@ import { SharedModule } from '../shared/shared.module';
 import { ErrorMessageComponent } from './components/error-message/error-message.component';
 import { ControlMessageComponent } from './components/control-message/control-message.component';
 import { FocusDirective } from './directives/focus.directive';
+import { ErrorActions } from './actions/error.actions';
 
 const COMPONENTS: any[] = [
     ErrorMessageComponent,
@@ -23,6 +24,7 @@ const DIRECTIVES: any[] = [
 ];
 
 const SERVICES: any[] = [
+    ErrorActions
 ];
 
 @NgModule({

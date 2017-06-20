@@ -1,4 +1,4 @@
-<div dropdown class="dropdown dropdown-default dropdown-assign" (onClose)="onCloseDropdown()">
+<div dropdown class="dropdown dropdown-default dropdown-assign">
   <div dropdown-open class="dropdown-open-assign">
     <span class="project-icon"></span>
     <span>{{ projectAssign?.nameProject }}</span>
@@ -18,6 +18,11 @@
     </ng-container>
   </div>
   <div dropdown-not-closable-zone class="dropdown-menu dropdown-menu-default dropdown-menu-assign-project">
-    <assign-project></assign-project>
+    <assign-project
+      [projectList]="projectList"
+      (selectProjectAssign)="onSelectProjectAssign($event)"
+      (selectStatusAssign)="onSelectStatusAssign($event)"
+      (closeDropdown)="onCloseDropdown()"
+    ></assign-project>
   </div>
 </div>

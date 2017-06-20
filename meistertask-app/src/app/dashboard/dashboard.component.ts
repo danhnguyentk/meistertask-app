@@ -10,10 +10,7 @@ import { Observable } from 'rxjs/Observable';
 
 import { ProjectListActions } from '../project/actions/project-list.actions';
 import { AppState } from '../interface';
-import {
-    getProjectList,
-    getErrorMessage
-} from '../project/selectors/project-list.selector';
+import { getProjectList } from '../project/selectors/project-list.selector';
 import { Project } from '../project/models/project';
 import { AppConfig } from '../core/shared/services/app-config.service';
 import { Task } from '../task/models/task';

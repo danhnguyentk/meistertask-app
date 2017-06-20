@@ -12,6 +12,7 @@ import { Observable } from 'rxjs/Observable';
 import { Dropdown } from 'ngx-dropdown';
 
 import { Project } from '../../../project/models/project';
+import { User } from '../../../auth/models/user';
 
 @Component({
     selector: 'project-header',
@@ -20,12 +21,14 @@ import { Project } from '../../../project/models/project';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProjectHeaderComponent implements OnInit {
+    closeDropdownMenuProject: boolean;
+    searchInput: string;
     @ViewChild(Dropdown) dropwdown: Dropdown;
     @Input() projectList: Project[];
     @Input() project: Project;
+    @Input() user: User;
     @Output() switchProject: EventEmitter<Project> = new EventEmitter<Project>();
-    closeDropdownMenuProject: boolean;
-    searchInput: string;
+    @Output() logout: EventEmitter<any> = new EventEmitter();
 
     constructor() { }
 
@@ -39,5 +42,12 @@ export class ProjectHeaderComponent implements OnInit {
 
     resetSearchInput() {
         this.searchInput = '';
+    }
+
+     /**
+     * Logout page
+     */
+    onLogout() {
+        this.logout.emit();
     }
 }

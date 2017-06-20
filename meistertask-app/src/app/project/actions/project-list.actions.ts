@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Action } from '@ngrx/store';
 
 import { Project } from '../models/project';
-import { ErrorMessage } from '../../core/shared/models/error-message.model';
+import { ErrorMessage } from '../../core/form/models/error-message.model';
 
 @Injectable()
 export class ProjectListActions {
