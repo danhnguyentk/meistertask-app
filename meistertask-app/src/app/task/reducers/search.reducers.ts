@@ -1,13 +1,10 @@
-import {
-    ActionReducer,
-    Action
-} from '@ngrx/store';
+import { Action } from '@ngrx/store';
 
 import * as _ from 'lodash';
 
 import { SearchActions } from '../actions/search.actions';
 import { SearchState } from '../models/search.state';
-import { Task } from '../../../task/models/task';
+import { Task } from '../models/task';
 
 const initialState: SearchState = { results: [], query: '' };
 

@@ -6,6 +6,11 @@
     (changeTaskStatus)="onChangeTaskStatus($event)"
     (completeTask)="onCompleteTask($event)"
     (addTask)="onAddTask($event)"
-    (removeTask)="onRemoveTask($event)"
+    (confirmRemoveTask)="onConfirmRemoveTask($event)"
   ></task-status>
 </section>
+<confirm-modal
+  [message]="this.appConfig.CONFIRM_MESSAGE.DELETE_TASK"
+  (accept)="onRemoveTask($event)"
+>
+</confirm-modal>

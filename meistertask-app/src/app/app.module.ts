@@ -7,7 +7,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { AppComponent } from './app.component';
 import { ROUTES } from './app.routes';
-import { SharedModule } from './core/shared/shared.module';
+import { CommonModule } from './core/common/common.module';
 import { HomeModule } from './home/home.module';
 import { LayoutModule } from './core/layout/layout.module';
 import { AuthModule } from './auth/auth.module';
@@ -27,7 +27,7 @@ const MODULES: any[] = [
     StoreModule.provideStore(reducer),
     ...optionalImports,
     BrowserModule,
-    SharedModule,
+    CommonModule,
     HomeModule,
     AuthModule,
     DashboardModule,

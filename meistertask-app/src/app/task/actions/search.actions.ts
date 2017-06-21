@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { Action } from '@ngrx/store';
 
-import { Task } from '../../../task/models/task';
+import { Task } from '../models/task';
 
 @Injectable()
 export class SearchActions {

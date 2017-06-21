@@ -7,7 +7,7 @@ import { FormControl } from '@angular/forms';
 
 import * as _ from 'lodash';
 
-import { ValidationMessage } from '../../../../core/shared/services/validation-message.service';
+import { ValidationMessage } from '../../../../core/common/services/validation-message.service';
 
 @Component({
     selector: 'control-message',

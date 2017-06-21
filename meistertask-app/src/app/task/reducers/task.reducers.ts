@@ -1,7 +1,4 @@
-import {
-    ActionReducer,
-    Action
-} from '@ngrx/store';
+import { Action } from '@ngrx/store';
 
 import * as _ from 'lodash';
 
@@ -15,8 +12,6 @@ export function taskReducer(state: TaskState = initialState, action: Action ): T
     let index: number;
     let taskList: Task[];
     let taskListByProject: Task[];
-    let taskListSearch: Task[];
-    let querySearch: string;
     switch (action.type) {
 
         case TaskActions.GET_TASK_LIST_SUCCESS:

@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 import { LoginComponent } from './login.component';
 import { SignupComponent } from './signup.component';
 import { LoggedOutComponent } from './components/logged-out/logged-out.component';
-import { AuthGuard } from './guards/auth.guard';
+import { AuthPublicPageGuard } from './guards/auth-public-page.guard';
 
 export const ROUTES: Routes = [
     {
@@ -12,17 +12,17 @@ export const ROUTES: Routes = [
             {
                 path: 'login',
                 component: LoginComponent,
-                canActivate: [ AuthGuard ]
+                canActivate: [ AuthPublicPageGuard ]
             },
             {
                 path: 'signup',
                 component: SignupComponent,
-                canActivate: [ AuthGuard ]
+                canActivate: [ AuthPublicPageGuard ]
             },
             {
                 path: 'loggedout',
                 component: LoggedOutComponent,
-                canActivate: [ AuthGuard ]
+                canActivate: [ AuthPublicPageGuard ]
             }
         ]
     }

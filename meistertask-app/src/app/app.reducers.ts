@@ -12,7 +12,7 @@ import { projectListReducer } from './project/reducers/project-list.reducer';
 import { taskReducer } from './task/reducers/task.reducers';
 import { errorReducer } from './core/form/reducers/error.reducer';
 import { loadingReducer } from './core/loading-indicator/reducers/loading.reducer';
-import { searchReducer } from './core/search-task-modal/reducers/search.reducers';
+import { searchReducer } from './task/reducers/search.reducers';
 import { AppState } from './interface';
 import { environment } from '../environments/environment';
 

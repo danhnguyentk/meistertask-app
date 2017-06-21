@@ -8,7 +8,6 @@ import {
     ChangeDetectionStrategy
 } from '@angular/core';
 
-import { Observable } from 'rxjs/Observable';
 import { Dropdown } from 'ngx-dropdown';
 
 import { Project } from '../../../project/models/project';

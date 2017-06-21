@@ -3,14 +3,22 @@
   <p class="intro">with you MeisterTask account</p>
   <form class="login-form" novalidate [formGroup]=form (ngSubmit)="login()">
     <error-message [message]="errorMessage$ | async"></error-message>
-    <div class="form-group">
+    <!-- <div class="form-group">
       <input type="email" class="form-control" placeholder="Email" formControlName="email">
       <control-message [control]="form.controls.email" nameControl="Email"></control-message>
-    </div>
-    <div class="form-group">
+    </div> -->
+    <input-wrapper
+      nameControl="Email"
+      [control]="form.controls.email"
+    >
+      <input type="email" class="form-control" placeholder="Email" formControlName="email">
+    </input-wrapper>
+    <input-wrapper
+      nameControl="Password"
+      [control]="form.controls.password"
+    >
       <input type="password" class="form-control" placeholder="Password" formControlName="password">
-      <control-message [control]="form.controls.password" nameControl="Password"></control-message>
-    </div>
+    </input-wrapper>
     <button type="submit" class="btn btn-login" [disabled]="!form.valid">Login</button>
   </form>
 </section>

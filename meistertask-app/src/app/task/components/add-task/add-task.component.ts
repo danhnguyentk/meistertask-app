@@ -10,12 +10,7 @@ import {
     Validators
 } from '@angular/forms';
 
-import * as _ from 'lodash';
-import { Dropdown } from 'ngx-dropdown';
-
-import { Logger } from '../../../core/shared/services/logger.service';
-import { Project } from '../../../project/models/project';
-import { DropdownAssignComponent } from '../../../project/components/dropdown-assign/dropdown-assign.component';
+import { Logger } from '../../../core/common/services/logger.service';
 import { Task } from '../../../task/models/task';
 
 @Component({

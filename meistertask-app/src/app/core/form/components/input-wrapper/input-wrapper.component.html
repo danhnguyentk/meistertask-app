@@ -1,0 +1,5 @@
+<div class="form-group form-group-default" [class.form-group-error]="!control?.valid && control?.touched">
+  <label>{{ label }}</label>
+  <ng-content></ng-content>
+  <control-message [control]="control" [nameControl]="nameControl"></control-message>
+</div>

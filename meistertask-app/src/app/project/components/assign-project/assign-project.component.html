@@ -1,12 +1,16 @@
 <!-- Assign project content -->
 <div class="assign-project-content" *ngIf="showProjectAssign">
   <h3 class="title">Assign Project</h3>
-  <div class="form-group form-group-search">
+  <!-- <div class="form-group form-group-search">
     <input type="text" placeholder="Search Projects" class="search-input form-control" [(ngModel)]="searchProject">
     <span class="close search-close" *ngIf="searchProject" (click)="resetSearchInput()">X</span>
-  </div>
+  </div> -->
+  <search-text
+    placeholder="Search projects"
+    #searchText
+  ></search-text>
   <ul class="project-list">
-    <li class="project-item" *ngFor="let project of projectList | filterProject: searchProject"
+    <li class="project-item" *ngFor="let project of projectList | filterProject: searchText.textSearch"
     (click)="onSelectProjectAssign(project)">
       <span class="project-icon"></span>
       <span>{{ project.nameProject }}</span>

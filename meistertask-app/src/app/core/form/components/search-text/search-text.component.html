@@ -1,0 +1,9 @@
+<div class="form-group search-form">
+  <input
+    type="text"
+    class="search-input"
+    [placeholder]="placeholder"
+    [(ngModel)]="textSearch"
+  >
+  <span class="close search-close" *ngIf="textSearch" (click)="onClearSearch()">X</span>
+</div>

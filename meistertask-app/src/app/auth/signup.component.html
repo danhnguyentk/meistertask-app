@@ -3,18 +3,15 @@
   <p class="signup-desc">with your email address</p>
   <form [formGroup]="form" (ngSubmit)="signup()" novalidate>
     <error-message [message]="errorMessage$ | async"></error-message>
-    <div class="form-group">
+    <input-wrapper [control]="form.controls.workName" nameControl="Work name">
       <input class="form-control name" placeholder="Name" formControlName="workName">
-      <control-message [control]="form.controls.workName" nameControl="Work name"></control-message>
-    </div>
-    <div class="form-group">
+    </input-wrapper>
+    <input-wrapper [control]="form.controls.email" nameControl="Email">
       <input class="form-control work-email" placeholder="Work Email" formControlName="email">
-      <control-message [control]="form.controls.email" nameControl="Email"></control-message>
-    </div>
-    <div class="form-group">
+    </input-wrapper>
+    <input-wrapper [control]="form.controls.password" nameControl="Password">
       <input type="password" class="form-control password" placeholder="Password" formControlName="password">
-      <control-message [control]="form.controls.password" nameControl="Password"></control-message>
-    </div>
+    </input-wrapper>
     <button type="submit" class="btn btn-signup" [disabled]="!form.valid">Sign Up</button>
   </form>
 </section>

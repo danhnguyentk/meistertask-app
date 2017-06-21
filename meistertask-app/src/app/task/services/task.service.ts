@@ -5,8 +5,8 @@ import * as _ from 'lodash';
 import * as moment from 'moment';
 
 import { Task } from '../models/task';
-import { HttpWrapperService } from '../../core/shared/services/http-wrapper.service';
-import { AppConfig } from '../../core/shared/services/app-config.service';
+import { HttpWrapperService } from '../../core/common/services/http-wrapper.service';
+import { AppConfig } from '../../core/common/services/app-config.service';
 
 @Injectable()
 export class TaskService {

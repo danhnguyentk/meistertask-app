@@ -1,7 +1,6 @@
 
 import { Injectable } from '@angular/core';
 
-import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 import {
     Effect,
@@ -11,15 +10,12 @@ import {
 
 import * as _ from 'lodash';
 
-import { AppState } from '../../../interface';
+import { AppState } from '../../interface';
 import { SearchActions } from '../actions/search.actions';
-import { ProjectListActions } from '../../../project/actions/project-list.actions';
-import { Task } from '../../../task/models/task';
-import { Project } from '../../../project/models/project';
-import { ErrorMessage } from '../../../core/form/models/error-message.model';
-import { TaskService } from '../../../task/services/task.service';
-import { Logger } from '../../../core/shared/services/logger.service';
-import { getProjectList } from '../../../project/selectors/project-list.selector';
+import { Task } from '../models/task';
+import { TaskService } from '../../task/services/task.service';
+import { Logger } from '../../core/common/services/logger.service';
+import { getProjectList } from '../../project/selectors/project-list.selector';
 
 @Injectable()
 export class SearchEffects {

@@ -3,7 +3,7 @@
     <div class="search-task-content">
       <h3 class="search-label">Search</h3>
       <form [formGroup]="form" (ngSubmit)="onSearchTask()" class="search-task-form">
-        <div class="form-group form-group-search">
+        <div class="form-group search-form">
           <input type="text" placeholder="Search Tasks" class="form-control search-input" formControlName="task">
           <span class="close search-close" (click)="resetSearchInput()">X</span>
         </div>

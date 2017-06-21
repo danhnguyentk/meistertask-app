@@ -7,19 +7,18 @@ import {
     ChangeDetectionStrategy,
     ElementRef,
     Renderer,
-    ViewContainerRef
+    ViewChild
 } from '@angular/core';
 
 import * as _ from 'lodash';
-import { Observable } from 'rxjs/Observable';
 import { DragDropData } from 'ng2-dnd';
 
-import { AppState } from '../../../interface';
 import { Task } from '../../models/task';
 import { TaskStatus } from '../../models/task-status';
 import { TaskActions } from '../../actions/task.actions';
-import { Logger } from '../../../core/shared/services/logger.service';
-import { AppConfig } from '../../../core/shared/services/app-config.service';
+import { Logger } from '../../../core/common/services/logger.service';
+import { AppConfig } from '../../../core/common/services/app-config.service';
+import { ConfirmModalComponent } from '../../../core/modal/components/confirm-modal/confirm-modal.component';
 
 export enum Key {
     ENTER = 13
@@ -32,11 +31,13 @@ export enum Key {
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TaskStatusComponent implements OnInit {
+    @ViewChild(ConfirmModalComponent)  confirmModalComponent: ConfirmModalComponent;
     @Input() tasks: Task;
     @Output() changeTaskStatus: EventEmitter<Task> = new EventEmitter<Task>();
     @Output() addTask: EventEmitter<Task> = new EventEmitter<Task>();
     @Output() completeTask: EventEmitter<Task> = new EventEmitter<Task>();
     @Output() removeTask: EventEmitter<Task> = new EventEmitter<Task>();
+    @Output() confirmRemoveTask: EventEmitter<Task> = new EventEmitter<Task>();
 
     _statusValue: number;
     statusName: string;
@@ -50,12 +51,11 @@ export class TaskStatusComponent implements OnInit {
     parentElement: HTMLElement;
 
     constructor(
+        private appConfig: AppConfig,
         private taskActions: TaskActions,
         private logger: Logger,
         private elementRef: ElementRef,
-        private appConfig: AppConfig,
-        private renderer: Renderer,
-        private viewContainerRef: ViewContainerRef) {
+        private renderer: Renderer) {
     }
 
     @Input() set statusValue(value) {
@@ -155,12 +155,13 @@ export class TaskStatusComponent implements OnInit {
     }
 
     /**
-     * Remove task
+     * Open modal make sure delete task
      */
     onRemoveTask(event: Event, task: Task) {
         this.logger.info('Remove task with: ', task);
         event.stopPropagation();
-        this.removeTask.emit(task);
+        this.confirmRemoveTask.emit(task);
+        // this.removeTask.emit(task);
     }
 
     /**

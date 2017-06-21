@@ -1,0 +1,17 @@
+.form-group-default {
+    margin-bottom: 0;
+
+    label {
+        font-size: 16px;
+    }
+
+    input {
+        margin-bottom: 10px;
+    }
+}
+
+.form-group-error {
+    .form-control {
+        border: 1px solid red;
+    }
+}

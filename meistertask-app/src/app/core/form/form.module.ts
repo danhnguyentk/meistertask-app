@@ -1,22 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
-import { EffectsModule } from '@ngrx/effects';
-
-import { SharedModule } from '../shared/shared.module';
 import { ErrorMessageComponent } from './components/error-message/error-message.component';
 import { ControlMessageComponent } from './components/control-message/control-message.component';
 import { FocusDirective } from './directives/focus.directive';
 import { ErrorActions } from './actions/error.actions';
+import { InputWrapperComponent } from './components/input-wrapper/input-wrapper.component';
+import { SearchTextComponent } from './components/search-text/search-text.component';
 
 const COMPONENTS: any[] = [
     ErrorMessageComponent,
-    ControlMessageComponent
+    ControlMessageComponent,
+    InputWrapperComponent,
+    SearchTextComponent
 ];
 
 const MODULES: any[] = [
     CommonModule,
-    SharedModule
+    FormsModule,
+    ReactiveFormsModule
 ];
 
 const DIRECTIVES: any[] = [
@@ -40,7 +44,9 @@ const SERVICES: any[] = [
     ],
     exports: [
         ...COMPONENTS,
-        ...DIRECTIVES
+        ...DIRECTIVES,
+        FormsModule,
+        ReactiveFormsModule
     ]
 })
 export class FormModule { }

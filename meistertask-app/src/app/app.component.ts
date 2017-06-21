@@ -11,7 +11,6 @@ import {
 import { Store } from '@ngrx/store';
 
 import { ErrorActions } from './core/form/actions/error.actions';
-import { getErrorLogin} from './core/form/selectors/error.selectors';
 import { AppState } from './interface';
 
 @Component({

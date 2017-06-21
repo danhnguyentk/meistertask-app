@@ -4,8 +4,6 @@ import {
     Input,
     OnChanges,
     ViewChild,
-    Output,
-    EventEmitter,
     ChangeDetectionStrategy
 } from '@angular/core';
 
@@ -13,7 +11,7 @@ import { Dropdown } from 'ngx-dropdown';
 
 import { Project } from '../../models/project';
 import { TaskStatus } from '../../../task/models/task-status';
-import { Logger } from '../../../core/shared/services/logger.service';
+import { Logger } from '../../../core/common/services/logger.service';
 
 @Component({
     selector: 'dropdown-assign',

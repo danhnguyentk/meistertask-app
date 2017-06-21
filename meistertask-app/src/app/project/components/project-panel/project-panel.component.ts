@@ -18,7 +18,7 @@ import { Router } from '@angular/router';
 import { Modal } from 'ngx-modal';
 
 import { Project } from '../../models/project';
-import { AppConfig } from '../../../core/shared/services/app-config.service';
+import { AppConfig } from '../../../core/common/services/app-config.service';
 
 @Component({
     selector: 'project-panel',

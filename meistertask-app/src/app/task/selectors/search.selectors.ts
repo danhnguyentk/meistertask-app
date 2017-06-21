@@ -1,9 +1,8 @@
 import * as _ from 'lodash';
 
-import { AppState } from '../../../interface';
-import { TaskState } from '../../../task/models/task.state';
-import { Task } from '../../../task/models/task';
-import { Project } from '../../../project/models/project';
+import { AppState } from '../../interface';
+import { Task } from '../../task/models/task';
+import { Project } from '../../project/models/project';
 
 export function getTaskListSearch(state: AppState): Task[] {
     return state.search.results;

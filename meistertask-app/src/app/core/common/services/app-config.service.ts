@@ -38,4 +38,8 @@ export class AppConfig {
 
     MOVE_TASK = 'YOU JUST MOVE TASK';
 
+    CONFIRM_MESSAGE = {
+        DELETE_TASK: 'Are you want to delete this task?'
+    };
+
 }

@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 
 import { DashboardComponent } from './dashboard.component';
-import { AuthRequiredPageGuard } from '../auth/guards/auth-required-page.guard';
+import { AuthPrivatePageGuard } from '../auth/guards/auth-private-page.guard';
 
 export const ROUTES: Routes = [
     {
@@ -10,7 +10,7 @@ export const ROUTES: Routes = [
             {
                 path: 'app/dashboard',
                 component: DashboardComponent,
-                canActivate: [ AuthRequiredPageGuard ]
+                canActivate: [ AuthPrivatePageGuard ]
             }
         ]
     }

@@ -1,15 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import {
-    FormsModule,
-    ReactiveFormsModule
-} from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
-import { DropdownModule } from 'ngx-dropdown';
-import { ModalModule } from 'ngx-modal';
-import { DndModule } from 'ng2-dnd';
 
 import { AppConfig } from './services/app-config.service';
 import { HttpWrapperService } from './services/http-wrapper.service';
@@ -19,13 +9,7 @@ import { CustomValidator } from './services/custom-validator.service';
 import { Logger } from './services/logger.service';
 
 const MODULES = [
-    CommonModule,
-    RouterModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpModule,
-    DropdownModule,
-    ModalModule
+    HttpModule
 ];
 
 const PIPES = [
@@ -48,8 +32,7 @@ const SERVICES: any[] = [
 
 @NgModule({
     imports: [
-        ...MODULES,
-        DndModule.forRoot()
+        ...MODULES
     ],
     declarations: [
         ...COMPONENTS,
@@ -60,11 +43,9 @@ const SERVICES: any[] = [
         ...SERVICES
     ],
     exports: [
-        ...MODULES,
         ...COMPONENTS,
         ...PIPES,
         ...DIRECTIVES,
-        DndModule
     ]
 })
-export class SharedModule { }
+export class CommonModule { }

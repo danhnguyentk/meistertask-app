@@ -1,13 +1,9 @@
-import {
-    ActionReducer,
-    Action
-} from '@ngrx/store';
+import { Action } from '@ngrx/store';
 
 import * as _ from 'lodash';
 
 import { AuthActions } from '../actions/auth.actions';
 import { AuthState } from '../models/auth.state';
-import { User } from '../models/user';
 
 const initialState: AuthState = { isAuthenticated: false, user: null };
 

@@ -1,6 +1,7 @@
 import {
     Component,
     OnInit,
+    ChangeDetectionStrategy
 } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -12,12 +13,12 @@ import { ProjectListActions } from '../project/actions/project-list.actions';
 import { AppState } from '../interface';
 import { getProjectList } from '../project/selectors/project-list.selector';
 import { Project } from '../project/models/project';
-import { AppConfig } from '../core/shared/services/app-config.service';
+import { AppConfig } from '../core/common/services/app-config.service';
 import { Task } from '../task/models/task';
 import { TaskActions } from '../task/actions/task.actions';
-import { SearchActions } from '../core/search-task-modal/actions/search.actions';
+import { SearchActions } from '../task/actions/search.actions';
 import { AuthActions } from '../auth/actions/auth.actions';
-import { getTasksSearch } from '../core/search-task-modal/selectors/search.selectors';
+import { getTasksSearch } from '../task/selectors/search.selectors';
 import { getAuthUser } from '../auth/selectors/auth.selectors';
 import { User } from '../auth/models/user';
 import { getLoadingProject } from '../core/loading-indicator/selectors/loading.selectors';
@@ -25,7 +26,8 @@ import { getLoadingProject } from '../core/loading-indicator/selectors/loading.s
 @Component({
     selector: 'dashboard',
     templateUrl: './dashboard.component.html',
-    styleUrls: [ './dashboard.component.scss' ]
+    styleUrls: [ './dashboard.component.scss' ],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DashboardComponent implements OnInit {
     projectList$: Observable<Project[]>;

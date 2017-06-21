@@ -2,24 +2,22 @@ import {
     Component,
     OnInit,
     Input,
-    ViewChild,
     Output,
     EventEmitter,
     ChangeDetectionStrategy
 } from '@angular/core';
 
 import { Project } from '../../models/project';
-import { TaskStatus } from '../../../task/models/task-status';
-import { Logger } from '../../../core/shared/services/logger.service';
+import { Logger } from '../../../core/common/services/logger.service';
 
 @Component({
     selector: 'assign-project',
     templateUrl: './assign-project.component.html',
-    styleUrls: [ './assign-project.component.scss' ]
+    styleUrls: [ './assign-project.component.scss' ],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AssignProjectComponent implements OnInit {
     showProjectAssign: boolean = true;
-    searchProject: string;
     @Input() projectList: Project[];
     @Output() closeDropdown: EventEmitter<any> = new EventEmitter();
     @Output() selectProjectAssign: EventEmitter<Project> = new EventEmitter();
@@ -53,7 +51,4 @@ export class AssignProjectComponent implements OnInit {
         this.closeDropdown.emit();
     }
 
-    resetSearchInput() {
-        this.searchProject = '';
-    }
 }

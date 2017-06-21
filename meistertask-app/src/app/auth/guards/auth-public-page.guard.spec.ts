@@ -1,19 +1,18 @@
 import {
     TestBed,
-    async,
     inject
 } from '@angular/core/testing';
 
-import { AuthGuard } from './auth.guard';
+import { AuthPublicPageGuard } from './auth-public-page.guard';
 
 describe('AuthGuard', () => {
     beforeEach(() => {
         TestBed.configureTestingModule({
-            providers: [ AuthGuard ]
+            providers: [ AuthPublicPageGuard ]
         });
     });
 
-    it('should ...', inject([ AuthGuard ], (guard: AuthGuard) => {
+    it('should ...', inject([ AuthPublicPageGuard ], (guard: AuthPublicPageGuard) => {
         expect(guard).toBeTruthy();
     }));
 });

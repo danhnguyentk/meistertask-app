@@ -5,10 +5,10 @@ import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 
 import { User } from '../models/user';
-import { AppConfig } from '../../core/shared/services/app-config.service';
-import { HttpWrapperService } from '../../core/shared/services/http-wrapper.service';
-import { Logger } from '../../core/shared/services/logger.service';
-import { LocalStorageService } from '../../core/shared/services/local-storage.service';
+import { AppConfig } from '../../core/common/services/app-config.service';
+import { HttpWrapperService } from '../../core/common/services/http-wrapper.service';
+import { Logger } from '../../core/common/services/logger.service';
+import { LocalStorageService } from '../../core/common/services/local-storage.service';
 import { AppState } from '../../interface';
 import { getAuthUser } from '../selectors/auth.selectors';
 import { AuthActions } from '../actions/auth.actions';

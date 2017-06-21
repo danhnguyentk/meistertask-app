@@ -1,0 +1,13 @@
+<modal
+  modalClass="confirm-modal"
+>
+  <modal-content>
+    <div class="confirm-modal-content">
+      <p class="confirm-modal-desc">{{ message }}</p>
+      <div class="confirm-modal-btn">
+        <button type="button" class="btn btn-yes" (click)="acceptRequest()">Yes</button>
+        <button type="button" class="btn btn-no" (click)="cancelRequest()">No</button>
+      </div>
+    </div>
+  </modal-content>
+</modal>

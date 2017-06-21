@@ -1,7 +1,4 @@
-import {
-    ActionReducer,
-    Action
-} from '@ngrx/store';
+import { Action } from '@ngrx/store';
 
 import * as _ from 'lodash';
 

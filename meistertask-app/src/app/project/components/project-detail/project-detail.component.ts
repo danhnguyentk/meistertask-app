@@ -4,11 +4,15 @@ import {
     Output,
     Input,
     EventEmitter,
-    ChangeDetectionStrategy
+    ChangeDetectionStrategy,
+    ViewChild
 } from '@angular/core';
+
+import { ConfirmModalComponent } from '../../../core/modal/components/confirm-modal/confirm-modal.component';
 
 import { Task } from '../../../task/models/task';
 import { TaskStatus } from '../../../task/models/task-status';
+import { AppConfig } from '../../../core/common/services/app-config.service';
 
 @Component({
     selector: 'project-detail',
@@ -17,14 +21,15 @@ import { TaskStatus } from '../../../task/models/task-status';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProjectDetailComponent implements OnInit {
+    taskStates: number[] = [ TaskStatus.OPEN, TaskStatus.IN_PROGRESS, TaskStatus.DONE ];
+    @ViewChild(ConfirmModalComponent) confirmModalComponent: ConfirmModalComponent;
     @Input() taskList: Task[];
     @Output() changeTaskStatus: EventEmitter<Task> = new EventEmitter<Task>();
     @Output() addTask: EventEmitter<Task> = new EventEmitter<Task>();
     @Output() completeTask: EventEmitter<Task> = new EventEmitter<Task>();
     @Output() removeTask: EventEmitter<Task> = new EventEmitter<Task>();
-    taskStates: number[] = [ TaskStatus.OPEN, TaskStatus.IN_PROGRESS, TaskStatus.DONE ];
 
-    constructor() { }
+    constructor(public appConfig: AppConfig) { }
 
     ngOnInit() {
     }
@@ -43,6 +48,14 @@ export class ProjectDetailComponent implements OnInit {
 
     onRemoveTask(task: Task) {
         this.removeTask.emit(task);
+    }
+
+    /**
+     * Show confirm modal delete task and pass data task into modal
+     * @param {Task} task [description]
+     */
+    onConfirmRemoveTask(task: Task) {
+        this.confirmModalComponent.openModal(task);
     }
 
 }

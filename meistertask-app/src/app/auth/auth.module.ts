@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
-
+import {
+    FormsModule,
+    ReactiveFormsModule
+} from '@angular/forms';
+import { CommonModule } from '@angular/common';
 import { EffectsModule } from '@ngrx/effects';
 
-import { SharedModule } from '../core/shared/shared.module';
 import { FormModule } from '../core/form/form.module';
 import { LoginComponent } from './login.component';
 import { SignupComponent } from './signup.component';
@@ -10,13 +13,15 @@ import { AuthService } from './services/auth.service';
 import { AuthEffects } from './effects/auth.effects';
 import { AuthActions } from './actions/auth.actions';
 import { LoggedOutComponent } from './components/logged-out/logged-out.component';
-import { AuthGuard } from './guards/auth.guard';
-import { AuthRequiredPageGuard } from './guards/auth-required-page.guard';
+import { AuthPublicPageGuard } from './guards/auth-public-page.guard';
+import { AuthPrivatePageGuard } from './guards/auth-private-page.guard';
 import { DropdownUserComponent } from './components/dropdown-user/dropdown-user.component';
 
 const MODULES = [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     EffectsModule.run(AuthEffects),
-    SharedModule,
     FormModule
 ];
 
@@ -30,8 +35,8 @@ const COMPONENTS = [
 const SERVICES = [
     AuthService,
     AuthActions,
-    AuthGuard,
-    AuthRequiredPageGuard
+    AuthPublicPageGuard,
+    AuthPrivatePageGuard
 ];
 
 @NgModule({

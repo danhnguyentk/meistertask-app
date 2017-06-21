@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 import { EffectsModule } from '@ngrx/effects';
 
-import { SharedModule } from '../core/shared/shared.module';
+import { ModalModule } from '../core/modal/modal.module';
 import { TaskModule } from '../task/task.module';
 import { AuthModule } from '../auth/auth.module';
 import { LoadingIndicatorModule } from '../core/loading-indicator/loading-indicator.module';
-import { SearchTaskModalModule } from '../core/search-task-modal/search-task-modal.module';
 import { FormModule } from '../core/form/form.module';
 import { ProjectComponent } from './project.component';
 import { FilterProjectPipe } from './pipes/filter-project.pipe';
@@ -21,11 +21,11 @@ import { ProjectListActions } from './actions/project-list.actions';
 import { ProjectService } from './services/project.service';
 
 const MODULES: any[] = [
+    CommonModule,
     EffectsModule.run(ProjectListEffects),
-    SharedModule,
+    ModalModule,
     AuthModule,
     FormModule,
-    SearchTaskModalModule,
     LoadingIndicatorModule,
     TaskModule
 ];

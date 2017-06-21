@@ -8,17 +8,12 @@ import {
     toPayload
 } from '@ngrx/effects';
 
-import * as _ from 'lodash';
-
 import { AppState } from '../../interface';
 import { TaskActions } from '../actions/task.actions';
 import { ProjectListActions } from '../../project/actions/project-list.actions';
 import { Task } from '../models/task';
-import { Project } from '../../project/models/project';
-import { ErrorMessage } from '../../core/form/models/error-message.model';
 import { TaskService } from '../services/task.service';
-import { Logger } from '../../core/shared/services/logger.service';
-import { getProjectList } from '../../project/selectors/project-list.selector';
+import { Logger } from '../../core/common/services/logger.service';
 
 @Injectable()
 export class TaskEffects {

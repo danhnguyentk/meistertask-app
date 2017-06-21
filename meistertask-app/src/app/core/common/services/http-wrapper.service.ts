@@ -12,7 +12,9 @@ import * as _ from 'lodash';
 
 import { AppConfig } from './app-config.service';
 import { Logger } from './logger.service';
+import { LocalStorageService } from './local-storage.service';
 import { CaseFormat } from '../helper/case-format';
+import { User } from '../../../auth/models/user';
 
 @Injectable()
 export class HttpWrapperService {
@@ -20,7 +22,12 @@ export class HttpWrapperService {
     constructor(
         private http: Http,
         private appConfig: AppConfig,
-        private logger: Logger) { }
+        private logger: Logger,
+        private localStorageService: LocalStorageService) { }
+
+    getCurrentUser(): User {
+        return this.localStorageService.getCurrentUser();
+    }
 
     get(url: string, paramObj?: Object): Observable<any> {
         const params: URLSearchParams = this.convertObjToParams(CaseFormat.convertKeysToSnakeCase(paramObj));

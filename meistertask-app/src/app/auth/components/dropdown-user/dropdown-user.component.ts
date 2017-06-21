@@ -10,10 +10,10 @@ import {
 import { User } from '../../models/user';
 
 @Component({
-  selector: 'dropdown-user',
-  templateUrl: './dropdown-user.component.html',
-  styleUrls: [ './dropdown-user.component.scss' ],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'dropdown-user',
+    templateUrl: './dropdown-user.component.html',
+    styleUrls: [ './dropdown-user.component.scss' ],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DropdownUserComponent implements OnInit {
     @Input() user: User;

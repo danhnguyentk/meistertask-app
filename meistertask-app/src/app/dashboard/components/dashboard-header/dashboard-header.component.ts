@@ -7,20 +7,14 @@ import {
     EventEmitter,
     ChangeDetectionStrategy
 } from '@angular/core';
-import {
-    FormGroup,
-    FormBuilder,
-    Validators
-} from '@angular/forms';
 
 import * as _ from 'lodash';
-import { Dropdown } from 'ngx-dropdown';
 
-import { Logger } from '../../../core/shared/services/logger.service';
+import { Logger } from '../../../core/common/services/logger.service';
 import { Project } from '../../../project/models/project';
 import { Task } from '../../../task/models/task';
 import { User } from '../../../auth/models/user';
-import { SearchTaskModalComponent } from '../../../core/search-task-modal/components/search-task-modal/search-task-modal.component';
+import { SearchTaskModalComponent } from '../../../task/components/search-task-modal/search-task-modal.component';
 import { DropdownAssignComponent } from '../../../project/components/dropdown-assign/dropdown-assign.component';
 import { DropdownAddTaskComponent } from '../../../task/components/dropdown-add-task/dropdown-add-task.component';
 

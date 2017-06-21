@@ -4,7 +4,6 @@ import * as _ from 'lodash';
 
 import { ErrorState } from '../models/error.state';
 import { ErrorActions } from '../actions/error.actions';
-import { ErrorMessage } from '../models/error-message.model';
 
 const initialError: ErrorState = { login: null, signup: null };
 

@@ -4,8 +4,7 @@ import {
     ViewChild,
     EventEmitter,
     Output,
-    Input,
-    ChangeDetectionStrategy
+    Input
 } from '@angular/core';
 
 import {
@@ -15,9 +14,8 @@ import {
 } from '@angular/forms';
 
 import { Modal } from 'ngx-modal';
-import { Observable } from 'rxjs/Observable';
 
-import { Task } from '../../../../task/models/task';
+import { Task } from '../../models/task';
 
 @Component({
     selector: 'search-task-modal',
