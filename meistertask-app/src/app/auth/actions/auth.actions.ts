@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Action } from '@ngrx/store';
 
 import { User } from '../models/user';
+import { Passwords } from '../models/passwords.model';
 import { ErrorMessage } from '../../core/form/models/error-message.model';
 
 @Injectable()
@@ -15,6 +16,9 @@ export class AuthActions {
     static LOGIN = '[Auth] LOGIN';
     static LOGIN_SUCCESS = '[Auth] LOGIN_SUCCESS';
     static LOGIN_FAIL = '[Auth] LOGIN_FAIL';
+    static CHANGE_PASSWORD = '[Auth] CHANGE_PASSWORD';
+    static CHANGE_PASSWORD_SUCCESS = '[Auth] CHANGE_PASSWORD_SUCCESS';
+    static CHANGE_PASSWORD_FAIL = '[Auth] CHANGE_PASSWORD_FAIL';
     static LOGOUT = '[Auth] LOGOUT';
 
     saveUserToState(user: User): Action {
@@ -69,6 +73,27 @@ export class AuthActions {
     logout(): Action {
         return {
             type: AuthActions.LOGOUT
+        };
+    }
+
+    changePassword(passwords: Passwords): Action {
+        return {
+            type: AuthActions.CHANGE_PASSWORD,
+            payload: passwords
+        };
+    }
+
+    changePasswordSuccess(successMessage: string): Action {
+        return {
+            type: AuthActions.CHANGE_PASSWORD_SUCCESS,
+            payload: successMessage
+        };
+    }
+
+    changePasswordFail(errorMessage: ErrorMessage): Action {
+        return {
+            type: AuthActions.CHANGE_PASSWORD_FAIL,
+            payload: errorMessage
         };
     }
 }

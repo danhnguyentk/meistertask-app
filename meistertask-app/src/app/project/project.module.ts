@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 import { EffectsModule } from '@ngrx/effects';
+import { DropdownModule } from 'ngx-dropdown';
 
 import { ModalModule } from '../core/modal/modal.module';
 import { TaskModule } from '../task/task.module';
@@ -22,6 +24,8 @@ import { ProjectService } from './services/project.service';
 
 const MODULES: any[] = [
     CommonModule,
+    DropdownModule,
+    RouterModule,
     EffectsModule.run(ProjectListEffects),
     ModalModule,
     AuthModule,

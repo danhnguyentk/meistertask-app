@@ -1,0 +1,74 @@
+.page-error {
+    @extend %content-box;
+    min-height: calc(100% - #{rem(90)});
+    padding: rem(48.5) 0 0 rem(163.5);
+
+    &__content,
+    &__icon {
+        @extend %float-left;
+    }
+
+    &__link,
+    &__message {
+    }
+
+    &__link,
+    &__warning {
+        font-size: rem(7);
+    }
+
+    &__type {
+        font-size: rem(35);
+        letter-spacing: rem(-1);
+        line-height: rem(44);
+        font-weight: bold;
+        @extend %no-margin;
+        @include boxSize(rem(56.5), rem(46));
+    }
+
+    &__icon {
+        margin: rem(27) 0 0 rem(59);
+        @extend %format-background;
+        @include format-icon(54.95, 49.5, 'error-shape.png');
+    }
+
+    &__type403 {
+        .page-error__icon {
+            @include format-icon(65.5, 65.5, 'forbidden.png');
+        }
+    }
+
+    &__type500 {
+        padding: rem(90) 0 0 0;
+
+        .page-error__layout {
+            @extend %margin-auto;
+            @include boxSize(rem(327), rem(140.5));
+            padding: rem(18.5) 0 rem(18.5) rem(20.5);
+            background-color: $white;
+        }
+
+        .page-error__icon {
+            margin-left: rem(31.6);
+        }
+    }
+
+    &__info {
+        margin-bottom: rem(14);
+    }
+
+    &__message {
+        font-size: rem(11);
+        font-weight: 500;
+        @extend %block;
+    }
+
+    &__warning {
+        line-height: rem(17);
+        letter-spacing: rem(-0.05);
+    }
+
+    &__link {
+        @extend %cursor-pointer;
+    }
+}

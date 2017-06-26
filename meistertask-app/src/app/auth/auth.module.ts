@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
-import {
-    FormsModule,
-    ReactiveFormsModule
-} from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+
 import { EffectsModule } from '@ngrx/effects';
+import { DropdownModule } from 'ngx-dropdown';
 
 import { FormModule } from '../core/form/form.module';
 import { LoginComponent } from './login.component';
@@ -16,20 +15,24 @@ import { LoggedOutComponent } from './components/logged-out/logged-out.component
 import { AuthPublicPageGuard } from './guards/auth-public-page.guard';
 import { AuthPrivatePageGuard } from './guards/auth-private-page.guard';
 import { DropdownUserComponent } from './components/dropdown-user/dropdown-user.component';
+import { PersonalComponent } from './personal.component';
+import { ChangePasswordComponent } from './change-password.component';
 
 const MODULES = [
     CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
     EffectsModule.run(AuthEffects),
-    FormModule
+    FormModule,
+    DropdownModule,
+    RouterModule
 ];
 
 const COMPONENTS = [
     LoginComponent,
     SignupComponent,
     LoggedOutComponent,
-    DropdownUserComponent
+    DropdownUserComponent,
+    PersonalComponent,
+    ChangePasswordComponent
 ];
 
 const SERVICES = [

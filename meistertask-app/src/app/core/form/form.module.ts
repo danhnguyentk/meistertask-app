@@ -9,12 +9,15 @@ import { FocusDirective } from './directives/focus.directive';
 import { ErrorActions } from './actions/error.actions';
 import { InputWrapperComponent } from './components/input-wrapper/input-wrapper.component';
 import { SearchTextComponent } from './components/search-text/search-text.component';
+import { FormBuilderWrapper } from './services/form-builder-wrapper';
+import { SuccessMessageComponent } from './components/success-message/success-message.component';
 
 const COMPONENTS: any[] = [
     ErrorMessageComponent,
     ControlMessageComponent,
     InputWrapperComponent,
-    SearchTextComponent
+    SearchTextComponent,
+    SuccessMessageComponent
 ];
 
 const MODULES: any[] = [
@@ -28,6 +31,7 @@ const DIRECTIVES: any[] = [
 ];
 
 const SERVICES: any[] = [
+    FormBuilderWrapper,
     ErrorActions
 ];
 

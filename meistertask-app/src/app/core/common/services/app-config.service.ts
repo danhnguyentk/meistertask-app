@@ -17,10 +17,13 @@ export class AppConfig {
     };
 
     VALIDATION_MESSAGES = {
+        invalidConfirmPassword: 'The confirm password does\'t match',
         required: `<%= name %> is required.`,
         [this.VALIDATION_KEY.EMAIL] : 'Please enter a valid email address',
         minlength: `<%= name %> must be at least <%= errors.minlength.requiredLength %> characters long.`,
-        maxlength: `<%= name %> can not be more than <%= errors.maxlength.requiredLength %> characters long.`
+        maxlength: `<%= name %> can not be more than <%= errors.maxlength.requiredLength %> characters long.`,
+        percentage: 'The total must 100%',
+        invalidNewPassword: 'The new password should\'t same the old password'
     };
 
     // Pattern validate

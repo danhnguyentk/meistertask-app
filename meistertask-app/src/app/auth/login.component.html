@@ -3,10 +3,6 @@
   <p class="intro">with you MeisterTask account</p>
   <form class="login-form" novalidate [formGroup]=form (ngSubmit)="login()">
     <error-message [message]="errorMessage$ | async"></error-message>
-    <!-- <div class="form-group">
-      <input type="email" class="form-control" placeholder="Email" formControlName="email">
-      <control-message [control]="form.controls.email" nameControl="Email"></control-message>
-    </div> -->
     <input-wrapper
       nameControl="Email"
       [control]="form.controls.email"

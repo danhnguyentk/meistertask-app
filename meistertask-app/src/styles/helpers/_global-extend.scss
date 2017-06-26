@@ -317,6 +317,10 @@
   font-weight: normal;
 }
 
+%content-box {
+  box-sizing: content-box;
+}
+
 /* class extend for float */
 %float-left {
   float: left;
@@ -493,4 +497,10 @@
 
 %full-height {
   height: 100%
+}
+
+/* format background icon*/
+%format-background {
+  background-size: contain;
+  background-repeat: no-repeat;
 }

@@ -40,9 +40,7 @@ export class DashboardHeaderComponent implements OnInit {
     @Output() completeTask: EventEmitter<Task> = new EventEmitter<Task>();
     @Output() removeTask: EventEmitter<Task> = new EventEmitter<Task>();
 
-    constructor(
-        private formBuilder: FormBuilder,
-        private logger: Logger) { }
+    constructor(private logger: Logger) { }
 
     ngOnInit() {
 

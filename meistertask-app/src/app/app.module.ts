@@ -13,6 +13,7 @@ import { LayoutModule } from './core/layout/layout.module';
 import { AuthModule } from './auth/auth.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { ProjectModule } from './project/project.module';
+import { ErrorPagesModule } from './error-pages/error-pages.module';
 import { reducer } from './app.reducers';
 import { environment } from '../environments/environment';
 
@@ -32,6 +33,7 @@ const MODULES: any[] = [
     AuthModule,
     DashboardModule,
     ProjectModule,
+    ErrorPagesModule,
     LayoutModule
 ];
 

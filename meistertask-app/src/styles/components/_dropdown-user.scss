@@ -1,4 +1,9 @@
 .dropdown-user {
+    .dropdown-menu {
+        right: 0;
+        left: auto;
+    }
+
     .name-user {
         @extend %cursor-pointer;
         @extend %text-uppercase;

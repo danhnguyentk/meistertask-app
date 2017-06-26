@@ -57,4 +57,19 @@ export class AuthService {
             });
     }
 
+    /**
+     * Change password
+     */
+    changePassword(userId: string, oldPassword: string, newPassword: string) {
+        return this.httpWrapperService.get(`${this.appConfig.API.USER}/${userId}`)
+            .switchMap((userRes: User) => {
+                if (userRes.password === oldPassword) {
+                    return this.httpWrapperService.patch(`${this.appConfig.API.USER}/${userId}`, { password: newPassword })
+                        .mapTo('Change password success');
+                } else {
+                    return Observable.throw({ statusCode: 104, statusMessage: 'Old password not correct.' });
+                }
+            });
+    }
+
 }

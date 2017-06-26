@@ -1,7 +1,6 @@
 import {
     Component,
-    OnInit,
-    ChangeDetectionStrategy
+    OnInit
 } from '@angular/core';
 import {
     FormBuilder,
@@ -18,19 +17,29 @@ import { CustomValidator } from '../core/common/services/custom-validator.servic
 import { AppState } from '../interface';
 import { AuthActions } from './actions/auth.actions';
 import { User } from './models/user';
+import { Passwords } from './models/passwords.model';
 import { ErrorMessage } from '../core/form/models/error-message.model';
 import { AppConfig } from '../core/common/services/app-config.service';
-import { getAuthStatus } from './selectors/auth.selectors';
-import { getErrorSignup } from '../core/form/selectors/error.selectors';
+import {
+    getAuthStatus,
+    getAuthUser
+} from './selectors/auth.selectors';
+import {
+    getErrorChangePassword,
+    getMessageChangePasswordSuccess
+} from '../core/form/selectors/error.selectors';
 
 @Component({
-    selector: 'signup',
-    templateUrl: './signup.component.html',
-    styleUrls: [ './signup.component.scss' ]
+    selector: 'change-password',
+    templateUrl: './change-password.component.html',
+    styleUrls: [ './change-password.component.scss' ]
 })
-export class SignupComponent implements OnInit {
+export class ChangePasswordComponent implements OnInit {
+
     form: FormGroup;
     errorMessage$: Observable<ErrorMessage>;
+    successMessage$: Observable<string>;
+    user$: Observable<User>;
 
     constructor(
         private store: Store<AppState>,
@@ -43,35 +52,30 @@ export class SignupComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        this.errorMessage$ = this.store.select(getErrorSignup);
+        this.errorMessage$ = this.store.select(getErrorChangePassword);
+        this.successMessage$ = this.store.select(getMessageChangePasswordSuccess);
+        this.user$ = this.store.select(getAuthUser);
         this.redirectPage();
         this.buildForm();
     }
 
     buildForm() {
         this.form = this.fb.group({
-            workName: [ '', Validators.required ],
-            email: [ '', [
-                Validators.required,
-                this.customValidator.validateEmail()
-            ]],
-            passwords: this.fb.group({
-                password: [ '', Validators.required ],
-                confirmPassword: [ '', Validators.required ]
-            }, { validator: this.customValidator.matchConfirmPassword('password', 'confirmPassword') })
-        });
+            oldPassword: [ '', Validators.required ],
+            newPassword: [ '', Validators.required ],
+            confirmPassword: [ '', Validators.required ]
+        }, { validator: this.customValidator.validateChangePassword('oldPassword', 'newPassword', 'confirmPassword') });
     }
 
-    signup() {
+    changePassword() {
         if (!this.form.valid) {
             return;
         }
-        const userPass: User = {
-            workName: this.form.get('workName').value,
-            email: this.form.get('email').value,
-            password: this.form.get('passwords.password').value
+        const password: Passwords = {
+            oldPassword: this.form.get('oldPassword').value,
+            newPassword: this.form.get('newPassword').value
         };
-        this.store.dispatch(this.authActions.signup(userPass));
+        this.store.dispatch(this.authActions.changePassword(password));
     }
 
     /**

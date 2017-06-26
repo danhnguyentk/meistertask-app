@@ -1,0 +1,30 @@
+.personal {
+    border: 1px solid grey;
+    width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+
+    .title {
+        margin-bottom: 20px;;
+    }
+
+    .desc {
+        margin-bottom: 20px;
+    }
+
+    .btn-add-height {
+        margin-top: 20px;
+    }
+
+    .part-body {
+        display: flex;
+
+        .form-group {
+            margin-right: 20px;
+        }
+    }
+
+    .close-part-body {
+        margin-top: 30px;
+    }
+}

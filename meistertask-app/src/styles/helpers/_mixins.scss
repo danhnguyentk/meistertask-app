@@ -96,7 +96,7 @@ $browser-context: 8;
 }
 
 // format icon
-@mixin format-icon($image, $width, $height, $background-size) {
+@mixin format-icon($image, $width, $height, $background-size: center) {
   display: block;
   background-image: url('#{$image-path+$image}');
   width: $width;

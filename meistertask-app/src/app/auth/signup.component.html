@@ -9,9 +9,14 @@
     <input-wrapper [control]="form.controls.email" nameControl="Email">
       <input class="form-control work-email" placeholder="Work Email" formControlName="email">
     </input-wrapper>
-    <input-wrapper [control]="form.controls.password" nameControl="Password">
-      <input type="password" class="form-control password" placeholder="Password" formControlName="password">
-    </input-wrapper>
+    <div formGroupName="passwords">
+      <input-wrapper [control]="form.controls.passwords.controls.password" nameControl="Password">
+        <input type="password" class="form-control password" placeholder="Password" formControlName="password">
+      </input-wrapper>
+      <input-wrapper [control]="form.controls.passwords.controls.confirmPassword" nameControl="Confirm Password">
+        <input type="password" class="form-control password" placeholder="Confirm Password" formControlName="confirmPassword">
+      </input-wrapper>
+    </div>
     <button type="submit" class="btn btn-signup" [disabled]="!form.valid">Sign Up</button>
   </form>
 </section>

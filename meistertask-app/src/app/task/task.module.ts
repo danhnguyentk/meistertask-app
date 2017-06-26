@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { EffectsModule } from '@ngrx/effects';
 import { DndModule } from 'ng2-dnd';
+import { DropdownModule } from 'ngx-dropdown';
 
 import { ModalModule } from '../core/modal/modal.module';
 import { MainHeaderModule } from '../core/main-header/main-header.module';
@@ -25,6 +26,7 @@ const MODULES: any[] = [
     ModalModule,
     MainHeaderModule,
     FormModule,
+    DropdownModule,
     LoadingIndicatorModule,
     EffectsModule.run(TaskEffects),
     EffectsModule.run(SearchEffects)

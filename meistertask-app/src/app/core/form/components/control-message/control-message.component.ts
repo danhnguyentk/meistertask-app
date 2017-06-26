@@ -23,14 +23,14 @@ export class ControlMessageComponent implements OnInit {
     ngOnInit() {
     }
 
-    get errorMessage() {
+    get errorMessage(): string {
         let error: string = '';
-        // Fix me should return when occur error
-        _.forOwn(this.control.errors, (value, key) => {
-            if (this.control.touched) {
-                error += this.validationMessage.getValidatorMessage(this.control, this.nameControl, key);
-            }
-        });
+        if (this.control.touched) {
+            _.forOwn(this.control.errors, (value, key) => {
+                error = this.validationMessage.getValidatorMessage(this.control, this.nameControl, key);
+                return;
+            });
+        }
         return error;
     }
 

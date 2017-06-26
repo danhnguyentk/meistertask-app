@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Action} from '@ngrx/store';
 
 import { ErrorMessage } from '../models/error-message.model';
+import { AuthActions } from '../../../auth/actions/auth.actions';
 
 @Injectable()
 export class ErrorActions {
@@ -29,6 +30,20 @@ export class ErrorActions {
         return {
             type: ErrorActions.SIGNUP_ERROR,
             payload: error
+        };
+    }
+
+    changePasswordFail(errorMessage: ErrorMessage): Action {
+        return {
+            type: AuthActions.CHANGE_PASSWORD_FAIL,
+            payload: errorMessage
+        };
+    }
+
+    changePasswordSuccess(successMessage: string): Action {
+        return {
+            type: AuthActions.CHANGE_PASSWORD_SUCCESS,
+            payload: successMessage
         };
     }
 
