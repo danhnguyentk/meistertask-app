@@ -17,6 +17,9 @@ import { AuthPrivatePageGuard } from './guards/auth-private-page.guard';
 import { DropdownUserComponent } from './components/dropdown-user/dropdown-user.component';
 import { PersonalComponent } from './personal.component';
 import { ChangePasswordComponent } from './change-password.component';
+import { HeightPercentageControlComponent } from './components/height-percentage-control/height-percentage-control.component';
+import { PartBodyGroupComponent } from './components/part-body-group/part-body-group.component';
+import { TextRangeControlComponent } from './components/text-range-control/text-range-control.component';
 
 const MODULES = [
     CommonModule,
@@ -32,7 +35,9 @@ const COMPONENTS = [
     LoggedOutComponent,
     DropdownUserComponent,
     PersonalComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    HeightPercentageControlComponent,
+    PartBodyGroupComponent
 ];
 
 const SERVICES = [
@@ -47,7 +52,8 @@ const SERVICES = [
         ...MODULES
     ],
     declarations: [
-        ...COMPONENTS
+        ...COMPONENTS,
+        TextRangeControlComponent
     ],
     providers: [
         ...SERVICES

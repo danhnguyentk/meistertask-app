@@ -43,34 +43,8 @@ export class PersonalComponent implements OnInit {
     buildForm() {
         this.form = this.fbw.group({
             name: ['', [ Validators.required ]],
-            heightPartsBody: this.fbw.array([], this.customValidator.validatePercentage())
+            heightPartsBody: this.fbw.array([])
         });
-
-        this.heightPartsBody.valueChanges.subscribe((array) => {
-            this.logger.info(this.heightPartsBody.controls);
-            this.logger.info('Form array body:', array);
-            // _.forEach(this.heightPartsBody.controls, (formGroup: FormGroup) => {
-            //     let control: FormControl = formGroup.get(percentageHeight)
-            //     // formGroup.controls.
-            // });
-        });
-    }
-
-    /**
-     * Add info height part of body
-     */
-    addPartBody() {
-        this.heightPartsBody.push(this.fbw.group({
-            part: [ '' ],
-            percentageHeight: [ '' ],
-        }));
-    }
-
-    /**
-     * Delete info height part of body
-     */
-    deletePartBody(at: number) {
-        this.heightPartsBody.removeAt(at);
     }
 
     /**

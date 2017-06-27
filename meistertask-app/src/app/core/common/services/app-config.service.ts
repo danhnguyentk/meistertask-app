@@ -45,4 +45,19 @@ export class AppConfig {
         DELETE_TASK: 'Are you want to delete this task?'
     };
 
+    PERSONAL_VALIDATION_MESSAGES = {
+        RANGE_OVERLAPPED: 'Unit or Unit Range should be not overlapped.',
+        MIN_MAX_COMPARE: 'First number should be lower than second number.',
+        NON_NEGATIVE_RANGE: 'Unit or Unit Range is non-negative integer.',
+        PERCENTAGE_VALIDATION: 'Height Percentage cannot exceed 100.',
+        PERCENTAGES_VALIDATION: 'The total of Height Percentage must be added up to 100.',
+        MAXIMUM_MSG: 'cannot exceed',
+        WRONG_FORMAT: 'Invalid format.',
+        VALUE_POSITIVE: 'The value should be positive integer.',
+        UNIT_POSITIVE: 'Unit should be positive.',
+        SAVE_SUCCESSFULLY: 'Personal user has been saved.',
+        SAVE_FAIL: 'There was an error, please try again later.',
+        REQUIRED: 'This field is required.'
+    };
+
 }

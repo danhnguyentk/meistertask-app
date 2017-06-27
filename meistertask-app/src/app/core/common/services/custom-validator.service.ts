@@ -93,6 +93,7 @@ export class CustomValidator {
             let newPassword: FormControl = formGroup.get(keyNewPassword) as FormControl;
             let confirmPassword: FormControl = formGroup.get(keyConfirmPassword) as FormControl;
             this.logger.info('Touch', formGroup.touched);
+            this.logger.info('Form group change password', formGroup);
             if (formGroup.touched) {
                 if (oldPassword.value === newPassword.value && newPassword.value) {
                     const error: any = _.assignIn({}, newPassword.errors, { invalidNewPassword: true });

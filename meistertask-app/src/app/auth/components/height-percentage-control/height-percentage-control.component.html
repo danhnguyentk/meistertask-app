@@ -1,0 +1,13 @@
+<div class="form-group form-group-default form-group-percentage">
+  <label>Percentage height</label>
+  <input
+    type="text"
+    class="form-control"
+    placeholder="15"
+    #percentageHeight
+    [value]="percentageValue"
+    (change)="onChange(percentageHeight.value)"
+    (keyup)="onChange(percentageHeight.value)"
+  >
+</div>
+<div class="">{{ control.errors.percentage.message }}</div>

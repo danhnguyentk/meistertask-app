@@ -4,31 +4,15 @@
   Please note that changing your email address requires reactivation via email.</p>
   <form novalidate [formGroup]="form"(ngSubmit)="updateUser()">
     <input-wrapper
+      label="Username"
       nameControl="Username"
       [control]="form.controls.name"
     >
       <input type="text" class="form-control" placeholder="Username" formControlName="name">
     </input-wrapper>
-    <div formArrayName="heightPartsBody">
-      <h3>Height body</h3>
-
-      <div class="part-body" *ngFor=" let item of heightPartsBody.controls; let i=index" [formGroupName]="i">
-        <input-wrapper
-          nameControl="Part"
-          [control]="item.controls.part"
-        >
-          <input type="text" class="form-control" placeholder="Head" formControlName="part">
-        </input-wrapper>
-        <input-wrapper
-          nameControl="Percentage height"
-          [control]="item.controls.percentageHeight"
-        >
-          <input type="text" class="form-control" placeholder="15" formControlName="percentageHeight">
-        </input-wrapper>
-        <a class="close close-part-body" (click)="deletePartBody(i)">X</a>
-      </div>
-
-      <button type="button" class="btn btn-success btn-add-height" (click)="addPartBody()">Add height part body</button>
-    </div>
+    <part-body-group
+      formArrayName="heightPartsBody"
+    ></part-body-group>
+    <button class="btn btn-success btn-update" type="subbmit" [disabled]="!form.valid">Update info personal</button>
   </form>
 </section>

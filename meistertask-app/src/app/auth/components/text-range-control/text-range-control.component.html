@@ -1,0 +1,15 @@
+<div
+  class="form-group form-group-default form-group-range"
+  [class.form-group-error]="control.errors.range && control.touched">
+  <label>Unit or unit range</label>
+  <input
+    type="text"
+    class="form-control"
+    placeholder="1 or 0-2"
+    [value]="textRange"
+    (change)="onChange($event)"
+    (keyup)="onChange($event)"
+  >
+</div>
+<div class="alert-error">{{ control.errors.range.message }}</div>
+{{ control.touched }}
