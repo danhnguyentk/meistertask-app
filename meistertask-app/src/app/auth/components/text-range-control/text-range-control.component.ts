@@ -1,21 +1,26 @@
 import {
     Component,
     OnInit,
-    forwardRef
+    Input,
+    forwardRef,
+    ChangeDetectorRef
 } from '@angular/core';
 import {
     FormControl,
     NG_VALUE_ACCESSOR,
     NG_VALIDATORS,
     ControlValueAccessor,
-    Validator
+    Validator,
+    ValidatorFn
 } from '@angular/forms';
 
 import * as _ from 'lodash';
 
 import { Logger } from '../../../core/common/services/logger.service';
+import { AppConfig } from '../../../core/common/services/app-config.service';
 import { FormBuilderWrapper } from '../../../core/form/services/form-builder-wrapper';
 import { HeightAttribute } from '../../models/height-attribute.model';
+import { textRangeValidator } from './text-range.validator';
 
 @Component({
     selector: 'text-range-control',
@@ -27,39 +32,46 @@ import { HeightAttribute } from '../../models/height-attribute.model';
     ]
 })
 export class TextRangeControlComponent implements OnInit, ControlValueAccessor, Validator {
-    namePart: string;
+    @Input() maximum: number;
+    @Input() legend: string;
+
+    range: string;
+    submitted: boolean;
+
     propagateChange = (_: any) => {};
-    control: FormControl;
+    validateFn: ValidatorFn;
+
+    internalFormControl: FormControl = new FormControl();
+    formControl: FormControl;
     model: HeightAttribute;
+
 
     constructor(
         private logger: Logger,
-        private fbw: FormBuilderWrapper) { }
+        private fbw: FormBuilderWrapper,
+        private appConfig: AppConfig,
+        private cd: ChangeDetectorRef) { }
 
     ngOnInit() {
+        this.validateFn = textRangeValidator(this.maximum, this.legend, this.appConfig);
     }
 
     /**
      * Set inital value to DOM
      */
     writeValue(value: HeightAttribute) {
-        // Doing in here
-        // this.model = value;
-        // if (value) {
-        //     if (value.min && value.max) {
-        //         this.range = `${value.min}-${value.max}`;
-        //         this.model.min = <any>`${this.model.min}`;
-        //         this.model.max = <any>`${this.model.max}`;
-        //     } else if (value.min) {
-        //         this.range = `${value.min}`;
-        //         this.model.min = <any>`${this.model.min}`;
-        //     } else if (value.max) {
-        //         this.range = `${value.max}`;
-        //         this.model.max = <any>`${this.model.max}`;
-        //     }
-        // } else {
-        //     this.range = '';
-        // }
+        this.model = value;
+        if (value && value.min) {
+            if (value.max) {
+                this.range = `${value.min}-${value.max}`;
+            } else {
+                this.range = `${value.min}`;
+            }
+        } else {
+            this.range = '';
+            this.model.min = '';
+            this.model.max = '';
+        }
     }
 
     registerOnChange(fn: any) {
@@ -74,13 +86,9 @@ export class TextRangeControlComponent implements OnInit, ControlValueAccessor, 
      * Validate control
      */
     validate(c: FormControl): any {
-        this.control = c;
-        this.logger.info(this.control);
-        return {
-            range: { message:
-                'Error rorroror'
-            }
-        };
+        this.formControl = c;
+        this.logger.info('Form control Range: ', this.formControl);
+        return this.validateFn(c);
     };
 
     getRangeValueFromText(newValue: string): any {
@@ -104,8 +112,8 @@ export class TextRangeControlComponent implements OnInit, ControlValueAccessor, 
     }
 
     onRangeChange(event) {
+        this.internalFormControl.markAsDirty();
         let newValue = event.target.value;
-
         let { min, max } = this.getRangeValueFromText(newValue);
         let newModel: HeightAttribute = _.assignIn(this.model, {
             min: min,
@@ -114,6 +122,12 @@ export class TextRangeControlComponent implements OnInit, ControlValueAccessor, 
 
         // Update the form
         this.propagateChange(newModel);
+    }
+
+    markAsSubmitted(valid: boolean) {
+        this.submitted = valid;
+        // FIXME: why have this command
+        // this.cd.detectChanges();
     }
 
 }

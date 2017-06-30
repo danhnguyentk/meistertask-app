@@ -11,8 +11,10 @@
       <input type="text" class="form-control" placeholder="Username" formControlName="name">
     </input-wrapper>
     <part-body-group
+      max="25"
+      legend="Height body"
       formArrayName="heightPartsBody"
     ></part-body-group>
-    <button class="btn btn-success btn-update" type="subbmit" [disabled]="!form.valid">Update info personal</button>
+    <button class="btn btn-success btn-update" type="subbmit">Update info personal</button>
   </form>
 </section>

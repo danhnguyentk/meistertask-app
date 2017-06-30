@@ -20,6 +20,7 @@ import { ChangePasswordComponent } from './change-password.component';
 import { HeightPercentageControlComponent } from './components/height-percentage-control/height-percentage-control.component';
 import { PartBodyGroupComponent } from './components/part-body-group/part-body-group.component';
 import { TextRangeControlComponent } from './components/text-range-control/text-range-control.component';
+import { ErrorTooltipComponent } from './components/error-tooltip/error-tooltip.component';
 
 const MODULES = [
     CommonModule,
@@ -37,7 +38,9 @@ const COMPONENTS = [
     PersonalComponent,
     ChangePasswordComponent,
     HeightPercentageControlComponent,
-    PartBodyGroupComponent
+    PartBodyGroupComponent,
+    TextRangeControlComponent,
+    ErrorTooltipComponent
 ];
 
 const SERVICES = [
@@ -52,8 +55,7 @@ const SERVICES = [
         ...MODULES
     ],
     declarations: [
-        ...COMPONENTS,
-        TextRangeControlComponent
+        ...COMPONENTS
     ],
     providers: [
         ...SERVICES

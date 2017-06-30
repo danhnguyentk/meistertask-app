@@ -9,10 +9,15 @@ import {
     NG_VALUE_ACCESSOR,
     NG_VALIDATORS,
     ControlValueAccessor,
-    Validator
+    Validator,
+    ValidatorFn
 } from '@angular/forms';
 
+import * as _ from 'lodash';
+
 import { Logger } from '../../../core/common/services/logger.service';
+import { heightPercentageValidator } from './height-percentage.validator';
+import { HeightAttribute } from '../../models/height-attribute.model';
 
 @Component({
     selector: 'height-percentage-control',
@@ -24,23 +29,36 @@ import { Logger } from '../../../core/common/services/logger.service';
     ]
 })
 export class HeightPercentageControlComponent implements OnInit, ControlValueAccessor, Validator {
-    percentateValue: string;
+
+    percentage: string;
+    submitted: boolean;
+
     propagateChange = (_: any) => {};
-    control: FormControl;
+    validateFn: ValidatorFn;
+    model: HeightAttribute;
+
+    formControl: FormControl;
+    internalFormControl: FormControl = new FormControl();
 
     constructor(
         private logger: Logger,
         private cdf: ChangeDetectorRef) { }
 
     ngOnInit() {
+        this.validateFn = heightPercentageValidator();
     }
 
     /**
      * Set inital value to DOM
      */
-    writeValue(value: string) {
+    writeValue(value: HeightAttribute) {
         this.logger.info('Write value:', value);
-        this.percentateValue = '5';
+        this.model = value;
+        if (value && value.percentage) {
+            this.percentage = value.percentage;
+        } else {
+            this.percentage = '';
+        }
     }
 
     registerOnChange(fn: any) {
@@ -55,17 +73,24 @@ export class HeightPercentageControlComponent implements OnInit, ControlValueAcc
      * Validate control
      */
     validate(c: FormControl): any {
-        this.logger.info('Value form control percentage: ', c.value);
-        this.control = c;
-        return {
-            percentage: {
-                message: 'Percentage error'
-            }
-        };
+        this.logger.info('Validate form control percentage: ', c);
+        this.formControl = c;
+        return this.validateFn(this.formControl);
     }
 
-    onChange(value: string) {
-        this.propagateChange(value);
+    onChange(event: any) {
+        this.internalFormControl.markAsDirty();
+        const newValue: string = event.target.value;
+        const newModel: HeightAttribute = _.assignIn({}, this.model, { percentage: newValue });
+
+        // Update the form
+        this.propagateChange(newModel);
+    }
+
+    markAsSubmitted(valid: boolean) {
+        this.submitted = valid;
+        // FIXME: why have this command
+        // this.cd.detectChanges();
     }
 
 }

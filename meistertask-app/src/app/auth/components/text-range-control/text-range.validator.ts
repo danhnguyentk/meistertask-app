@@ -82,6 +82,7 @@ export function textRangeValidator(maximum: number, legend: string, appConfig: A
     }
 
     return (c: FormControl) => {
+
         if (isEmptyValue(c.value.min) && _.isNil(c.value.max)) {
             return buildErrorMessage(appConfig.PERSONAL_VALIDATION_MESSAGES.REQUIRED);
         }
@@ -106,44 +107,14 @@ export function textRangeValidator(maximum: number, legend: string, appConfig: A
             return buildErrorMessage(appConfig.PERSONAL_VALIDATION_MESSAGES.MIN_MAX_COMPARE);
         }
 
+        // Display error if invalid format
+        if (!isValidFormat(c.value.min, c.value.max)) {
+            return buildErrorMessage(appConfig.PERSONAL_VALIDATION_MESSAGES.WRONG_FORMAT);
+        } else if (isOverUpperLimit(c.value.min, maximum)
+            || (!isEmptyValue(c.value.max) && isOverUpperLimit(c.value.max, maximum))) {
+            return buildErrorMessage(`${legend} ${appConfig.PERSONAL_VALIDATION_MESSAGES.MAXIMUM_MSG} ${maximum}`);
+        }
+        return null;
     };
-
-    // return (c: FormControl) => {
-    //     if (isEmptyValue(c.value.min)
-    //         && _.isNil(c.value.max)) {
-    //         return buildErrorMessage(appConfig.ATTRIBUTE_VALIDATION_MESSAGES.REQUIRED);
-    //     }
-
-    //     // Min is number but not positive number, max is null (empty)
-    //     if (!isEmptyValue(c.value.min)
-    //         && isEmptyValue(c.value.max)
-    //         && isNumber(c.value.min)
-    //         && !isPositiveNumber(c.value.min)) {
-    //         if (isNegativeNum(c.value.min) || isEqualToZero(c.value.min)) {
-    //             return buildErrorMessage(appConfig.ATTRIBUTE_VALIDATION_MESSAGES.UNIT_POSITIVE);
-    //         } else {
-    //             return buildErrorMessage(appConfig.ATTRIBUTE_VALIDATION_MESSAGES.WRONG_FORMAT);
-    //         }
-    //     }
-
-    //     // Min, max is not empty and no valid range
-    //     if (!isEmptyValue(c.value.min)
-    //         && !isEmptyValue(c.value.max)
-    //         && isIntegerGreaterOrEqualZero(c.value.max)
-    //         && !isValidRange(c.value.min, c.value.max)) {
-    //         return buildErrorMessage(appConfig.ATTRIBUTE_VALIDATION_MESSAGES.MIN_MAX_COMPARE);
-    //     }
-
-    //     // Display error if invalid format
-    //     if (!isValidFormat(c.value.min, c.value.max)) {
-    //         return buildErrorMessage(appConfig.ATTRIBUTE_VALIDATION_MESSAGES.WRONG_FORMAT);
-    //     } else if (isOverUpperLimit(c.value.min, maximum)
-    //             || (!isEmptyValue(c.value.max) && isOverUpperLimit(c.value.max, maximum))) {
-    //         // Valid format but exceed data
-    //         return buildErrorMessage(`${ legend } ${ appConfig.ATTRIBUTE_VALIDATION_MESSAGES.MAXIMUM_MSG } ${ maximum }.`);
-    //     }
-
-    //     return null;
-    // };
 
 }

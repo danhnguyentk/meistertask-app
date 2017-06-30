@@ -1,15 +1,18 @@
-<div
-  class="form-group form-group-default form-group-range"
-  [class.form-group-error]="control.errors.range && control.touched">
+<div class="form-group form-group-default form-group-range">
   <label>Unit or unit range</label>
-  <input
-    type="text"
-    class="form-control"
-    placeholder="1 or 0-2"
-    [value]="textRange"
-    (change)="onChange($event)"
-    (keyup)="onChange($event)"
-  >
+  <div class="attribute-value">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="1 or 0-2"
+      [value]="range"
+      (change)="onRangeChange($event)"
+      (keyup)="onRangeChange($event)"
+      [class.invalid-error]="(submitted || internalFormControl?.dirty) && (formControl?.errors?.range || formControl?.errors?.inRange)"
+    >
+    <error-tooltip
+      *ngIf="(submitted || internalFormControl?.dirty) && (formControl?.errors?.range || formControl?.errors?.inRange)"
+      [message]="formControl?.errors?.range?.message || formControl?.errors?.inRange.message"
+    ></error-tooltip>
+  </div>
 </div>
-<div class="alert-error">{{ control.errors.range.message }}</div>
-{{ control.touched }}

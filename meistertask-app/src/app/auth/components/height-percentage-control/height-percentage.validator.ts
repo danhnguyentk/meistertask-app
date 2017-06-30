@@ -17,12 +17,13 @@ export function heightPercentageValidator() {
     }
 
     return (c: FormControl) => {
+        let percentageValue = c.value.percentage;
         let error: any;
         let percentageMessage: string;
-        let isValidFormat = /^0*(?:[1-9][0-9]?|100)$/.test(c.value.percentage);
-        if (isEmptyValue(c.value)) {
+        let isValidFormat = /^0*(?:[1-9][0-9]?|100)$/.test(percentageValue);
+        if (isEmptyValue(percentageValue)) {
             percentageMessage = 'This field is required';
-        } else if (isInteger(c.value) && +c.value <= 0 || c.value > 100) {
+        } else if (isInteger(percentageValue) && +percentageValue <= 0 || c.value > 100) {
             percentageMessage = 'Height percentage should greater than 0 and cannot exceed 100.';
         } else if (!isValidFormat) {
             percentageMessage = 'Height percentage should be an integer, greater than 0 and cannot exceed 100.';

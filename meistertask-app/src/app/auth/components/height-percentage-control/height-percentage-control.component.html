@@ -1,13 +1,18 @@
 <div class="form-group form-group-default form-group-percentage">
   <label>Percentage height</label>
-  <input
-    type="text"
-    class="form-control"
-    placeholder="15"
-    #percentageHeight
-    [value]="percentageValue"
-    (change)="onChange(percentageHeight.value)"
-    (keyup)="onChange(percentageHeight.value)"
-  >
+  <div class="attribute-value">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="15"
+      [value]="percentage"
+      (change)="onChange($event)"
+      (keyup)="onChange($event)"
+      [class.invalid-error]="(submitted || internalFormControl?.dirty) && (formControl?.errors?.percentage || formControl?.errors?.sumPercentage)"
+    >
+    <error-tooltip
+      *ngIf="(submitted || internalFormControl?.dirty) && (formControl?.errors?.percentage || formControl?.errors?.sumPercentage)"
+      [message]="formControl?.errors?.percentage?.message || formControl?.errors?.sumPercentage.message"
+    ></error-tooltip>
+  </div>
 </div>
-<div class="">{{ control.errors.percentage.message }}</div>

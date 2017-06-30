@@ -1,0 +1,46 @@
+//No Results Found class
+.no-results-found {
+  @extend %block;
+  @extend %text-center;
+  color: red;
+  font-size: rem(7);
+}
+
+//Invalid class
+.invalid-error {
+  border: rem(0.5) solid red !important;
+  color: red;
+}
+
+// Error message tooltip on input fieldss
+.error-tooltip {
+  @extend %absolute;
+  display: none;
+  font-size: rem(5.5);
+  z-index: 100;
+  border-radius: rem(2);
+  border: rem(0.5) solid red;
+  color: red;
+  padding: rem(3) rem(4.5);
+  left: 30%;
+  min-width: rem(130);
+}
+
+.error-tooltip:before {
+  @extend %absolute;
+  @include boxSize (rem(4), rem(4));
+  content: '';
+  top: rem(-2.3);
+  border-top: rem(0.5) solid red;
+  border-left: rem(0.5) solid red;
+  left: 6%;
+  margin-left: rem(5);
+  transform: rotate(45deg);
+  background: white;
+}
+
+.glyphicon-exclamation-sign {
+  padding-right: rem(3);
+  font-size: rem(8);
+  color: red;
+}

@@ -2,6 +2,8 @@
   <h3 class="height-attribute">Year to grow height body</h3>
   <div class="part-body" *ngFor=" let control of formArray.controls; let i=index">
     <text-range-control
+      [maximum]="max"
+      [legend]="legend"
       [formControl]="control"
     ></text-range-control>
     <height-percentage-control

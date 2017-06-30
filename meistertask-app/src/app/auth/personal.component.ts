@@ -1,22 +1,17 @@
 import {
     Component,
     OnInit,
-    ChangeDetectionStrategy
 } from '@angular/core';
 import {
     FormGroup,
-    FormControl,
     Validators,
     FormArray,
     FormBuilder
 } from '@angular/forms';
 
-import * as _ from 'lodash';
-
 import { FormBuilderWrapper } from '../core/form/services/form-builder-wrapper';
 import { Logger } from '../core/common/services/logger.service';
 import { CustomValidator } from '../core/common/services/custom-validator.service';
-
 
 @Component({
     selector: 'personal',
